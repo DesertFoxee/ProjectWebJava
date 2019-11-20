@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,11 +11,11 @@
     <body>
         <div class="login">
             <h1>Login</h1>
-            <form method="post" action="">
-                <input type="text" name="u" placeholder="Username" required="required" />
-                <input type="password" name="p" placeholder="Password" required="required" />
+            <form:form method="post" action="admin/login" modelAttribute="mAdmin">
+                <form:input type="text" path="tenTaiKhoan" placeholder="Username" required="required" />
+                <form:input type="password" path="matKhau" placeholder="Password" required="required" />
                 <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-            </form>
+            </form:form>
         </div>
     </body>
 </html>

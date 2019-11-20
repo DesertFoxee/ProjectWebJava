@@ -24,5 +24,6 @@
     <mapping class="models.LoaiGiay"/>
     <mapping class="models.DanhGiaId"/>
     <mapping class="models.TaiKhoan"/>
+    <mapping class="models.QuanTri"/>
   </session-factory>
 </hibernate-configuration>

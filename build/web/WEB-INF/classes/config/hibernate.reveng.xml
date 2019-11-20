@@ -16,4 +16,5 @@
     <table-filter match-name="GioHang"/>
     <table-filter match-name="ChiTietGioHang"/>
     <table-filter match-name="HangGiay"/>
+    <table-filter match-name="QuanTri"/>
 </hibernate-reverse-engineering>

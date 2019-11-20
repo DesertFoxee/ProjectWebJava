@@ -8,9 +8,8 @@ import util.HibernateUtil;
 
 public class GiayDAO {
     
-    private static final Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-
     public static List<Giay> getAllShoes(){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         List<Giay> a_shoes = session.createQuery("from Giay").list();
         return a_shoes;
