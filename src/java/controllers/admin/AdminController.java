@@ -1,8 +1,11 @@
 package controllers.admin;
 
 import dao.QuanTriDAO;
+import javax.validation.Valid;
 import models.QuanTri;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,21 +23,21 @@ public class AdminController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView login() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("admin/login");
-        mv.addObject("mAdmin", new QuanTri());
-        return mv;
+    public String showlogin(Model model) {
+        model.addAttribute("mAdmin", new QuanTri());
+        return "admin/login";
     }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("mAdmin") QuanTri admin) {
-
-        if (QuanTriDAO.validate(admin)) {
-            return "redirect:" + "/admin/manager";
-        } else {
-            return "redirect:" + "/admin";
+    @RequestMapping(method = RequestMethod.POST)
+    public String login(@Valid @ModelAttribute("mAdmin") QuanTri admin, BindingResult binding ) {
+        if(binding.hasErrors()){
+            return "admin/login";
+        }
+        else {
+            if (QuanTriDAO.validate(admin)) {
+            return "redirect:" + "admin/manager";
+            } else {
+                return "redirect:" + "admin";
+            }
         }
     }
-
 }

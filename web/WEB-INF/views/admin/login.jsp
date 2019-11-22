@@ -11,9 +11,11 @@
     <body>
         <div class="login">
             <h1>Login</h1>
-            <form:form method="post" action="admin/login" modelAttribute="mAdmin">
-                <form:input type="text" path="tenTaiKhoan" placeholder="Username" required="required" />
-                <form:input type="password" path="matKhau" placeholder="Password" required="required" />
+            <form:form method="post" modelAttribute="mAdmin">
+                <form:input type="text" path="tenTaiKhoan" placeholder="Username" />
+                <small><form:errors path="tenTaiKhoan" cssClass="error" /></small>
+                <form:input type="password" path="matKhau" placeholder="Password" />
+                <small><form:errors path="matKhau" cssClass="error" /></small>
                 <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
             </form:form>
         </div>

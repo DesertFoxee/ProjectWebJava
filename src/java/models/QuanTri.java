@@ -2,12 +2,9 @@ package models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "QuanTri",
@@ -38,6 +35,7 @@ public class QuanTri implements java.io.Serializable {
     }
 
     @Column(name="TenTaiKhoan", nullable=false, length=30)
+    @NotEmpty(message = "admin.username.empty")
     public String getTenTaiKhoan() {
         return tenTaiKhoan;
     }
@@ -48,6 +46,7 @@ public class QuanTri implements java.io.Serializable {
     }
     
     @Column(name="MatKhau", nullable=false, length=20)
+    @NotEmpty(message ="admin.password.empty")
     public String getMatKhau() {
         return matKhau;
     }
