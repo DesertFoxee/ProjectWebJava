@@ -35,7 +35,7 @@ public class QuanTri implements java.io.Serializable {
     }
 
     @Column(name="TenTaiKhoan", nullable=false, length=30)
-    @NotEmpty(message = "admin.username.empty")
+    @NotEmpty(message= "Tài khoản trống")
     public String getTenTaiKhoan() {
         return tenTaiKhoan;
     }
@@ -46,7 +46,7 @@ public class QuanTri implements java.io.Serializable {
     }
     
     @Column(name="MatKhau", nullable=false, length=20)
-    @NotEmpty(message ="admin.password.empty")
+    @NotEmpty(message ="Mật khẩu trống")
     public String getMatKhau() {
         return matKhau;
     }

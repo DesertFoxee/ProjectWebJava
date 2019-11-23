@@ -25,9 +25,10 @@ public class QuanTriDAO {
         // set paramater 
         query.setParameter("username", admin.getTenTaiKhoan() , StandardBasicTypes.STRING);
         query.setParameter("password", admin.getMatKhau() , StandardBasicTypes.STRING);
-        
         // execute query => list()
         List admins =query.list();
+        
+        session.getTransaction().commit();
         if(admins.size() > 0){
             return true;
         }
