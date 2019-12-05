@@ -11,8 +11,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView Index(){
         ModelAndView mv = new ModelAndView();
-        
-        mv.setViewName("home/index"); 
+        mv.setViewName("website/home/index"); 
         return mv;
     }
 }

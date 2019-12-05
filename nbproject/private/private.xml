@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/HomeController.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/manager/AdminController.java</file>
             <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/config/interceptor/AuthInterceptor.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/manager/ManagerController.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/dispatcher-servlet.xml</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/manager/login.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/CustomerController.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/manager/header.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/dao/HinhAnhDAO.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/manager/dashboard.jsp</file>
         </group>
     </open-files>
 </project-private>

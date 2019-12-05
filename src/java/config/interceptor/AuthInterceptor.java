@@ -26,7 +26,7 @@ public class AuthInterceptor implements HandlerInterceptor {
              return false;
         }
 
-        String name_controller = handler_menthod.getBeanType().getSimpleName().toLowerCase();
+        String name_controller = handler_menthod.getBeanType().getPackage().toString();
 
         boolean access_admin = name_controller.contains(ad_controller_name);
         boolean access_custom = name_controller.contains(cs_controller_name);
