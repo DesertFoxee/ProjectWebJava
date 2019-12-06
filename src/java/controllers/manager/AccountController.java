@@ -62,15 +62,8 @@ public class AccountController {
         ValidationResponse resp = new ValidationResponse();
         resp.setValidated(false);
         if (binding.hasErrors() || bindingcus.hasErrors()) {
-            Map<String, String> errors = binding.getFieldErrors().stream()
-                    .collect(
-                            Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage)
-                    );
-            errors.putAll(bindingcus.getFieldErrors().stream()
-                    .collect(
-                            Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage)
-                    ));
-            resp.setErrorMessages(errors);
+            resp.processError(binding.getFieldErrors());
+            resp.processError(bindingcus.getFieldErrors());
         } else {
             TaiKhoan acc = TaiKhoanDAO.getAccountID(account.getMaTaiKhoan());
             if (acc.getKhachHang() != null) {

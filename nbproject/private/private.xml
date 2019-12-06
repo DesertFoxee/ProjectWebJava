@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/manager/AdminController.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/config/interceptor/AuthInterceptor.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/manager/header.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/dao/HinhAnhDAO.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/manager/dashboard.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/define.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/manager/shoes.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/footer.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/website/home/index.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/css/website/theme-red.css</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/header.jsp</file>
         </group>
     </open-files>
 </project-private>
