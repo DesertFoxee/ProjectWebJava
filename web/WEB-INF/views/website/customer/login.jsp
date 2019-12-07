@@ -6,10 +6,10 @@
 <t:template-website title="Login">
     <jsp:attribute name="content">
         <div class="container">
-            <c:set var="baseURL" value="${pageContext.request.localName}"/>
+            <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <ul class="breadcrumb">
                 <li>
-                    <a href="${baseURL}">
+                    <a  href="${contextPath}">
                         <i class="fa fa-home"></i>
                     </a>
                 </li>

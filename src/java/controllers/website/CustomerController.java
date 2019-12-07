@@ -59,5 +59,12 @@ public class CustomerController {
         mv.setViewName("website/customer/cart");
         return mv;
     }
+    @RequestMapping(value = "/account", method = RequestMethod.GET)
+    public ModelAndView getFormAccount() {
+        ModelAndView mv = new ModelAndView();
+
+        mv.setViewName("website/customer/account");
+        return mv;
+    }
 
 }

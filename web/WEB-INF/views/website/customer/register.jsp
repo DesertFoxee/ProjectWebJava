@@ -6,21 +6,25 @@
 <t:template-website title="Register">
     <jsp:attribute name="content">
         <div class="container">
+            <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <ul class="breadcrumb">
-                <li><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=common/home"><i
-                            class="fa fa-home"></i></a></li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/account">Account</a>
+                <li>
+                    <a  href="${contextPath}">
+                        <i class="fa fa-home"></i>
+                    </a>
                 </li>
                 <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/register">Register</a>
+                        href="<c:url value="/customer"/>"> Khách hàng</a>
+                </li>
+                <li><a
+                        href="<c:url value="/customer/register"/>">Đăng ký</a>
                 </li>
             </ul>
             <div class="row">
                 <div id="content" class="col-sm-12">
                     <h1>Đăng ký tài khoản</h1>
                     <p>Nếu bạn đã có tài khoản , thực hiện giao dịch hoặc <a
-                            href="<c:url value="/cusmter/login"/>"><u>Đăng nhập</u></a>.</p>
+                            href="<c:url value="/customer/login"/>"><u>Đăng nhập</u></a>.</p>
                     <form action="<c:url value="/customer/resgister"/>"
                           method="post" enctype="multipart/form-data" class="form-horizontal account-register">
                         <fieldset id="account">

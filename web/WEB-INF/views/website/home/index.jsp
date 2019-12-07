@@ -7,7 +7,6 @@
     <jsp:attribute name="content">
         <div class="so-slider">
             <div class="container">
-                
                 <div id="so-slideshow" class="col-md-offset-3 col-md-12 col-xs-12 module sohomepage-slider ">
                     <div class="modcontent">
                         <div id="sohomepage-slider1">
@@ -71,6 +70,7 @@
                                     $(".owl2-item.active .item .sohomeslider-description .text h4 ").addClass("h4-active");
                                     $(".owl2-item.active .item .sohomeslider-description .text .des").addClass("des-active");
                                 }
+
                                 $(".sohomeslider-inner-1").owlCarousel2({
                                     animateOut: 'slideOutDown',
                                     animateIn: 'slideInDown',
@@ -120,6 +120,7 @@
 
                     <div class="loader-mod-box"></div>
                 </div>
+
             </div>
         </div>
         <div class="container">
@@ -263,11 +264,7 @@
                                                                     <div class="content_price">
                                                                         <span class="price product-price">
                                                                             33.000VNĐ														</span>
-
                                                                     </div>
-
-
-
                                                                 </div>
                                                                 <!-- End item-content -->
                                                             </div>
@@ -293,7 +290,7 @@
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="item-info">
-       
+
                                                                 <div class="item-title">
                                                                     <a href="#" title="Deserunt bresaola">
                                                                         Deserunt bresao..												</a>
@@ -330,6 +327,7 @@
                 </aside>
             </div>
         </div>
+
         <div class="so-spotlight1">
             <div class="container">
                 <div class="row">
@@ -337,60 +335,56 @@
                         <div class="module cus-style-supper-cate  ">
                             <div class="header">
                                 <h3 class="modtitle">
-                                    <span class="icon-color" style="background-color: #009688; ">
-                                        <i class="fa fa-empire #009688"></i>
-                                        Electronics				<small class="arow-after" style="border-color: transparent transparent  #009688 transparent">
+                                    <span class="icon-color" style="background-color: #ea3a3c; ">
+                                        <i class="fa fa-empire #ea3a3c"></i>
+                                        ADIDAS				<small class="arow-after" style="border-color: transparent transparent  #ea3a3c transparent">
                                         </small>
                                     </span>
-                                    <strong class="line-color" style="background-color: #009688"></strong>
+                                    <strong class="line-color" style="background-color: #ea3a3c;"></strong>
                                 </h3>
 
                             </div>
-
-                            <div id="so_super_category_154" class="so-sp-cat first-load">
+                            <div id="so_super_category_154" class="so-sp-cat first-load"><!--<![endif]-->
                                 <div class="spcat-wrap ">
                                     <div class="spcat-tabs-container" data-delay="300" data-duration="600" data-effect="none" data-ajaxurl="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=common/home" data-modid="154">
                                         <!--Begin Tabs-->
                                         <div class="spcat-tabs-wrap">
                                             <span class="spcat-tab-selected">
-                                                Giảm giá					
-                                            </span>
+                                                Khuyến mại					</span>
                                             <span class="spcat-tab-arrow">▼</span>
                                             <ul class="spcat-tabs cf">
-                                                <li class="spcat-tab tab-sel" data-active-content=".items-category-sales" data-field_order="sales">
+                                                <li class="spcat-tab   tab-loaded tab-sel" data-active-content=".items-category-sales" data-field_order="sales">
                                                     <span class="spcat-tab-label">
-                                                        Giảm giá					
-                                                    </span>
+                                                        Khuyến mại					</span>
                                                 </li>
                                                 <li class="spcat-tab" data-active-content=".items-category-p_sort_order" data-field_order="p_sort_order">
                                                     <span class="spcat-tab-label">
-                                                        Mới nhất					
-                                                    </span>
+                                                        Bán chạy			</span>
                                                 </li>
-                                                <li class="spcat-tab" data-active-content=".items-category-p_price" data-field_order="p_price">
+                                                <li class="spcat-tab" data-active-content=".items-category-rating" data-field_order="rating">
                                                     <span class="spcat-tab-label">
-                                                        Giá					
-                                                    </span>
+                                                        Giá					</span>
                                                 </li>
                                             </ul>
                                         </div>
+                                        <!-- End Tabs-->
                                     </div>
                                     <div class="main-left">
                                         <div class="banner-post-text">
-                                            <a href="#" title="banner">   <img src="<c:url value="/resources/images/common/jpg/s22.jpg"/>" alt="banner">   </a>                				</div>
+                                            <a href="#" title="banner">   <img src= "<c:url value="/resources/images/common/jpg/s22.jpg" />" alt="banner">   
+                                            </a>                				</div>
                                         <div class="hot-category">
                                             <div class="category-wrap-cat">
                                                 <div class="title-imageslider  sp-cat-title-parent">
-                                                    Danh mục       
-                                                </div>
+                                                    Hot Categories        </div>
 
-                                                <div id="cat_slider_893192261575645790" class="slider">
+                                                <div id="cat_slider_20148406371575692380" class="slider">
                                                     <div class="cat_slider_inner so_category_type_default">
                                                         <div class="item">
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a  href="<c:url value="/product/single" />" title="Egante mangetes" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=60" title="Egante mangetes" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Egante mangetes                                    </a>
                                                                 </div>
 
@@ -400,7 +394,7 @@
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a href="<c:url value="/product/single" />" title="Guntes magesg" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=61" title="Guntes magesg" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Guntes magesg                                    </a>
                                                                 </div>
 
@@ -410,7 +404,7 @@
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a href="<c:url value="/product/single" />" title="Gante extensg" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=62" title="Gante extensg" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Gante extensg                                    </a>
                                                                 </div>
 
@@ -420,7 +414,7 @@
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a href="<c:url value="/product/single" />" title="Sine engain" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=63" title="Sine engain" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Sine engain                                    </a>
                                                                 </div>
 
@@ -430,7 +424,7 @@
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a href="<c:url value="/product/single" />" title="Angene mafin" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=64" title="Angene mafin" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Angene mafin                                    </a>
                                                                 </div>
 
@@ -440,7 +434,7 @@
                                                             <div class="item-inner">
                                                                 <div class="cat_slider_title">
 
-                                                                    <a href="<c:url value="/product/single" />" title="Rengae manges" target="_blank">
+                                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=66" title="Rengae manges" target="_blank">
                                                                         <i class="fa fa-caret-right"></i> Rengae manges                                    </a>
                                                                 </div>
 
@@ -456,18 +450,22 @@
                                     <div class="main-right">
                                         <div class="banner-pre-text">
                                             <a href="#" title="banner">   
-                                                <img src="<c:url value="/resources/images/common/jpg/t22.jpg"/>" alt="banner">            
+                                                <img src= "<c:url value="/resources/images/common/jpg/t22.jpg" />" alt="banner" />            
                                             </a>           				
                                         </div>
+
                                         <div class="spcat-items-container products-list grid show-pre show-row"><!--Begin Items-->
+
                                             <div class="spcat-items  spcat-items-loaded items-category-sales product-layout spcat-items-selected" data-total="13">
                                                 <div class="spcat-items-inner spcat00-4 spcat01-4 spcat02-3 spcat03-2 spcat04-1 none">
+
                                                     <div class="ltabs-items-inner owl2-carousel ltabs-slider ">				<div class="ltabs-item ">
+
                                                             <div class="item-inner product-thumb product-item-container transition ">
                                                                 <div class="left-block">
                                                                     <div class="product-image-container">
                                                                         <div class="image">
-                                                                            <a class="lt-image" href="<c:url value="/product/single" />" target="_blank" title="Kenle masen itc..">
+                                                                            <a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58" target="_blank" title="Kenle masen itc..">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-183x183.jpg" class="img-1" alt="Kenle masen itcute">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el6-183x183.jpg" class="img-2" alt="Kenle masen itcute">
                                                                             </a>
@@ -477,26 +475,47 @@
                                                                 </div>
                                                                 <div class="right-block">
                                                                     <div class="caption">
+
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
+
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" title="Kenle masen itc..">
-                                                                                Kenle masen itc								
-                                                                            </a>
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58" title="Kenle masen itc.." target="_blank">
+                                                                                Kenle masen itc								</a>
                                                                         </h4>
+
                                                                         <p class="price">
-                                                                            800.000VNĐ							  							  
-                                                                            <span class="price-old">Ex Tax: 900.000VNĐ</span>
+                                                                            700.000VNĐ							  							  
+                                                                            <span class="price-tax">Ex Tax: 700.000VNĐ</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('58');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('58');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
+
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('58');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=58" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
+
                                                         <div class="ltabs-item ">
 
                                                             <div class="item-inner product-thumb product-item-container transition ">
                                                                 <div class="left-block">
                                                                     <div class="product-image-container">
                                                                         <div class="image">
-                                                                            <a class="lt-image" href="<c:url value="/product/single" />" target="_blank" title="Duidem rerum fa..">
+                                                                            <a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=40" target="_blank" title="Duidem rerum fa..">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/3-183x183.PNG" class="img-1" alt="Duidem rerum facilis">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/38-183x183.jpg" class="img-2" alt="Duidem rerum facilis">
                                                                             </a>
@@ -507,19 +526,36 @@
                                                                 <div class="right-block">
                                                                     <div class="caption">
 
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
+
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" title="Duidem rerum fa.." >
-                                                                                Duidem rerum fa								
-                                                                            </a>
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=40" title="Duidem rerum fa.." target="_blank">
+                                                                                Duidem rerum fa								</a>
                                                                         </h4>
 
                                                                         <p class="price">
                                                                             123.200VNĐ							  							  
-                                                                            <span class="price-old">Ex Tax: 201.000VNĐ</span>
+                                                                            <span class="price-tax">Ex Tax: 101.000VNĐ</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('40');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('40');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
 
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('40');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=40" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -529,7 +565,7 @@
                                                                 <div class="left-block">
                                                                     <div class="product-image-container">
                                                                         <div class="image">
-                                                                            <a class="lt-image" href="<c:url value="/product/single" />" target="_blank" title="Dail miren tuka..">
+                                                                            <a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=30" target="_blank" title="Dail miren tuka..">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/38-183x183.jpg" class="img-1" alt="Dail miren tukan potrem">
                                                                                 <img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/36-183x183.jpg" class="img-2" alt="Dail miren tukan potrem">
                                                                             </a>
@@ -540,19 +576,36 @@
                                                                 <div class="right-block">
                                                                     <div class="caption">
 
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
+
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" title="Dail miren tuka..">
-                                                                                Dail miren tuka								
-                                                                            </a>
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=30" title="Dail miren tuka.." target="_blank">
+                                                                                Dail miren tuka								</a>
                                                                         </h4>
 
                                                                         <p class="price">
                                                                             122.000VNĐ							  							  
-                                                                            <span class="price-old">Ex Tax: 100.000VNĐ</span>
+                                                                            <span class="price-tax">Ex Tax: 100.000VNĐ</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('30');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('30');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
 
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('30');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=30" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -572,8 +625,17 @@
                                                                 </div>
                                                                 <div class="right-block">
                                                                     <div class="caption">
+
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
+
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" title="Cornedbeef turk.." >
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=89" title="Cornedbeef turk.." target="_blank">
                                                                                 Cornedbeef turk								</a>
                                                                         </h4>
 
@@ -583,7 +645,17 @@
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('89');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('89');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
 
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('89');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=89" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -603,8 +675,17 @@
                                                                 </div>
                                                                 <div class="right-block">
                                                                     <div class="caption">
+
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
+
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" >
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=55" title="Cuid dens inteu" target="_blank">
                                                                                 Cuid dens inteu								</a>
                                                                         </h4>
 
@@ -614,7 +695,17 @@
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('55');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('55');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
 
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('55');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=55" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -635,26 +726,57 @@
                                                                 <div class="right-block">
                                                                     <div class="caption">
 
+                                                                        <div class="rating">
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                        </div>
 
                                                                         <h4>
-                                                                            <a href="<c:url value="/product/single" />" title="Sende cuisei in.." >
+                                                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=59" title="Sende cuisei in.." target="_blank">
                                                                                 Sende cuisei in								</a>
                                                                         </h4>
 
-                                                                        <p class="price">90.000 
-                                                                            <span class="price-tax">Ex Tax: 70.000VNĐ</span>
+                                                                        <p class="price">
+                                                                            90.000VNĐ							  							  
+                                                                            <span class="price-tax">Ex Tax: 90.000VNĐ</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
+                                                                <div class="button-group">
+                                                                    <button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('59');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                                                                    <button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('59');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
 
+                                                                    <button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('59');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+
+                                                                    <!--full quick view block-->
+                                                                    <a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=59" data-original-title="Quick view"> <i class="fa fa-search"></i> </a>
+                                                                    <!--end full quick view block-->
+
+                                                                </div>
                                                             </div>
                                                         </div>
+
                                                     </div>
+
+
                                                 </div>
+                                            </div>
+
+                                            <div class="spcat-items  items-category-p_sort_order product-layout spcat-items-loaded" data-total="13">
+                                                <div class="spcat-items-inner spcat00-4 spcat01-4 spcat02-3 spcat03-2 spcat04-1 none"><div class="ltabs-items-inner owl2-carousel ltabs-slider "><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=57" target="_blank" title="Vanu sencute in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el4-183x183.jpg" class="img-1" alt="Vanu sencute ins"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-183x183.jpg" class="img-2" alt="Vanu sencute ins"></a></div></div><span class="label label-sale">Sale</span></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=57" title="Vanu sencute in.." target="_blank">Vanu sencute in</a></h4><p class="price"><span class="price-new">30.000VNĐ</span> <span class="price-old">90.000VNĐ</span><span class="price-tax">Ex Tax: 30.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('57');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('57');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('57');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=57" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=59" target="_blank" title="Sende cuisei in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el3-183x183.jpg" class="img-1" alt="Sende cuisei inges"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/35-183x183.jpg" class="img-2" alt="Sende cuisei inges"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=59" title="Sende cuisei in.." target="_blank">Sende cuisei in</a></h4><p class="price">90.000VNĐ  <span class="price-tax">Ex Tax: 90.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('59');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('59');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('59');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=59" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=60" target="_blank" title="Lande sincut in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el6-183x183.jpg" class="img-1" alt="Lande sincut inste"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/e2-183x183.JPG" class="img-2" alt="Lande sincut inste"></a></div></div><span class="label label-sale">Sale</span></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=60" title="Lande sincut in.." target="_blank">Lande sincut in</a></h4><p class="price"><span class="price-new">70.000VNĐ</span> <span class="price-old">87.000VNĐ</span><span class="price-tax">Ex Tax: 70.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('60');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('60');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('60');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=60" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58" target="_blank" title="Kenle masen itc.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-183x183.jpg" class="img-1" alt="Kenle masen itcute"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el6-183x183.jpg" class="img-2" alt="Kenle masen itcute"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58" title="Kenle masen itc.." target="_blank">Kenle masen itc</a></h4><p class="price">700.000VNĐ  <span class="price-tax">Ex Tax: 700.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('58');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('58');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('58');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=58" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=56" target="_blank" title="Emdcu meagi"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el1-183x183.jpg" class="img-1" alt="Emdcu meagi"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-183x183.jpg" class="img-2" alt="Emdcu meagi"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=56" title="Emdcu meagi" target="_blank">Emdcu meagi</a></h4><p class="price">80.000VNĐ  <span class="price-tax">Ex Tax: 80.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('56');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('56');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('56');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=56" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition last-product"><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=55" target="_blank" title="Cuid dens inteu"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/33-183x183.jpg" class="img-1" alt="Cuid dens inteu"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/e27-183x183.jpg" class="img-2" alt="Cuid dens inteu"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=55" title="Cuid dens inteu" target="_blank">Cuid dens inteu</a></h4><p class="price">70.000VNĐ  <span class="price-tax">Ex Tax: 70.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('55');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('55');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('55');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=55" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div></div></div>
+                                            </div>
+
+                                            <div class="spcat-items  items-category-rating product-layout spcat-items-loaded" data-total="13">
+                                                <div class="spcat-items-inner spcat00-4 spcat01-4 spcat02-3 spcat03-2 spcat04-1 none"><div class="ltabs-items-inner owl2-carousel ltabs-slider "><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=41" target="_blank" title="Dignissimos duc.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/4-183x183.png" class="img-1" alt="Dignissimos ducimus"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/demo/imac_3-183x183.jpg" class="img-2" alt="Dignissimos ducimus"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=41" title="Dignissimos duc.." target="_blank">Dignissimos duc</a></h4><p class="price">122.000VNĐ  <span class="price-tax">Ex Tax: 100.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('41');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('41');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('41');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=41" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=30" target="_blank" title="Dail miren tuka.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/38-183x183.jpg" class="img-1" alt="Dail miren tukan potrem"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/36-183x183.jpg" class="img-2" alt="Dail miren tukan potrem"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=30" title="Dail miren tuka.." target="_blank">Dail miren tuka</a></h4><p class="price">122.000VNĐ  <span class="price-tax">Ex Tax: 100.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('30');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('30');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('30');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=30" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=55" target="_blank" title="Cuid dens inteu"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/33-183x183.jpg" class="img-1" alt="Cuid dens inteu"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/e27-183x183.jpg" class="img-2" alt="Cuid dens inteu"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=55" title="Cuid dens inteu" target="_blank">Cuid dens inteu</a></h4><p class="price">70.000VNĐ  <span class="price-tax">Ex Tax: 70.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('55');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('55');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('55');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=55" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=57" target="_blank" title="Vanu sencute in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el4-183x183.jpg" class="img-1" alt="Vanu sencute ins"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-183x183.jpg" class="img-2" alt="Vanu sencute ins"></a></div></div><span class="label label-sale">Sale</span></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=57" title="Vanu sencute in.." target="_blank">Vanu sencute in</a></h4><p class="price"><span class="price-new">30.000VNĐ</span> <span class="price-old">90.000VNĐ</span><span class="price-tax">Ex Tax: 30.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('57');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('57');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('57');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=57" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition "><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=59" target="_blank" title="Sende cuisei in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el3-183x183.jpg" class="img-1" alt="Sende cuisei inges"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/35-183x183.jpg" class="img-2" alt="Sende cuisei inges"></a></div></div></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=59" title="Sende cuisei in.." target="_blank">Sende cuisei in</a></h4><p class="price">90.000VNĐ  <span class="price-tax">Ex Tax: 90.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('59');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('59');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('59');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=59" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div><div class="ltabs-item "><div class="item-inner product-thumb product-item-container transition last-product"><div class="left-block"><div class="product-image-container"><div class="image"><a class="lt-image" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=60" target="_blank" title="Lande sincut in.."><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el6-183x183.jpg" class="img-1" alt="Lande sincut inste"><img src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/e2-183x183.JPG" class="img-2" alt="Lande sincut inste"></a></div></div><span class="label label-sale">Sale</span></div><div class="right-block"><div class="caption"><div class="rating"><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div><h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=60" title="Lande sincut in.." target="_blank">Lande sincut in</a></h4><p class="price"><span class="price-new">70.000VNĐ</span> <span class="price-old">87.000VNĐ</span><span class="price-tax">Ex Tax: 70.000VNĐ</span></p></div></div><div class="button-group"><button type="button" class="addToCart" data-toggle="tooltip" title="" onclick="cart.add('60');" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button><button type="button" class="wishlist" data-toggle="tooltip" title="" onclick="wishlist.add('60');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button><button type="button" class="compare" data-toggle="tooltip" title="" onclick="compare.add('60');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button><a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/quickview&amp;product_id=60" data-original-title="Quick view"> <i class="fa fa-search"></i> </a></div></div></div></div></div>
                                             </div>
                                         </div>
                                         <!--End Items-->
                                     </div>
+
+
                                 </div>
                                 <script type="text/javascript">
                                     //<![CDATA[
@@ -984,8 +1106,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -1032,18 +1152,7 @@
                                                     alt="Duidem rerum facilis" title="Duidem rerum facilis"
                                                     class="img-responsive" /></a></div>
                                         <div class="caption">
-                                            <div class="rating">
-                                                <span class="fa fa-stack"><i
-                                                        class="fa fa-star-o fa-stack-2x"></i></span>
-                                                <span class="fa fa-stack"><i
-                                                        class="fa fa-star-o fa-stack-2x"></i></span>
-                                                <span class="fa fa-stack"><i
-                                                        class="fa fa-star-o fa-stack-2x"></i></span>
-                                                <span class="fa fa-stack"><i
-                                                        class="fa fa-star-o fa-stack-2x"></i></span>
-                                                <span class="fa fa-stack"><i
-                                                        class="fa fa-star-o fa-stack-2x"></i></span>
-                                            </div>
+
                                             <h4><a
                                                     href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=40">Duidem
                                                     rerum facilis</a></h4>
@@ -1172,7 +1281,6 @@
                                         var slider = $(this),
                                                 panels = slider.children('div'),
                                                 data = slider.data();
-
                                         // Remove unwanted br's
                                         slider.children(':not(.yt-content-slide)').remove();
                                         // Apply Owl Carousel
@@ -1200,12 +1308,169 @@
 
                                     });
                                 });
+                                (function ($) {
+                                    $('body').addClass('common-home');
+                                    $.fn.Soautocomplete = function (option) {
+                                        return this.each(function () {
+                                            this.timer = null;
+                                            this.items = new Array();
+
+                                            $.extend(this, option);
+
+                                            $(this).attr('autocomplete', 'off');
+
+                                            // Focus
+                                            $(this).on('focus', function () {
+                                                this.request();
+                                            });
+
+                                            // Blur
+                                            $(this).on('blur', function () {
+                                                setTimeout(function (object) {
+                                                    (typeof object !== 'undefined') ? object.hide() : '';
+                                                }, 200, this);
+                                            });
+
+                                            // Keydown
+                                            $(this).on('keydown', function (event) {
+                                                switch (event.keyCode) {
+                                                    case 27: // escape
+                                                        this.hide();
+                                                        break;
+                                                    default:
+                                                        this.request();
+                                                        break;
+                                                }
+                                            });
+
+                                            // Click
+                                            this.click = function (event) {
+                                                event.preventDefault();
+
+                                                value = $(event.target).parent().attr('data-value');
+
+                                                if (value && this.items[value]) {
+                                                    this.select(this.items[value]);
+                                                }
+                                            }
+
+                                            // Show
+                                            this.show = function () {
+                                                var pos = $(this).position();
+
+                                                $(this).siblings('ul.dropdown-menu').css({
+                                                    top: pos.top + $(this).outerHeight(),
+                                                    left: pos.left
+                                                });
+
+                                                $(this).siblings('ul.dropdown-menu').show();
+                                            }
+
+                                            // Hide
+                                            this.hide = function () {
+                                                $(this).siblings('ul.dropdown-menu').hide();
+                                            }
+
+                                            // Request
+                                            this.request = function () {
+                                                clearTimeout(this.timer);
+
+                                                this.timer = setTimeout(function (object) {
+                                                    (typeof object !== 'undefined') ? object.source($(object).val(), $.proxy(object.response, object)) : '';
+                                                }, 200, this);
+                                            }
+
+                                            // Response
+                                            this.response = function (json) {
+                                                html = '';
+
+                                                if (json.length) {
+                                                    for (i = 0; i < json.length; i++) {
+                                                        this.items[json[i]['value']] = json[i];
+                                                    }
+
+                                                    for (i = 0; i < json.length; i++) {
+                                                        if (!json[i]['category']) {
+                                                            html += '<li class="media" data-value="' + json[i]['value'] + '">';
+                                                            if (json[i]['image'] && json[i]['show_image'] && json[i]['show_image'] == 1) {
+                                                                html += '	<a class="media-left pull-left" href="' + json[i]['link'] + '"><img class="pull-left" src="' + json[i]['image'] + '"></a>';
+                                                            }
+
+                                                            html += '<div class="media-body">';
+                                                            html += '<a href="' + json[i]['link'] + '"><span>' + json[i]['label'] + '</span></a>';
+                                                            if (json[i]['price'] && json[i]['show_price'] && json[i]['show_price'] == 1) {
+                                                                html += '	<div class="price">';
+                                                                if (!json[i]['special']) {
+                                                                    html += '<span class="price">Price : ' + json[i]['price'] + '</span>';
+                                                                    ;
+                                                                } else {
+                                                                    html += '<span class="price-old">' + json[i]['price'] + '</span><span class="price-new">' + json[i]['special'] + '</span>';
+                                                                }
+                                                                if (json[i]['tax']) {
+                                                                    html += '<br />';
+                                                                    html += '<span class="price-tax">Tax : ' + json[i]['tax'] + '</span>';
+                                                                }
+                                                                html += '	</div>';
+                                                            }
+
+                                                            if (json[i]['show_addtocart'] || json[i]['show_addtowishlist'] || json[i]['show_addtocompare']) {
+                                                                html += '<div class="button-group">';
+                                                                if (json[i]['show_addtocart'])
+                                                                    html += '<button type="button" onclick="cart.add(' + json[i]['value'] + ', ' + json[i]['minimum'] + ');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span> <i class="fa fa-shopping-cart"></i></button>';
+                                                                if (json[i]['show_addtowishlist'])
+                                                                    html += '<button type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add(' + json[i]['value'] + ');"><i class="fa fa-heart"></i></button>';
+                                                                if (json[i]['show_addtocompare'])
+                                                                    html += '<button type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add(' + json[i]['value'] + ');"><i class="fa fa-exchange"></i></button>';
+                                                                html += '</div>';
+                                                            }
+                                                            html += '</div></li>';
+                                                            html += '<li class="clearfix"></li>';
+                                                        }
+                                                    }
+
+                                                    // Get all the ones with a categories
+                                                    var category = new Array();
+
+                                                    for (i = 0; i < json.length; i++) {
+                                                        if (json[i]['category']) {
+                                                            if (!category[json[i]['category']]) {
+                                                                category[json[i]['category']] = new Array();
+                                                                category[json[i]['category']]['name'] = json[i]['category'];
+                                                                category[json[i]['category']]['item'] = new Array();
+                                                            }
+
+                                                            category[json[i]['category']]['item'].push(json[i]);
+                                                        }
+                                                    }
+
+                                                    for (i in category) {
+                                                        html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
+
+                                                        for (j = 0; j < category[i]['item'].length; j++) {
+                                                            html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
+                                                        }
+                                                    }
+                                                }
+
+                                                if (html) {
+                                                    this.show();
+                                                } else {
+                                                    this.hide();
+                                                }
+
+                                                $(this).siblings('ul.dropdown-menu').html(html);
+                                            }
+
+                                            $(this).after('<ul class="dropdown-menu"></ul>');
+
+                                        });
+                                    }
+                                })(window.jQuery);
                             </script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </jsp:attribute>
 </t:template-website>

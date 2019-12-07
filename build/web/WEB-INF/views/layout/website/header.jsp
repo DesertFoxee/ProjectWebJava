@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <div id="header" class=" variant">
     <!-- HEADER TOP -->
     <div class="header-top compact-hidden">
@@ -10,30 +11,31 @@
                     <div class="form-group navbar-welcome hidden-xs">
                         <div class="welcome-msg">
                             <ul class="list-msg">
-                                <li><label class="label-msg">This week</label> <a href="#">Sale special too good
-                                        to miss in every gear category</a></li>
-                                <li><label class="label-msg">Tomorrow</label> <a href="#">Laten ipsum dolor sit
-                                        amet. In gravida pellentesque</a></li>
+                                <li><label class="label-msg">Tuần này</label> <a href="#">Giảm giá cho tất cả mặt hàng Nike</a></li>
+                                <li><label class="label-msg">Tuần sau</label> <a href="#">Giảm giá cho tất cả mặt hàng Adidas</a></li>
                             </ul>
                         </div>
                     </div>
                     <!-- END -->
                 </div>
                 <div class="header-top-right collapsed-block col-lg-8 col-md-7 col-xs-12 ">
-                    <h5 class="tabBlockTitle visible-sm visible-xs">More<a class="expander " href="#TabBlock-1"><i
-                                class="fa fa-angle-down"></i></a></h5>
-                    <div class="tabBlock" id="TabBlock-1">
 
+                    <div class="tabBlock" id="TabBlock-1">
                         <ul class="top-link list-inline">
-                            <li class="account" id="my_account"><a
-                                    href="#"
-                                    title="My Account" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
-                                    <span>Tài khoản</span> <span class="fa fa-angle-down"></span></a>
+
+                            <li class="account" id="my_account">
+                                <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+
+                                    <span>Tài khoản</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
                                 <ul class="dropdown-menu ">
+                                    <li><a href="<c:url value="/customer/login"/>"><i class="fa fa-pencil-square-o"></i> Đăng nhập</a></li>
                                     <li><a href="<c:url value="/customer/register"/>"
                                            <i class="fa fa-user"></i> Đăng ký</a></li>
-                                    <li><a href="<c:url value="/customer/login"/>"><i class="fa fa-pencil-square-o"></i> Đăng nhập</a></li>
                                 </ul>
+
+
                             </li>
                             <li class="checkout"><a
                                     href="<c:url value="/customer/cart"/>"
@@ -50,7 +52,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="navbar-logo col-md-3 col-sm-3 col-xs-10">
-                    <a href="#"><img
+                    <a href="${contextPath}"><img
                             src="<c:url value="/resources/images/common/theme_logo.png" />"
                             title="MaxStore" alt="MaxStore" /></a>
                 </div>
@@ -64,35 +66,27 @@
                         <div class="responsive so-megamenu">
                             <nav class="navbar-default">
                                 <div class=" container-megamenu  horizontal">
-                                    <div class="navbar-header">
-                                        <button type="button" id="show-megamenu" data-toggle="collapse"
-                                                class="navbar-toggle">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
+
 
                                     <div class="megamenu-wrapper">
 
                                         <span id="remove-megamenu" class="fa fa-times"></span>
 
                                         <div class="megamenu-pattern">
+
                                             <div class="container" style="float: right;">
                                                 <ul class="megamenu">
                                                     <li class="home">
                                                         <a
-                                                            href="<c:url value="/" />">
-                                                            <span><strong>Home</strong></span> </a>
+                                                            href="${contextPath}">
+                                                            <span><strong>TRANG CHỦ</strong></span> </a>
                                                     </li>
-
                                                     <li class='full-width'>
                                                         <a href= "<c:url value="/product" />"
                                                            class='clearfix'>
                                                             <strong>
                                                                 SẢN PHẨM
                                                             </strong>
-                                                            <b class='caret'></b>
                                                         </a>
                                                     </li>
                                                     <li class='full-width with-sub-menu hover'>
@@ -292,8 +286,7 @@
                                             </button>
                                         </div>
 
-                                        <div class="vertical-wrapper">
-
+                                        <div class="vertical-wrapper ">
                                             <span id="remove-verticalmenu" class="fa fa-times"></span>
 
                                             <div class="megamenu-pattern">
@@ -305,6 +298,26 @@
                                                                 class='clearfix'>
                                                                 <span><strong>
                                                                         <i class='icon icon1'></i>ADIDAS
+                                                                    </strong></span>
+                                                                <span class='label'> </span>
+                                                            </a>
+                                                        </li>
+                                                        <li class='item-vertical style1 with-sub-menu hover'>
+                                                            <p class='close-menu'></p><a
+                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
+                                                                class='clearfix'>
+                                                                <span><strong>
+                                                                        <i class='icon icon1'></i>NIKE
+                                                                    </strong></span>
+                                                                <span class='label'> </span>
+                                                            </a>
+                                                        </li>
+                                                        <li class='item-vertical style1 with-sub-menu hover'>
+                                                            <p class='close-menu'></p><a
+                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
+                                                                class='clearfix'>
+                                                                <span><strong>
+                                                                        <i class='icon icon1'></i>NIKE
                                                                     </strong></span>
                                                                 <span class='label'> </span>
                                                             </a>
@@ -358,6 +371,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="header-bottom-right col-md-9 col-sm-10 col-xs-10">
                         <!-- Search -->
                         <div class="col-lg-9 col-md-8 col-sm-7 col-xs-9 header_search">
@@ -504,6 +518,58 @@
                                     <input type="hidden" name="route" value="product/search" />
                                 </form>
                             </div>
+                            <script type="text/javascript">
+
+
+                                $(document).ready(function () {
+                                    var selector = '#search1';
+                                    var total = 0;
+                                    var showimage = 1;
+                                    var showprice = 1;
+                                    var character = 3;
+                                    var height = 100;
+                                    var width = 100;
+
+
+                                    $(selector).find('input[name=\'search\']').Soautocomplete({
+                                        delay: 500,
+                                        source: function (request, response) {
+                                            var category_id = $(".select_category select[name=\"category_id\"]").first().val();
+                                            if (typeof (category_id) == 'undefined')
+                                                category_id = 0;
+                                            var limit = 5;
+                                            if (request.length >= character) {
+                                                $.ajax({
+                                                    url: 'index.php?route=module/so_searchpro/autocomplete&filter_category_id=' + category_id + '&limit=' + limit + '&width=' + width + '&height=' + height + '&filter_name=' + encodeURIComponent(request),
+                                                    dataType: 'json',
+                                                    success: function (json) {
+                                                        response($.map(json, function (item) {
+                                                            total = 0;
+                                                            if (item.total) {
+                                                                total = item.total;
+                                                            }
+
+                                                            return {
+                                                                price: item.price,
+                                                                special: item.special,
+                                                                tax: item.tax,
+                                                                label: item.name,
+                                                                image: item.image,
+                                                                link: item.link,
+                                                                minimum: item.minimum,
+                                                                show_price: showprice,
+                                                                show_image: showimage,
+                                                                value: item.product_id,
+                                                            }
+                                                        }));
+                                                    }
+                                                });
+                                            }
+                                        },
+                                    });
+                                });
+
+                            </script>
                         </div>
                         <div class="header_custom_link hidden-xs">
                             <ul>
