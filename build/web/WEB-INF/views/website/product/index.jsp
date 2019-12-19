@@ -29,14 +29,14 @@
                         </div>
                         <div id="so_super_category_154" class="so-sp-cat first-load">
 
-                            <div class="main-left" style="float: right;">
+                            <div class="main-left">
                                 <div class="banner-post-text">
                                     <a href="#" title="banner">  <img src="<c:url value="/resources/images/common/jpg/s22.jpg"/>" alt="banner">
                                     </a> </div>
                                 <div class="hot-category">
                                     <div class="category-wrap-cat">
                                         <div class="title-imageslider  sp-cat-title-parent">
-                                            Hot Categories </div>
+                                            Danh Mục </div>
                                         <div id="cat_slider_4069187071575549906" class="slider">
                                             <div class="cat_slider_inner so_category_type_default">
                                                 <div class="item">
@@ -108,10 +108,8 @@
                                 </div>
                             </div>
                             <div class="main-right">
-                                <div id="content" class=" col-md-12 col-sm-8  col-xs-12" style="
-                                     padding-left: 0px;">
+                                <div id="content" class=" col-md-12 col-sm-12  col-xs-12">
                                     <div class="products-category">
-                                        <!--// Begin  Today Deals-->
                                         <div class="product-filter filters-panel">
                                             <div class="row">
                                                 <div class="col-md-2 hidden-sm hidden-xs"style="width: 5%;">
@@ -125,43 +123,62 @@
                                                     </div>
                                                 </div>
                                                 <div
-                                                    class="short-by-show form-inline text-left col-lg-7 col-sm-6 col-xs-12">
+                                                    class="short-by-show form-inline text-left col-lg-7 col-sm-6 col-xs-12" style="width: 65%;">
                                                     <div class="form-group short-by">
-                                                        <label class="control-label" for="input-sort">Sắp xếp sản phẩm:</label>
+                                                        <label class="control-label" for="input-sort">Lọc SP:</label>
                                                         <select id="input-sort" class="form-control"
                                                                 onchange="location = this.value;">
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.sort_order&amp;order=ASC"
-                                                                selected="selected">Default</option>
+                                                                selected="selected">Sắp xếp</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=pd.name&amp;order=ASC">
-                                                                Name (A - Z)</option>
+                                                                Tên (A - Z)</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=pd.name&amp;order=DESC">
-                                                                Name (Z - A)</option>
+                                                                Tên (Z - A)</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=ASC">
-                                                                Price (Low &gt; High)</option>
+                                                                Giá (Low &gt; High)</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=DESC">
-                                                                Price (High &gt; Low)</option>
+                                                                Giá (High &gt; Low)</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=rating&amp;order=DESC">
-                                                                Rating (Highest)</option>
+                                                                Giảm giá</option>
                                                             <option
                                                                 value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=rating&amp;order=ASC">
-                                                                Rating (Lowest)</option>
-                                                            <option
-                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.model&amp;order=ASC">
-                                                                Model (A - Z)</option>
-                                                            <option
-                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.model&amp;order=DESC">
-                                                                Model (Z - A)</option>
+                                                                Giảm giá (Lowest)</option>
                                                         </select>
-                                                    </div>
+                                                        <select id="input-sort" class="form-control"
+                                                                onchange="location = this.value;" style="min-width: 130px;">
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.sort_order&amp;order=ASC"
+                                                                selected="selected">Hãng giày</option>
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=ASC">
+                                                                Adidas</option>
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=DESC">
+                                                                Nike </option>
+                                                        </select>
+                                                        <select id="input-sort" class="form-control"
+                                                                onchange="location = this.value;" style="min-width: 130px;">
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.sort_order&amp;order=ASC"
+                                                                selected="selected">Loại giày</option>
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=ASC">
+                                                                Thể thao</option>
+                                                            <option
+                                                                value="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;sort=p.price&amp;order=DESC">
+                                                                Đi dạo </option>
 
+                                                        </select>
+                                                        <button class="btn btn-primary" style="font-size: 12px;">Tìm kiếm</button>
+                                                    </div>
                                                 </div>
-                                                <div class="box-pagination col-lg-3 col-sm-4 col-xs-12 text-right" style="float: right;">
+                                                <div class="box-pagination col-lg-3 col-sm-4 col-xs-12 text-right" style="width: 30%; float: right;">
                                                     <ul class="pagination">
                                                         <li><a
                                                                 href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33&amp;page=2">|&lt;</a>
@@ -173,9 +190,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- //end Filters -->
-
-                                        <!--Changed Listings-->
                                         <div class="products-list row grid so-filter-gird">
                                             <!-- GRID VIEW -->
                                             <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
@@ -222,9 +236,6 @@
 
                                                 </div>
                                             </div>
-
-
-
                                             <!-- GRID VIEW -->
                                             <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
                                                 <div class="product-item-container">
@@ -312,6 +323,135 @@
                                             </div>
 
                                             <!-- GRID VIEW -->
+                                            <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
+                                                <div class="product-item-container">
+                                                    <div class="left-block">
+                                                        <div class="product-image-container lt-image  ">
+
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-1 img-responsive">
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 alt="Kevinconsequat exercit"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-2 img-responsive">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="right-block">
+                                                        <div class="caption">
+                                                            <h4><a
+                                                                    href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;path=33&amp;product_id=85">Kevinconsequat
+                                                                    exercit</a></h4>
+
+
+                                                            <div class="price">
+                                                                <span class="price-new">88.000VNĐ</span>
+
+                                                            </div>
+                                                            <div class="description  hidden ">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit, sed do
+                                                                    eiusmod tempor incididunt ut labore et dolore magna
+                                                                    aliqua. Ut enim
+                                                                    ad minim veniam, quis nostrud exercitation ullamco
+                                                                    laboris nisi ut
+                                                                    ..</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!-- right block -->
+
+                                                </div>
+                                            </div>
+                                            <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
+                                                <div class="product-item-container">
+                                                    <div class="left-block">
+                                                        <div class="product-image-container lt-image  ">
+
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-1 img-responsive">
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 alt="Kevinconsequat exercit"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-2 img-responsive">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="right-block">
+                                                        <div class="caption">
+                                                            <h4><a
+                                                                    href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;path=33&amp;product_id=85">Kevinconsequat
+                                                                    exercit</a></h4>
+
+
+                                                            <div class="price">
+                                                                <span class="price-new">88.000VNĐ</span>
+
+                                                            </div>
+                                                            <div class="description  hidden ">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit, sed do
+                                                                    eiusmod tempor incididunt ut labore et dolore magna
+                                                                    aliqua. Ut enim
+                                                                    ad minim veniam, quis nostrud exercitation ullamco
+                                                                    laboris nisi ut
+                                                                    ..</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!-- right block -->
+
+                                                </div>
+                                            </div>
+                                            <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
+                                                <div class="product-item-container">
+                                                    <div class="left-block">
+                                                        <div class="product-image-container lt-image  ">
+
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f10-270x270.jpg"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-1 img-responsive">
+                                                            <img data-src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/f19-270x270.jpg"
+                                                                 alt="Kevinconsequat exercit"
+                                                                 title="Kevinconsequat exercit"
+                                                                 class="img-2 img-responsive">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="right-block">
+                                                        <div class="caption">
+                                                            <h4><a
+                                                                    href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;path=33&amp;product_id=85">Kevinconsequat
+                                                                    exercit</a></h4>
+
+
+                                                            <div class="price">
+                                                                <span class="price-new">88.000VNĐ</span>
+
+                                                            </div>
+                                                            <div class="description  hidden ">
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                    elit, sed do
+                                                                    eiusmod tempor incididunt ut labore et dolore magna
+                                                                    aliqua. Ut enim
+                                                                    ad minim veniam, quis nostrud exercitation ullamco
+                                                                    laboris nisi ut
+                                                                    ..</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!-- right block -->
+
+                                                </div>
+                                            </div>
                                             <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
                                                 <div class="product-item-container">
                                                     <div class="left-block">

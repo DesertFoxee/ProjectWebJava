@@ -130,21 +130,23 @@ public class GiayDAO extends AbstractGenericDao {
         return count;
     }
 
-    public static List<KichCo> getSizeShoes(Integer id_shoes) {
+    public static List<Giay> getBestSale(int limit) {
         beginTransaction();
-        List<KichCo> _size;
+        List<Giay> a_shoes = null;
         try {
-            _size = Session()
-                    .createQuery("from KichCo \n"
-                            + "where maGiay  =:id")
-                    .setParameter("id", id_shoes)
+            a_shoes = Session()
+                    .createQuery("from Giay g "
+                            + "left join fetch  g.hinhAnhs "
+                            + "order by giamGia desc")
+                    .setMaxResults(limit)
                     .list();
             commitTransaction();
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             Transaction().rollback();
-            _size = null;
         }
-        return _size;
+        return a_shoes;
     }
+
+   
 
 }

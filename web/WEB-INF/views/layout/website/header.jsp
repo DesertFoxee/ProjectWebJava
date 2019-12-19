@@ -1,5 +1,15 @@
+<%@page import="models.database.LoaiGiay"%>
+<%@page import="dao.LoaiGiayDAO"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="models.database.HangGiay" %>
+<%@page import="dao.HangGiayDAO" %>
+
+<%
+    List<HangGiay> manus = HangGiayDAO.getAllManufacturer();
+    List<LoaiGiay> types = LoaiGiayDAO.getAllType();
+%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <div id="header" class=" variant">
@@ -102,36 +112,24 @@
                                                                     <div class="col-sm-6">
                                                                         <div class="html ">
                                                                             <ul class="row-list">
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=6">FAQ</a>
+                                                                                <% for (int i = 0; i < types.size() / 2; i++) {%>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="<c:url value="/product/style?id="/><%=types.get(i).getMaLoaiGiay()%>"><%=types.get(i).getTenLoaiGiay()%></a>
                                                                                 </li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=3">Pricing
-                                                                                        Tables</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=11">Gallery</a>
-                                                                                </li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/contact">Contact
-                                                                                        us</a></li>
+                                                                                <%}%>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <div class="html ">
                                                                             <ul class="row-list">
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=4">About
-                                                                                        Us 1</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=7">About
-                                                                                        Us 2</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=8">About
-                                                                                        Us 3</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=9">About
-                                                                                        Us 4</a></li>
+                                                                                <% for (int i = types.size() / 2 + 1; i < types.size(); i++) {%>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="<c:url value="/product/style?id="/><%=types.get(i).getMaLoaiGiay()%>"><%=types.get(i).getTenLoaiGiay()%></a>
+                                                                                </li>
+                                                                                <%}%>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -153,36 +151,24 @@
                                                                     <div class="col-sm-6">
                                                                         <div class="html ">
                                                                             <ul class="row-list">
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=6">FAQ</a>
+                                                                                <% for (int i = 0; i < manus.size() / 2; i++) {%>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="<c:url value="/product/manu?id="/><%=manus.get(i).getMaHang()%>"><%=manus.get(i).getTenHangGiay()%></a>
                                                                                 </li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=3">Pricing
-                                                                                        Tables</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=11">Gallery</a>
-                                                                                </li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/contact">Contact
-                                                                                        us</a></li>
+                                                                                <%}%>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <div class="html ">
                                                                             <ul class="row-list">
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=4">About
-                                                                                        Us 1</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=7">About
-                                                                                        Us 2</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=8">About
-                                                                                        Us 3</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=9">About
-                                                                                        Us 4</a></li>
+                                                                                <% for (int i = manus.size() / 2 + 1; i < manus.size(); i++) {%>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="<c:url value="/product/manu?id="/><%=manus.get(i).getMaHang()%>"><%=manus.get(i).getTenHangGiay()%></a>
+                                                                                </li>
+                                                                                <%}%>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -204,18 +190,18 @@
                                                                     <div class="col-sm-6">
                                                                         <div class="html ">
                                                                             <ul class="row-list">
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=6">FAQ</a>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="${contextPath}">Trang chủ</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a class="subcategory_item"
+                                                                                       href="<c:url value="/product"/>">Sản phẩm</a>
                                                                                 </li>
                                                                                 <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=3">Pricing
-                                                                                        Tables</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=11">Gallery</a>
+                                                                                       href="<c:url value="/customer/cart"/>">Giỏ hàng</a>
                                                                                 </li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/contact">Contact
-                                                                                        us</a></li>
+
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -223,17 +209,14 @@
                                                                         <div class="html ">
                                                                             <ul class="row-list">
                                                                                 <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=4">About
-                                                                                        Us 1</a></li>
+                                                                                       href="<c:url value="/customer/register"/>">Đăng ký</a>
+                                                                                </li>
                                                                                 <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=7">About
-                                                                                        Us 2</a></li>
+                                                                                       href="<c:url value="/manager"/>">Quản lý</a>
+                                                                                </li>
                                                                                 <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=8">About
-                                                                                        Us 3</a></li>
-                                                                                <li><a class="subcategory_item"
-                                                                                       href="index.php?route=information/information&amp;information_id=9">About
-                                                                                        Us 4</a></li>
+                                                                                       href="<c:url value="/customer/login"/>">Đăng nhập</a>
+                                                                                </li>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -292,76 +275,18 @@
                                             <div class="megamenu-pattern">
                                                 <div class="container">
                                                     <ul class="megamenu">
+                                                        <% for (HangGiay h : manus) {%>
                                                         <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
+                                                            <p class='close-menu'></p>
+                                                            <a href= "<c:url value="/product/manu?id="/><%=h.getMaHang()%>" class='clearfix'>
                                                                 <span><strong>
-                                                                        <i class='icon icon1'></i>ADIDAS
+                                                                        <i class='icon icon1'></i><%=h.getTenHangGiay()%>
                                                                     </strong></span>
                                                                 <span class='label'> </span>
                                                             </a>
                                                         </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>NIKE
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>NIKE
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>NIKE
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>PRADA
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>ADIDAS
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class='item-vertical style1 with-sub-menu hover'>
-                                                            <p class='close-menu'></p><a
-                                                                href='http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=33'
-                                                                class='clearfix'>
-                                                                <span><strong>
-                                                                        <i class='icon icon1'></i>ADIDAS
-                                                                    </strong></span>
-                                                                <span class='label'> </span>
-                                                            </a>
-                                                        </li>
+                                                        <%}%>
+
                                                     </ul>
                                                 </div>
                                             </div>

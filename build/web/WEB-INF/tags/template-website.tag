@@ -6,7 +6,6 @@
 <%@attribute name="content" fragment="true" required="false" %>
 
 <t:template-base title="Website-${title}">
-
     <jsp:attribute name="define">
         <%--Check have using script --%>
         <c:if test="${empty script}" >
@@ -17,7 +16,6 @@
         <jsp:include page="/WEB-INF/views/layout/website/define.jsp">
             <jsp:param name="using_script" value= "${script}" />
         </jsp:include>
-
     </jsp:attribute>
 
     <jsp:attribute name="header">

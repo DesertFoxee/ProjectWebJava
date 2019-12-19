@@ -17,7 +17,7 @@ button:focus {
   color: inherit; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0; }
+  margin-top: 0; }  
 
 /* default font size */
 .fa {
@@ -2963,7 +2963,7 @@ span.fa-stack {
   margin: 0 0 10px 0;
   line-height: 24px;
   color: #e74c3c;
-  font-size: 18px; }
+  font-size: 13px; }
   .price .price-tax {
     display: none; }
   .price .price-old {
@@ -5663,7 +5663,7 @@ div.clients_say {
           margin-left: 0; }
           .best-seller .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-body .item-info .item-content .content_price span {
             color: #e74c3c;
-            font-size: 16px;
+            font-size: 13px;
             font-weight: bold; }
             .best-seller .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-body .item-info .item-content .content_price span.price-old {
               font-size: 12px;
@@ -6456,10 +6456,6 @@ ul.payment-method {
     margin: 0 5px; }
   @media (min-width: 1200px) {
     .short-by-show .form-group:after {
-      content: "\f0d7";
-      background: #fff;
-      color: #8d8d8d;
-      text-align: center;
       margin: 0;
       position: absolute;
       right: 1px;
