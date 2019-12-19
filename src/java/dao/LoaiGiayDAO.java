@@ -2,7 +2,7 @@ package dao;
 
 import static dao.AbstractGenericDao.beginTransaction;
 import java.util.List;
-import models.LoaiGiay;
+import models.database.LoaiGiay;
 
 public class LoaiGiayDAO extends AbstractGenericDao {
 

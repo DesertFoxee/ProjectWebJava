@@ -7,7 +7,7 @@ package dao;
 
 import static dao.AbstractGenericDao.beginTransaction;
 import java.util.List;
-import models.ChiTietHoaDon;
+import models.database.ChiTietHoaDon;
 
 /**
  *

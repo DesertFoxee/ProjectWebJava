@@ -1,7 +1,7 @@
 package dao;
 
 import java.util.List;
-import models.HangGiay;
+import models.database.HangGiay;
 
 public class HangGiayDAO extends AbstractGenericDao {
 

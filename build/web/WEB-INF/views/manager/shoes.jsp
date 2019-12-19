@@ -14,7 +14,6 @@
                         <h1 class="page-header">Sản phẩm</h1>
                     </div>
                 </div>
-                <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -38,9 +37,8 @@
                                                 <th>Tiêu đề</th>
                                                 <th>Hãng giày</th>
                                                 <th>Loại giày</th>
-                                                <th>Số lượng</th>
                                                 <th>Giá</th>
-                                                <th style="width: 86px;">Chức năng</th>
+                                                <th style="width: 95px;">Chức năng</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -52,16 +50,11 @@
                                                     <td>${item.tieuDe}</td>
                                                     <td class="center">${item.hangGiay.getTenHangGiay()}</td>
                                                     <td class="center">${item.loaiGiay.getTenLoaiGiay()}</td>
-                                                    <td class="center">${item.soLuong}</td>
                                                     <td class="center">${item.gia}</td>
                                                     <td class="right">
-                                                        <button type="button" class="btn btn-primary btn-edit btn-edit-shoes"
-                                                                data-toggle="modal" data-target="#edit-shoes"><i class="fa fa-edit fa-fw"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-edit btn-delete-shoes"
-                                                                data-toggle="modal" data-target="#delete-shoes"><i class="fa fa-trash fa-fw"></i></button>
-                                                        <button type="button" class="btn btn-default btn-edit btn-image-shoes"
-                                                                data-toggle="modal" data-target="#image-shoes"><i class="fa fa-image fa-fw"></i></button>
-
+                                                        <a href="#" class="btn-edit btn-edit-shoes" data-toggle="modal" data-target="#edit-shoes">Edit</a>|
+                                                        <a  href="#" class="btn-edit btn-delete-shoes" data-toggle="modal" data-target="#delete-shoes">Delete</a>|
+                                                        <a href="#" class="btn-edit btn-image-shoes" data-toggle="modal" data-target="#image-shoes">Image</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -102,7 +95,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

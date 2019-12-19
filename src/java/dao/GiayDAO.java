@@ -1,7 +1,8 @@
 package dao;
 
 import java.util.List;
-import models.Giay;
+import models.database.Giay;
+import models.database.KichCo;
 
 public class GiayDAO extends AbstractGenericDao {
 
@@ -18,6 +19,29 @@ public class GiayDAO extends AbstractGenericDao {
             Transaction().rollback();
             return null;
         }
+    }
+
+    public static List<Giay> getShoesManu(String manu, String colum_orderby,
+            int limit, boolean asc) {
+        beginTransaction();
+        List<Giay> m_shoes = null;
+        limit = (limit <= 0) ? 1 : limit;
+        String sort = (asc) ? "desc" : "asc";
+        try {
+            m_shoes = Session().createQuery("select g , ha from Giay g , HangGiay h\n"
+                    + "left join fetch  g.hinhAnhs ha\n"
+                    + "where g.hangGiay.maHang = h.maHang\n"
+                    + "and h.tenHangGiay = :manu\n"
+                    + "order by g." + colum_orderby + " " + sort)
+                    .setParameter("manu", manu)
+                    .setMaxResults(limit)
+                    .list();
+            commitTransaction();
+        } catch (Exception e) {
+            Transaction().rollback();
+            m_shoes = null;
+        }
+        return m_shoes;
     }
 
     public static boolean delete(Integer id) {
@@ -47,15 +71,15 @@ public class GiayDAO extends AbstractGenericDao {
         }
     }
 
-    public static boolean save(Giay giay) {
+    public static Giay save(Giay giay) {
         beginTransaction();
         try {
             Session().save(giay);
             commitTransaction();
-            return true;
+            return giay;
         } catch (Exception e) {
             Transaction().rollback();
-            return false;
+            return null;
         }
     }
 
@@ -104,6 +128,23 @@ public class GiayDAO extends AbstractGenericDao {
             Transaction().rollback();
         }
         return count;
+    }
+
+    public static List<KichCo> getSizeShoes(Integer id_shoes) {
+        beginTransaction();
+        List<KichCo> _size;
+        try {
+            _size = Session()
+                    .createQuery("from KichCo \n"
+                            + "where maGiay  =:id")
+                    .setParameter("id", id_shoes)
+                    .list();
+            commitTransaction();
+        } catch (NumberFormatException e) {
+            Transaction().rollback();
+            _size = null;
+        }
+        return _size;
     }
 
 }

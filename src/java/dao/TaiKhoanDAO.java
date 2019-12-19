@@ -2,8 +2,7 @@ package dao;
 
 import static dao.AbstractGenericDao.beginTransaction;
 import java.util.List;
-import models.KhachHang;
-import models.TaiKhoan;
+import models.database.TaiKhoan;
 
 public class TaiKhoanDAO extends AbstractGenericDao {
 

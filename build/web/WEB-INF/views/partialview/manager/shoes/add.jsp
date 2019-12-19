@@ -12,6 +12,12 @@
     </label>
     <input name="tenGiay" class="form-control"  placeholder="Tên giày" />
 </div>
+<div class="col-lg-6 shoes-padding-input">
+    <label>Màu sắc 
+        <small class="msg-error" id="er-mauSac"></small>
+    </label>
+    <input name="mauSac"class="form-control" placeholder="Màu giày">
+</div>
 <div class="col-lg-12 shoes-padding-input">
     <label>Tiêu đề
         <small class="msg-error" id="er-tieuDe" ></small>
@@ -37,7 +43,6 @@
             <option value="${manu.maLoaiGiay}">${manu.tenLoaiGiay}</option>
         </c:forEach>
     </select>
-
 </div>
 <div class="col-lg-6 shoes-padding-input">
     <label>Giá thành
@@ -48,9 +53,7 @@
         <input name ="gia" type="number" class ="form-control" />
         <span class="input-group-addon">đồng</span>
     </div>
-
 </div>
-
 <div class="col-lg-6 shoes-padding-input">
     <label>Giảm giá
         <small class="msg-error" id="er-giamGia"></small>
@@ -60,40 +63,41 @@
         <input name="giamGia" type="number" min="0" max="100" class="form-control" />
         <span class="input-group-addon">%</span>
     </div>
-
 </div>
-<div class="col-lg-6 shoes-padding-input">
-    <label>Kích cỡ
-        <small class="msg-error" id="er-kichCo"></small>
-    </label>
-    <div class="input-group">
-        <span class="input-group-addon">#</span>
-        <input name="kichCo" type="number" min="0" class="form-control" />
-        <span class="input-group-addon">dv</span>
+<div class="col-lg-12 shoes-padding-input">
+    <small class="msg-error" id="er-kichCo"></small>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Kích cỡ
+            <div class="pull-right">
+                <div class="btn-group" style="top: -5px;">
+                    <button type="button" class="btn btn-info btn-sm " id ="btn-add-size-shoes"
+                            style="line-height: 1.2em;">Thêm</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" style="overflow: auto; max-height: 100px;">
+            <div class="table-responsive">
+                <table
+                    class="table table-add-size-shoes table-bordered table-hover" id ="tb-add-size">
+                    <thead>
+                        <tr>
+                            <th>Kích cỡ</th>
+                            <th>Số lượng</th>
+                            <th align="center" style="text-align: center; width: 50px;">CN
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-<div class="col-lg-6 shoes-padding-input">
-    <label>Màu sắc 
-        <small class="msg-error" id="er-mauSac"></small>
-    </label>
-    <input name="mauSac"class="form-control" placeholder="Màu giày">
-</div>
-
-<div class="col-lg-6 shoes-padding-input">
-    <label>Số lượng
-        <small class="msg-error" id="er-soLuong"></small>
-    </label>
-    <div class="input-group">
-        <span class="input-group-addon">#</span>
-        <input name="soLuong" type="number" min="0" class="form-control">
-        <span class="input-group-addon">dv</span>
-    </div>
-
 </div>
 <div class="col-lg-12 shoes-padding-input">
     <label>Mô tả
         <small class="msg-error" id="er-moTa"></small>
     </label>
     <textarea name="moTa" class="form-control" rows="3"></textarea>
-
 </div>

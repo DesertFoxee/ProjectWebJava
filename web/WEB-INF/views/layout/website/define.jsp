@@ -94,6 +94,10 @@
     <script src="<c:url value="/resources/js/common/dataTables/jquery.dataTables.min.js" />"></script>
     <script src="<c:url value="/resources/js/common/dataTables/dataTables.bootstrap.min.js" />"></script>
 
+    <!-- User Plugin JavaScript -->
+    <script src="<c:url value="/resources/js/custom/effect_process.js" />"></script>
+    <script src="<c:url value="/resources/js/custom/data_process.js" />"></script>
+
     <script>
         $(document).ready(function () {
             $('#dataTables-example').DataTable({

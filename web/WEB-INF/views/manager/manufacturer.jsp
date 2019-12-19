@@ -48,10 +48,10 @@
                                                     <td>${manu.tenHangGiay}</td>
                                                     <td>${manu.ghiChu}</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary btn-edit btn-edit-manu"
-                                                                data-toggle="modal" data-target="#edit-manu"><i class="fa fa-edit fa-fw"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-edit btn-delete-manu"
-                                                                data-toggle="modal" data-target="#delete-manu"><i class="fa fa-trash fa-fw"></i></button>
+                                                        <a href="#" class="btn-edit btn-edit-manu"
+                                                           data-toggle="modal" data-target="#edit-manu">Edit</a> |
+                                                        <a href="#" class="btn-edit btn-delete-manu"
+                                                           data-toggle="modal" data-target="#delete-manu">Delete</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -113,10 +113,11 @@
                                                     <td>${count = count+1}</td>
                                                     <td>${type.tenLoaiGiay}</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary btn-edit btn-edit-type"
-                                                                data-toggle="modal" data-target="#edit-type"><i class="fa fa-edit fa-fw"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-edit btn-delete-type"
-                                                                data-toggle="modal" data-target="#delete-type"><i class="fa fa-trash fa-fw"></i></button>
+
+                                                        <a href="#" class="btn-edit btn-edit-type"
+                                                           data-toggle="modal" data-target="#edit-type">Edit</a> |
+                                                        <a href="#" class="btn-edit btn-delete-type"
+                                                           data-toggle="modal" data-target="#delete-type">Delete</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>

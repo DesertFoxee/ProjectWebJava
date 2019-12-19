@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+
     function base64toBlob(base64Data, contentType) {
         contentType = contentType || '';
         var sliceSize = 1024;
@@ -48,6 +49,18 @@ $(document).ready(function () {
         $.each(err_content, function (key, value) {
             $("#er-" + key + "").text(" (" + value + ")");
         });
+    }
+
+    function show_alert(msg, position) {
+        var alert = $('.myAlert-' + position);
+        var x = setTimeout('');
+        for (var i = 0; i < x; i++)
+            clearTimeout(x);
+        alert.show();
+        alert.find('.msg-alert').html(msg);
+        a = setTimeout(function () {
+            alert.slideUp(400);
+        }, 2000);
     }
 
     function getFormAdd(url, modal_body) {
@@ -101,6 +114,7 @@ $(document).ready(function () {
             }
         });
     }
+
     function submitDeleteForm(url, modal, table) {
         $(modal).modal('hide');
         var id = $(modal).data('id');
@@ -136,6 +150,24 @@ $(document).ready(function () {
             },
             error: function () {
                 $(modal).closest('.modal-body').html("Error");
+            }
+        });
+    }
+    function submitJson(url, data_json) {
+        remove_msg_error();
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data_json),
+            success: function (response) {
+                if (response.validated) {
+                    window.location.href = window.location;
+                } else
+                    show_msg_error(response.errorMessages);
+            },
+            error: function () {
+                show_alert("Có lỗi xảy ra !", 'bottom-error');
             }
         });
     }
@@ -180,6 +212,7 @@ $(document).ready(function () {
     $(".btn-edit-shoes").click(function () {
         var url = $("#form-edit-shoes").attr('action');
         getFormEdit($(this), url, $('#edit-shoes'));
+
     });
     $(".btn-edit-invoice").click(function () {
         var url = $("#form-edit-invoice").attr('action');
@@ -201,15 +234,33 @@ $(document).ready(function () {
     });
 
 
-
+    
 
 
     // submit form add 
     $("#form-add-shoes").submit(function () {
         var url = $(this).attr("action");
-        submitAddForm($(this), url, $('#add-shoes'));
+        var rows = $('#tb-add-size').find('tbody tr');
+        shoes = {};
+        $.each($(this).serializeArray(), function (i, obj) {
+            shoes[obj.name] = obj.value;
+        });
+        var size_new = [];
+        for (i = 0; i < rows.length; i++) {
+            var rowSizeNew = {};
+            rowSizeNew.soLuong = $(rows[i]).find('._count').html();
+            rowSizeNew.kichCo = $(rows[i]).find('._size').html();
+            size_new.push(rowSizeNew);
+        }
+        var data = {
+            'shoes': shoes,
+            'newSize': size_new
+        };
+        
+        submitJson(url ,data);
         return false;
-    });
+    }
+    );
     $("#form-add-manu").submit(function () {
         var url = $(this).attr("action");
         submitAddForm($(this), url, $('#add-manu'));
@@ -384,4 +435,51 @@ $(document).ready(function () {
         return false;
     });
 
+
+    // update size ;
+    $(document).on("click", "#btn-update-size-shoes", function () {
+        var rows = $('#tb-edit-size').find('tbody tr');
+        var shoes_id = $(this).closest('form').find('input[name="maGiay"]')[0].value;
+
+        var url = $(this).closest('form').attr('action') + '/size/update';
+        var size_update = [];
+        var size_delete = [];
+        var size_new = [];
+        for (i = 0; i < rows.length; i++) {
+            if ($(rows[i]).attr('state') === 'delete') {
+                size_delete.push($(rows[i]).attr('data-id'));
+            } else if ($(rows[i]).attr('state') === 'old') {
+                var rowSize = {};
+                rowSize.maKichCo = $(rows[i]).attr('data-id');
+                rowSize.soLuong = $(rows[i]).find('._count').html();
+                rowSize.kichCo = $(rows[i]).find('._size').html();
+                size_update.push(rowSize);
+            } else {
+                var rowSizeNew = {};
+                rowSizeNew.soLuong = $(rows[i]).find('._count').html();
+                rowSizeNew.kichCo = $(rows[i]).find('._size').html();
+                size_new.push(rowSizeNew);
+            }
+        }
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+                oldSize: size_update,
+                newSize: size_new,
+                deleteSize: size_delete,
+                shoesID: shoes_id
+            }),
+            success: function (response) {
+                show_alert("Cập nhật thành công" , "bottom-warring");
+                $('#tb-edit-size').find('tbody').empty();
+                $('#tb-edit-size').find('tbody').html(response);
+            },
+            error: function () {
+                show_msg("Lỗi xảy ra !");
+            }
+        });
+        return false;
+    });
 });

@@ -37,18 +37,15 @@
                                     <div class="category-wrap-cat">
                                         <div class="title-imageslider  sp-cat-title-parent">
                                             Hot Categories </div>
-
                                         <div id="cat_slider_4069187071575549906" class="slider">
                                             <div class="cat_slider_inner so_category_type_default">
                                                 <div class="item">
                                                     <div class="item-inner">
                                                         <div class="cat_slider_title">
-
                                                             <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=60"
                                                                title="Egante mangetes" target="_blank">
                                                                 <i class="fa fa-caret-right"></i> Egante mangetes </a>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="item">

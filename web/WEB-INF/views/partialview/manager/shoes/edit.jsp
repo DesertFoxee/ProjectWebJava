@@ -13,6 +13,12 @@
     </label>
     <input name="tenGiay" class="form-control" value="${shoes.tenGiay}"  placeholder="Tên giày" />
 </div>
+<div class="col-lg-6 shoes-padding-input">
+    <label>Màu sắc 
+        <small class="msg-error" id="er-mauSac"></small>
+    </label>
+    <input name="mauSac"class="form-control" value="${shoes.mauSac}" placeholder="Màu giày">
+</div>
 <div class="col-lg-12 shoes-padding-input">
     <label>Tiêu đề
         <small class="msg-error" id="er-tieuDe" ></small>
@@ -60,7 +66,7 @@
     <div class="form-group input-group">
         <span class="input-group-addon">$</span>
         <input name ="gia" type="number" value="${shoes.gia}" class ="form-control" />
-        <span class="input-group-addon">đồng</span>
+        <span class="input-group-addon">VND</span>
     </div>
 
 </div>
@@ -76,33 +82,42 @@
     </div>
 
 </div>
-<div class="col-lg-6 shoes-padding-input">
-    <label>Kích cỡ
-        <small class="msg-error" id="er-kichCo"></small>
-    </label>
-    <div class="input-group">
-        <span class="input-group-addon">#</span>
-        <input name="kichCo" type="number" value="${shoes.kichCo}" min="0" class="form-control" />
-        <span class="input-group-addon">dv</span>
+<div class="col-lg-12 shoes-padding-input">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Kích cỡ
+            <div class="pull-right">
+                <div class="btn-group" style="top: -5px;">
+                    <button type="button" class="btn btn-default btn-sm" id="btn-refesh-size-shoes"
+                            style="line-height: 1.2em;">Refesh</button>
+                    <button type="button" class="btn btn-info btn-sm " id ="btn-add-size-shoes"
+                            style="line-height: 1.2em;">Thêm</button>
+                    <button type="button" onclick='return false'
+                            class="btn btn-primary btn-sm " id="btn-update-size-shoes"
+                            style="line-height: 1.2em;">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body"
+             style="overflow: auto; max-height: 100px;">
+            <div class="table-responsive">
+                <table
+                    class="table table-add-size-shoes table-bordered table-hover" id ="tb-edit-size">
+                    <thead>
+                        <tr>
+                            <th>Kích cỡ</th>
+                            <th>Số lượng</th>
+                            <th align="center" style="text-align: center; width: 50px;">CN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:set var="obj" value="${list_size}" scope="request"></c:set>
+                        <jsp:include page="/WEB-INF/views/partialview/manager/shoes/size.jsp" flush="true" />
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-<div class="col-lg-6 shoes-padding-input">
-    <label>Màu sắc 
-        <small class="msg-error" id="er-mauSac"></small>
-    </label>
-    <input name="mauSac"class="form-control" value="${shoes.mauSac}" placeholder="Màu giày">
-</div>
-
-<div class="col-lg-6 shoes-padding-input">
-    <label>Số lượng
-        <small class="msg-error" id="er-soLuong"></small>
-    </label>
-    <div class="input-group">
-        <span class="input-group-addon">#</span>
-        <input name="soLuong" type="number" value="${shoes.soLuong}" min="0" class="form-control">
-        <span class="input-group-addon">dv</span>
-    </div>
-
 </div>
 <div class="col-lg-12 shoes-padding-input">
     <label>Mô tả

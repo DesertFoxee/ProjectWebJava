@@ -3,7 +3,7 @@ package controllers.website;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import models.TaiKhoan;
+import models.database.TaiKhoan;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;

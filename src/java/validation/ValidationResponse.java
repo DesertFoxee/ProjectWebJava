@@ -39,7 +39,9 @@ public class ValidationResponse {
 
     public void processError(List<FieldError> error) {
         for (FieldError fieldError : error) {
-            String key = fieldError.getField();
+            String a = fieldError.getField();
+            String[] error_key = a.split("\\.");
+            String key = error_key[error_key.length -1];
             String err = fieldError.getDefaultMessage();
             addErrorMessages(key, err);
         }

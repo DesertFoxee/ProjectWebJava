@@ -15,6 +15,7 @@
     <mapping class="models.Giay"/>
     <mapping class="models.QuanTri"/>
     <mapping class="models.KhachHang"/>
+    <mapping class="models.KichCo"/>
     <mapping class="models.HangGiay"/>
     <mapping class="models.LoaiGiay"/>
     <mapping class="models.ChiTietHoaDonId"/>

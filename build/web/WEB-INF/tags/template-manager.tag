@@ -28,6 +28,7 @@
 
     <jsp:attribute name="content">
         <jsp:invoke fragment="content" />     
+        <jsp:include page="/WEB-INF/views/partialview/common/alert.jsp"></jsp:include>
     </jsp:attribute>
 
     <jsp:attribute name="footer"> 

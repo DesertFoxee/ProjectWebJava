@@ -1,6 +1,9 @@
 package util;
 
 import dao.*;
+import java.util.Iterator;
+import java.util.List;
+import models.database.Giay;
 
 /**
  *
@@ -10,7 +13,9 @@ public class Test {
 
     public static void main(String[] args) {
         
-        System.out.println(HangGiayDAO.exists(100));
-        
+        List<Giay> shoes = GiayDAO.getShoesManu("adidas", "gia", 10, true);
+        for (Giay shoe : shoes) {
+            System.out.println("Tengiay  : "+ shoe.getTenGiay() + " Gia : " + shoe.getGia());;
+        }
     }
 }

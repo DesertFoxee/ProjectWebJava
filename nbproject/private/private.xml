@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/js/custom/data_process.js</file>
             <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/define.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/website/ProductController.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/partialview/manager/shoes/edit.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/partialview/common/edit.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/manager/ShoesController.java</file>
             <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/manager/shoes.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/footer.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/website/CustomerController.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/website/home/index.jsp</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/css/website/theme-red.css</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/header.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/js/custom/effect_process.js</file>
         </group>
     </open-files>
 </project-private>

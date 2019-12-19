@@ -34,7 +34,7 @@ h3 {
   font-size: 18px; }
 
 h4 {
-  font-size: 15px; }
+  font-size: 14px; }
 
 h5 {
   font-size: 12px; }
@@ -773,7 +773,9 @@ header.navbar-compact {
 
 .lib-two-img, .module.cus-style-supper-cate .main-right .spcat-items-container.products-list.grid .product-layout .product-item-container .left-block .lt-image, .best-seller .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-left .item-image .lt-image, .module.so-deals div.products-list .product-layout .product-item-container .left-block .product-image-container .lt-image, div.products-list .product-layout .product-item-container .left-block .lt-image {
   position: relative;
-  display: block; }
+  display: block; 
+  padding-left: 1px;
+}
   .lib-two-img .img-1, .module.cus-style-supper-cate .main-right .spcat-items-container.products-list.grid .product-layout .product-item-container .left-block .lt-image .img-1, .best-seller .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-left .item-image .lt-image .img-1, .module.so-deals div.products-list .product-layout .product-item-container .left-block .product-image-container .lt-image .img-1, div.products-list .product-layout .product-item-container .left-block .lt-image .img-1 {
     position: relative;
     z-index: 2;
@@ -5536,7 +5538,7 @@ div.clients_say {
           float: left;
           margin-top: 0;
           width: 100%;
-          padding: 0 20px; }
+          padding: 4px 10px; }
           .module.cus-style-supper-cate .main-right .spcat-items-container.products-list.grid .product-layout .product-item-container .right-block .caption {
             padding: 0; }
             .module.cus-style-supper-cate .main-right .spcat-items-container.products-list.grid .product-layout .product-item-container .right-block .caption h4 a {

@@ -33,7 +33,7 @@
                                                 <th>Mã khách hàng</th>
                                                 <th>Tên khách hàng</th>
                                                 <th>Tổng tiền</th>
-                                                <th style="width: 70px;">Chức năng</th>
+                                                <th style="width: 50px;">Chức năng</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -47,8 +47,8 @@
                                                     <td class="center">${item.tongTien}</td>
 
                                                     <td class="right">
-                                                        <button type="button" class="btn btn-primary btn-edit btn-edit-invoice"
-                                                                data-toggle="modal" data-target="#edit-invoice"><i class="fa fa-edit fa-fw"></i></button>
+                                                        <a href="#" class="btn-edit btn-edit-invoice"
+                                                                data-toggle="modal" data-target="#edit-invoice">Edit</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>

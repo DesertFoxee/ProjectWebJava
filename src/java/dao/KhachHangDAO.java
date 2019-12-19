@@ -1,8 +1,8 @@
 package dao;
 
 import java.util.List;
-import models.KhachHang;
-import models.TaiKhoan;
+import models.database.KhachHang;
+import models.database.TaiKhoan;
 
 public class KhachHangDAO extends AbstractGenericDao {
 

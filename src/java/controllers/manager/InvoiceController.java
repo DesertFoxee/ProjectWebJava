@@ -4,7 +4,7 @@ import config.interceptor.Auth;
 import dao.ChiTietHoaDonDAO;
 import dao.KhachHangDAO;
 import java.util.List;
-import models.ChiTietHoaDon;
+import models.database.ChiTietHoaDon;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

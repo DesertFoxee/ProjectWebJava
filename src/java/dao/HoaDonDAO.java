@@ -1,7 +1,7 @@
 package dao;
 
 import java.util.List;
-import models.HoaDon;
+import models.database.HoaDon;
 
 public class HoaDonDAO extends AbstractGenericDao {
 

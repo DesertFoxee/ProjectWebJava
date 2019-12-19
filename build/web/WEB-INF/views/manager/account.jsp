@@ -28,7 +28,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.panel-heading -->
                             <div class="panel-body">
 
                                 <div class="table-responsive" id="table-account">
@@ -55,10 +54,10 @@
                                                     <td class="center">${account.tenTaiKhoan}</td>
                                                     <td class="center">**********</td>
                                                     <td class="right">
-                                                        <button type="button" class="btn btn-primary btn-edit btn-edit-account"
-                                                                data-toggle="modal" data-target="#edit-account"><i class="fa fa-lock fa-fw"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-edit btn-delete-account"
-                                                                data-toggle="modal" data-target="#delete-account"><i class="fa fa-trash fa-fw"></i></button>
+                                                        <a href="#" class="btn-edit btn-edit-account"
+                                                           data-toggle="modal" data-target="#edit-account">Edit</a> |
+                                                        <a href="#" class="btn-edit btn-delete-account"
+                                                           data-toggle="modal" data-target="#delete-account">Delete</a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>

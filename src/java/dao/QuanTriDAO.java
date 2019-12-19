@@ -1,7 +1,7 @@
 package dao;
 
 import java.util.List;
-import models.QuanTri;
+import models.database.QuanTri;
 
 public class QuanTriDAO extends AbstractGenericDao {
 

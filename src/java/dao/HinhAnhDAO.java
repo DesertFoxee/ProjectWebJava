@@ -2,7 +2,7 @@ package dao;
 
 import static dao.AbstractGenericDao.beginTransaction;
 import java.util.List;
-import models.HinhAnh;
+import models.database.HinhAnh;
 
 public class HinhAnhDAO extends AbstractGenericDao {
 
@@ -41,6 +41,20 @@ public class HinhAnhDAO extends AbstractGenericDao {
         beginTransaction();
         try {
             Session().createQuery("delete from HinhAnh where maHinhAnh = :id")
+                    .setInteger("id", id)
+                    .executeUpdate();
+            commitTransaction();
+            return true;
+        } catch (Exception e) {
+            Transaction().rollback();
+            return false;
+        }
+    }
+    
+    public static boolean deleteImageShoes(Integer id) {
+        beginTransaction();
+        try {
+            Session().createQuery("delete from HinhAnh where maGiay = :id")
                     .setInteger("id", id)
                     .executeUpdate();
             commitTransaction();
