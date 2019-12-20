@@ -7,14 +7,16 @@
     <jsp:attribute name="content">
         <div class="container product-detail">
             <ul class="breadcrumb">
-                <li><a href="<c:url value ="/"/>">
+                <li>
+                    <a href="<c:url value ="/"/>">
                         <i class="fa fa-home"></i>
                     </a>
                 </li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/account">Tài khoản</a>
+                <li>
+                    <a href="<c:url value ="/product"/>">Sản phẩm</a>
                 </li>
-                <li><a href="<c:url value ="/customer/register"/>"> Đăng ký</a>
+                <li>
+                    <a href="<c:url value ="/customer/single"/>">Chi tiết</a>
                 </li>
             </ul>
             <div class="row">
@@ -104,7 +106,7 @@
                                     </div>
                                     <!-- Review ---->
                                     <div class="box-review">
-                                       
+
                                         <a class="reviews_button" href=""
                                            onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0
                                             review (s)</a> | <a class="write_review_button" href=""
@@ -309,7 +311,7 @@
 
                                                     <div class="media-body">
                                                         <div class="caption">
-                                                          
+
                                                             <h4><a class="preview-image"
                                                                    href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=42">Bikum
                                                                     masen dumas</a></h4>
@@ -436,7 +438,7 @@
                                                                            target="_blank">Bikum masen dumas</a>
                                                                     </h4>
 
-                                                                  
+
 
                                                                     <div class="price">
                                                                         <span class="price-new">122.000VNĐ</span>
@@ -478,7 +480,7 @@
                                                                             an</a>
                                                                     </h4>
 
-                                                                  
+
 
                                                                     <div class="price">
                                                                         <span class="price-new">122.000VNĐ</span>
@@ -718,7 +720,7 @@
                                                                     <h4><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=44"
                                                                            target="_blank">Hazen dima polan</a>
                                                                     </h4>
-                                                                 
+
                                                                     <div class="price">
                                                                         <span class="price-new">1,202.000VNĐ</span>
                                                                         <span class="price-tax">Ex Tax:

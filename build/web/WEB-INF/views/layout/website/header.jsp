@@ -231,16 +231,12 @@
                                 </div>
                             </nav>
                         </div>
-                        <!-- //end Navbar -->
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    <!-- end container for top line of header -->
-
-    <!-- Header Bottom -->
     <div class="header-bottom">
         <div class="container">
             <div class="row">

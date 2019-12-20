@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/website/HomeController.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/js/custom/data_process.js</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/tags/template-website.tag</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/process/Page.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/process/Filter.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/util/Test.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/website/product/index.jsp</file>
             <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/website/ProductController.java</file>
-            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/layout/website/header.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/models/parameter/KeyFilter.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/WEB-INF/views/partialview/website/product/page.jsp</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/web/resources/js/custom/effect_process.js</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/dao/GiayDAO.java</file>
+            <file>file:/F:/TaiLieuMonHoc/LapTrinhNangCao/BaiTapLon/WebJava/src/java/controllers/manager/DashboardController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -70,9 +70,26 @@ $(document).ready(function () {
             type: 'GET',
             success: function (response) {
                 $(modal_body).html(response);
+
             },
             error: function () {
                 $(modal_body).html("Error");
+            }
+        });
+    }
+    function getFormWithPara(url, modal_body, data) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: data,
+            success: function (response) {
+                modal_body.append(response);
+                var a = $('#l-p').attr('value');
+                var b = $('#l-n').attr('value');
+                alert(a + " " + b);
+            },
+            error: function () {
+                show_alert("Thất bại", "bottom-error");
             }
         });
     }
@@ -234,7 +251,7 @@ $(document).ready(function () {
     });
 
 
-    
+
 
 
     // submit form add 
@@ -256,8 +273,8 @@ $(document).ready(function () {
             'shoes': shoes,
             'newSize': size_new
         };
-        
-        submitJson(url ,data);
+
+        submitJson(url, data);
         return false;
     }
     );
@@ -472,7 +489,7 @@ $(document).ready(function () {
                 shoesID: shoes_id
             }),
             success: function (response) {
-                show_alert("Cập nhật thành công" , "bottom-warring");
+                show_alert("Cập nhật thành công", "bottom-warring");
                 $('#tb-edit-size').find('tbody').empty();
                 $('#tb-edit-size').find('tbody').html(response);
             },
@@ -482,4 +499,39 @@ $(document).ready(function () {
         });
         return false;
     });
+
+    function updatePageProduct(url, data) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: data,
+            success: function (response) {
+                $('.product-filter-bottom').remove();
+                $('.products-list').remove();
+                $(".products-category").append(response);
+                var pr_n = $('#change-page-bottom').contents().clone();
+                $('#change-page-top').empty();
+                $('#change-page-top').html(pr_n);
+            },
+            error: function () {
+                show_alert("Thất bại", "bottom-error");
+            }
+        });
+    }
+    $('.products-category').on('click' , '.change-page' ,function () {
+        var url = $(this).attr('href');
+        var page_number = $(this).attr('value');
+        var data = $('.filters-shoes').find("select").serialize();
+        data+= "&number="+page_number;
+        updatePageProduct(url, data);
+        return false;
+    });
+
+    $('.btn-filter').click(function () {
+        var url = $(this).attr('href');
+        var data = $('.filters-shoes').find("select").serialize();
+        updatePageProduct(url, data);
+        return false;
+    });
+
 });

@@ -91,8 +91,7 @@ $(document).ready(function () {
         $('#tb-edit-size').find('tbody tr[state="delete"]').attr('state', 'old').show();
     });
 
-
-    
+  
 
 });
 

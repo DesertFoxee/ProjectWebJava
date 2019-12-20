@@ -1,8 +1,12 @@
 package dao;
 
 import java.util.List;
+import java.util.Map;
+import javafx.util.Pair;
 import models.database.Giay;
 import models.database.KichCo;
+import models.parameter.KeyFilter;
+import models.parameter.KeySort;
 
 public class GiayDAO extends AbstractGenericDao {
 
@@ -147,6 +151,37 @@ public class GiayDAO extends AbstractGenericDao {
         return a_shoes;
     }
 
-   
+    
 
+    public static List<Giay> filter(KeyFilter key, KeySort sort) {
+        beginTransaction();
+        List<Giay> a_shoes = null;
+        String query = "select g , ha  from Giay g ,LoaiGiay l , HangGiay h\n"
+                + "left join fetch  g.hinhAnhs ha\n"
+                + "where \n"
+                + "g.loaiGiay.maLoaiGiay = l.maLoaiGiay\n"
+                + "and g.hangGiay.maHang = h.maHang\n";
+
+        String manu = key.getManu();
+        String type = key.getType();
+
+        if (manu != null) {
+            query += "and h.tenHangGiay = '" + manu + "'\n";
+        }
+        if (type != null) {
+            query += "and l.tenLoaiGiay = '" + type + "'\n";
+        }
+        if (sort != null) {
+            query += "order by " + sort.getKeySort() + " " + sort.getValueSort() + "\n";
+        }
+        try {
+            a_shoes = Session()
+                    .createQuery(query)
+                    .list();
+            commitTransaction();
+        } catch (Exception e) {
+            Transaction().rollback();
+        }
+        return a_shoes;
+    }
 }

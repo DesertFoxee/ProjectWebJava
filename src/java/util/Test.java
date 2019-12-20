@@ -3,7 +3,10 @@ package util;
 import dao.*;
 import java.util.Iterator;
 import java.util.List;
+import javafx.util.Pair;
 import models.database.Giay;
+import models.parameter.KeyFilter;
+import process.Page;
 
 /**
  *
@@ -12,10 +15,19 @@ import models.database.Giay;
 public class Test {
 
     public static void main(String[] args) {
+       
+//       Pair a = Page.getIndexPage(1, 5, 8);
+//        System.err.println(a.getKey()+"-"+ a.getValue());
+//        
+//        KeyFilter key = new KeyFilter();
+//        key.putManu("adidas");
+//        key.putManu("Đi bộ");
         
-        List<Giay> shoes = GiayDAO.getShoesManu("adidas", "gia", 10, true);
-        for (Giay shoe : shoes) {
-            System.out.println("Tengiay  : "+ shoe.getTenGiay() + " Gia : " + shoe.getGia());;
-        }
+//        GiayDAO.filter(key, sort, 0, 0)
+
+//        System.out.println(GiayDAO.check("Thể thao"));
+        Pair a =Page.getIndexPage(-1, 2, 4 , 8);
+        System.err.println(a.getKey()+"-"+ a.getValue());
+        
     }
 }
