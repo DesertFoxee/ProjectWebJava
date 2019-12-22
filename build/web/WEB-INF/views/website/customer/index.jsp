@@ -3,112 +3,100 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
+
 <t:template-website title="Customer">
     <jsp:attribute name="content">
         <div class="container">
+            <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <ul class="breadcrumb">
-                <li><a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=common/home"><i
-                            class="fa fa-home"></i></a></li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/account">Account</a>
+                <li>
+                    <a  href="${contextPath}">
+                        <i class="fa fa-home"></i>
+                    </a>
                 </li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/register">Register</a>
+                <li><a href="<c:url value ="customer"/>">Khách hàng</a>
                 </li>
             </ul>
             <div class="row">
                 <div id="content" class="col-sm-12">
-                    <h1>Tài khoản</h1>
-                    <p>Sửa thông tin cá nhân , hoặc mật khẩu tài khoản <a href="#"></a>.</p>
-                    <form action="#" method="post" enctype="multipart/form-data"
-                          class="form-horizontal account-register">
-                        <fieldset id="account">
-                            <legend>Thông tin khách hàng</legend>
-                            <div class="form-group required" style="display: none;">
-                                <label class="col-sm-2 control-label">Customer Group</label>
-                                <div class="col-sm-10">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="customer_group_id" value="1" checked="checked">
-                                            Default</label>
+                    <div class="page-login">
+                        <div class="account-border">
+                            <div class="row">
+                                <div id="content" class="col-sm-12">
+                                    <h1>Tài khoản</h1>
+                                    <div class="row">
+                                        <div class="col-sm-6 new-customer">
+                                            <div class="well">
+                                                <h2 style="border-bottom: 1px solid #e4e3e3;">Tổng quan</h2>
+                                                <p style="display:none;"><strong>Đăng ký tài khoản</strong></p>
+                                                <div style="max-height: 220px; overflow:auto;"> 
+                                                    Xin chào : <b>${account.tenTaiKhoan} !</b><br>
+
+                                                    <b>Tại đây bạn có thể thực hiện các tác vụ sau :</b><br>
+                                                    <div class="content-info-customer">
+                                                        1. Sửa thông tin cá nhân <br>
+                                                        2. Kiểm soát giỏ hàng , đặt hàng<br>
+                                                        3. Thay đổi mật khẩu <br>
+                                                    </div>
+                                                    <b>Thông tin khách hàng:</b>
+                                                    <div class="content-info-customer">
+
+                                                        Họ tên : ${account.khachHang.tenKhachHang} <br>
+                                                        Số điện thoại : ${account.khachHang.sdt} <br>
+                                                        Địa chỉ : ${account.khachHang.diaChi} <br>
+                                                    </div>
+                                                    <b>Giỏ hàng :</b>
+                                                    <div class="content-info-customer">
+                                                        Có 2 sản phẩm trong giỏ hàng <br>        
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="bottom-form">
+                                                <a >Chính sách</a> 
+                                                <a>Bảo mật</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 customer-login">
+                                            <div class="well">
+                                                <h2 style="border-bottom: 1px solid #e4e3e3;">Chức năng</h2>
+                                                <p><strong>Bạn có thể thực hiện :</strong></p>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-12 col-md-12 col-xs-12 col-sm-12"
+                                                           for="input-account">Thông tin khách hàng ,tài khoản : 
+                                                        <a href="<c:url value="customer/account"/>" style="color: red;">Tại đây</a>
+                                                    </label>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-12 col-md-12 col-xs-12 col-sm-12"
+                                                           for="input-account">Kiểm soát giỏ hàng :
+                                                        <a href="<c:url value="customer/cart"/>" style="color: red;">Tại đây</a>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-lg-12 col-md-12 col-xs-12 col-sm-12"
+                                                           for="input-account">Hay :
+                                                        <a href="${contextPath}" style="color: red;">Trang chủ</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="bottom-form">
+
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-name">Họ và tên
-                                    <small class="msg-error" id="er-tenKhachHang"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="tenKhachHang" value="" placeholder="Nhập họ và tên"
-                                           id="input-name" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-address">Địa chỉ
-                                    <small class="msg-error" id="er-diaChi"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="diaChi" value="" placeholder="Nhập địa chỉ"
-                                           id="input-address" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-phone">Số điện thoại
-                                    <small class="msg-error" id="er-sdt"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="email" name="sdt" value="" placeholder="Nhấp số điện thoại"
-                                           id="input-phone" class="form-control">
-                                </div>
-                            </div>
-
-                        </fieldset>
-                        <fieldset id="address">
-                            <legend>Đổi mật khẩu</legend>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="input-pass">Mật khẩu cũ
-                                    <small class="msg-error" id="er-matKhauCu"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="matKhauCu" value="" placeholder="Mật khẩu cũ"
-                                           id="input-pass" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-newpass">Mật khẩu mới
-                                    <small class="msg-error" id="er-matKhauMoi"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="matKhauMoi" value="" placeholder="Mật khẩu mới"
-                                           id="input-newpass" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="input-confirm">Xác nhận mật khẩu
-                                    <small class="msg-error" id="er-xacNhanMatKhau"></small>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="xacNhanMatKhau" value=""
-                                           placeholder="Xác nhận mật khẩu mới" id="input-confirm" class="form-control">
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend></legend>
-
-                        </fieldset>
-                        <div class="buttons">
-                            <div class="pull-left">
-                                <a>Bạn quên mật khẩu ?</a>
-                            </div>
-                            <div class="pull-right">
-                                <input type="submit" value="Xác nhận" style="margin-right:0px;" class="btn btn-primary">
-                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+
         </div>
     </jsp:attribute>
 </t:template-website>

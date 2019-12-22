@@ -24,10 +24,12 @@
 
     <jsp:attribute name="content">
         <jsp:invoke fragment="content" />     
+
     </jsp:attribute>
 
     <jsp:attribute name="footer"> 
         <jsp:include page="/WEB-INF/views/layout/website/footer.jsp" />    
+        <jsp:include page="/WEB-INF/views/partialview/common/alert.jsp"></jsp:include>
     </jsp:attribute>
 
 </t:template-base>

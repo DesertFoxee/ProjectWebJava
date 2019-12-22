@@ -1,3 +1,4 @@
+<%@page import="models.database.TaiKhoan"%>
 <%@page import="models.database.LoaiGiay"%>
 <%@page import="dao.LoaiGiayDAO"%>
 <%@page import="java.util.List"%>
@@ -9,9 +10,11 @@
 <%
     List<HangGiay> manus = HangGiayDAO.getAllManufacturer();
     List<LoaiGiay> types = LoaiGiayDAO.getAllType();
+    TaiKhoan account = (TaiKhoan) session.getAttribute("user_customer");
 %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="account" value ="<%=account%>" />
 <div id="header" class=" variant">
     <!-- HEADER TOP -->
     <div class="header-top compact-hidden">
@@ -32,31 +35,64 @@
 
                     <div class="tabBlock" id="TabBlock-1">
                         <ul class="top-link list-inline">
-
-                            <li class="account" id="my_account">
-                                <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
-
-                                    <span>Tài khoản</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </a>
-                                <ul class="dropdown-menu ">
-                                    <li><a href="<c:url value="/customer/login"/>"><i class="fa fa-pencil-square-o"></i> Đăng nhập</a></li>
-                                    <li><a href="<c:url value="/customer/register"/>"
-                                           <i class="fa fa-user"></i> Đăng ký</a></li>
-                                </ul>
-
-
+                            <li>
+                                Liên hệ HOTLINE : 032342554 
                             </li>
-                            <li class="checkout"><a
-                                    href="<c:url value="/customer/cart"/>"
-                                    class="top-link-checkout" title="Checkout"><span>Giỏ hàng</span></a></li>
+                            <c:choose>
+                                <c:when test="${not empty account}">
+                                    <li class="account" id="my_account">
+                                        <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                            <span>${account.tenTaiKhoan}</span>
+                                            <span class="fa fa-angle-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="<c:url value="/customer/register"/>"
+                                                   <i class="fa fa-user"></i> Tài khoản
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<c:url value="/customer/logout"/>">
+                                                    <i class="fa fa-sign-out"></i> Đăng xuất
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li > 
+                                        <a href="<c:url value="/customer/cart"/>">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <span>Giỏ hàng</span>
+                                        </a>
+                                    </li>
+                                </c:when>    
+                                <c:otherwise>
+                                    <li class="account" id="my_account">
+                                        <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                            <span>Tài khoản</span>
+                                            <span class="fa fa-angle-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu ">
+                                            <li>
+                                                <a href="<c:url value="/customer/login"/>">
+                                                    <i class="fa fa-sign-in"></i> Đăng nhập
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="<c:url value="/customer/register"/>"
+                                                   <i class="fa  fa-user-plus"></i> Đăng ký
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- HEADER CENTER -->
     <div class="header-center">
         <div class="container">
             <div class="row">
@@ -66,9 +102,6 @@
                             src="<c:url value="/resources/images/common/theme_logo.png" />"
                             title="MaxStore" alt="MaxStore" /></a>
                 </div>
-                <!-- //end Logo -->
-
-                <!-- Secondary menu -->
                 <div class="header-center-right col-md-9 col-sm-9 col-xs-2">
 
                     <div class="header-bottom-menu col-xs-12">
@@ -76,7 +109,6 @@
                         <div class="responsive so-megamenu">
                             <nav class="navbar-default">
                                 <div class=" container-megamenu  horizontal">
-
 
                                     <div class="megamenu-wrapper">
 
@@ -494,8 +526,21 @@
                         </div>
                         <div class="header_custom_link hidden-xs">
                             <ul>
-                                <li><a href="<c:url value="/customer/login"/>"><i
-                                            class="fa fa-user"></i> ĐĂNG NHẬP</a></li>
+                                <li>
+                                    <c:choose>
+                                        <c:when test="${not empty account}">
+                                            <a href="<c:url value="/customer/cart"/>">
+                                                <i class="fa fa-shopping-cart"></i> GIỎ HÀNG
+                                            </a>
+                                        </c:when>    
+                                        <c:otherwise>
+                                            <a href="<c:url value="/customer/login"/>">
+                                                <i class="fa fa-user"></i> ĐĂNG NHẬP
+                                            </a>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -15,41 +15,24 @@
 
 <link href="<c:url value="/resources/css/common/bootstrap.min.css"/>"  rel="stylesheet">
 
-<!-- MetisMenu CSS -->
 <link href="<c:url value="/resources/css/manager/metisMenu.min.css"/>" rel="stylesheet">
 
-<!-- DataTables CSS -->
 <link href="<c:url value="/resources/css/common/dataTables/dataTables.bootstrap.css"/>" rel="stylesheet">
 
-<!-- DataTables Responsive CSS -->
 <link href="<c:url value="/resources/css/common/dataTables/dataTables.responsive.css"/>"  rel="stylesheet">
-
-<!-- Custom CSS -->
 <link href="<c:url value="/resources/css/manager/startmin.css"/>" rel="stylesheet">
 
-<!-- UserCustom CSS -->
+
 <link href="<c:url value="/resources/css/custom/user_customs.css"/>" rel="stylesheet">
-
-<!-- Custom Fonts -->
 <link href="<c:url value="/resources/css/common/font-awesome.min.css"/>" rel="stylesheet" type="text/css"/>
-
-
-<!-- Custom Fonts -->
 <link href="<c:url value="/resources/css/website/lib.css"/>" rel="stylesheet" />
-<!-- Custom Fonts -->
 <link href="<c:url value="/resources/css/website/theme-red.css"/>" rel="stylesheet" />
-<link href="<c:url value="/resources/css/website/lib.css"/>" rel="stylesheet" />
-<!-- Custom Fonts -->
 <link href="<c:url value="/resources/css/website/so_megamenu.css"/>" rel="stylesheet" />
 
 <link href="<c:url value="/resources/css/website/wide-grid.css"/>" rel="stylesheet" />
-<!-- Custom Fonts -->
 <link href="<c:url value="/resources/css/website/style/style.css"/>" rel="stylesheet" />
 <link href="<c:url value="/resources/css/website/style/style.1.css"/>" rel="stylesheet" />
-<link href="<c:url value="/resources/css/website/style/style.2.css"/>" rel="stylesheet" />
-<link href="<c:url value="/resources/css/website/style/style.3.css"/>" rel="stylesheet" />
-<link href="<c:url value="/resources/css/website/style/style.4.css"/>" rel="stylesheet" />
-<link href="<c:url value="/resources/css/website/style/style.5.css"/>" rel="stylesheet" />
+
 
 
 <link href="<c:url value="/resources/css/website/css3.css"/>" rel="stylesheet" />
@@ -71,17 +54,13 @@
 
     <!--====================Link Javascript======================-->
 
-    <script src="<c:url value="/resources/js/website/lightslider.js" />"></script>
-
     <script src="<c:url value="/resources/js/common/jquery.min.js"/>"></script>
     <script src="<c:url value="/resources/js/common/bootstrap.min.js" />"></script>
     <script src="<c:url value="/resources/js/website/libs.js" />"></script>
 
     <script src="<c:url value="/resources/js/website/common.js" />"></script>
-    <script src="<c:url value="/resources/js/website/libs.js" />"></script>
     <script src="<c:url value="/resources/js/website/so.custom.js" />"></script>
 
-    <script src="<c:url value="/resources/js/website/toppanel.js" />"></script>
     <script src="<c:url value="/resources/js/website/toppanel.js" />"></script>
     <script src="<c:url value="/resources/js/website/jquery.elevateZoom-3.0.8.min.js" />"></script>
     <script src="<c:url value="/resources/js/website/moment.js" />"></script>
@@ -90,6 +69,7 @@
     <script src="<c:url value="/resources/js/website/owl.carousel.js" />"></script>
     <script src="<c:url value="/resources/js/website/accordion.js" />"></script>
     <script src="<c:url value="/resources/js/website/shortcodes.js" />"></script>
+    <script src="<c:url value="/resources/js/website/lightslider.js" />"></script>
 
     <script src="<c:url value="/resources/js/common/dataTables/jquery.dataTables.min.js" />"></script>
     <script src="<c:url value="/resources/js/common/dataTables/dataTables.bootstrap.min.js" />"></script>

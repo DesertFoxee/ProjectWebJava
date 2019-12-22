@@ -50,7 +50,20 @@ $(document).ready(function () {
             $("#er-" + key + "").text(" (" + value + ")");
         });
     }
-
+    function get_list_error(err_content) {
+        var err ="";
+        $.each(err_content, function (key, value) {
+            err+=  value +"\n";
+        });
+        return err;
+    }
+    function getFormToObject(data_form) {
+        var obj = {};
+        $.each(data_form.serializeArray(), function (i, obj) {
+            obj[obj.name] = obj.value;
+        });
+        return obj;
+    }
     function show_alert(msg, position) {
         var alert = $('.myAlert-' + position);
         var x = setTimeout('');
@@ -70,10 +83,10 @@ $(document).ready(function () {
             type: 'GET',
             success: function (response) {
                 $(modal_body).html(response);
-
             },
             error: function () {
-                $(modal_body).html("Error");
+                show_alert("Có lỗi xảy ra khi lấy dữ liệu", "bottom-error");
+                ;
             }
         });
     }
@@ -105,12 +118,12 @@ $(document).ready(function () {
                 $(modal).find('.modal-body').html(response);
             },
             error: function () {
-                $(modal).find('.modal-body').html("Error");
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
             }
         });
     }
 
-    function submitAddForm(formData, url, modal) {
+    function submitFormShowErr(formData, url) {
         remove_msg_error();
         var data_post = $(formData).serialize();
         $.ajax({
@@ -119,15 +132,37 @@ $(document).ready(function () {
             data: data_post,
             success: function (response) {
                 if (response.validated) {
-                    window.location.href = window.location;
+                    if (response.redirect) {
+                        window.location.href = response.redirect;
+                    } else {
+                        window.location.href = window.location;
+                    }
                 } else {
-                    $.each(response.errorMessages, function (key, value) {
-                        $("#er-" + key + "").text(" (" + value + ")");
-                    });
+                    show_msg_error(response.errorMessages);
                 }
             },
             error: function () {
-                $(modal).find('.modal-body').html("Error");
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
+            }
+        });
+    }
+    function submitFormShowErrToAlert(formData, msg_success) {
+        var url = $(formData).attr('action');
+        var data_post = $(formData).serialize();
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data_post,
+            success: function (response) {
+                if (response.validated) {
+                    show_alert(msg_success, "bottom-warning");
+                } else {
+                    var err = get_list_error(response.errorMessages);
+                    show_alert(err, "bottom-error");
+                }
+            },
+            error: function () {
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
             }
         });
     }
@@ -147,12 +182,12 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                show_msg('Có lỗi xảy ra');
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
             }
         });
         return false;
     }
-    function submitEditForm(url, modal, datapost) {
+    function submitEditForm(url, datapost) {
         remove_msg_error();
         $.ajax({
             type: 'POST',
@@ -166,7 +201,7 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                $(modal).closest('.modal-body').html("Error");
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
             }
         });
     }
@@ -251,9 +286,6 @@ $(document).ready(function () {
     });
 
 
-
-
-
     // submit form add 
     $("#form-add-shoes").submit(function () {
         var url = $(this).attr("action");
@@ -280,12 +312,39 @@ $(document).ready(function () {
     );
     $("#form-add-manu").submit(function () {
         var url = $(this).attr("action");
-        submitAddForm($(this), url, $('#add-manu'));
+        submitFormShowErr($(this), url);
         return false;
     });
     $("#form-add-type").submit(function () {
         var url = $(this).attr("action");
-        submitAddForm($(this), url, $('#add-type'));
+        submitFormShowErr($(this), url);
+        return false;
+    });
+
+
+    // login 
+    $('#user-login').submit(function () {
+        var url = $(this).attr("action");
+        remove_msg_error();
+        var data_post = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data_post,
+            success: function (response) {
+                if (response.validated) {
+                    if (window.location.href === document.referrer) {
+                        window.location.href = response.redirect;
+                    } else
+                        window.location.href = document.referrer;
+                } else {
+                    show_msg_error(response.errorMessages);
+                }
+            },
+            error: function () {
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
+            }
+        });
         return false;
     });
 
@@ -489,7 +548,7 @@ $(document).ready(function () {
                 shoesID: shoes_id
             }),
             success: function (response) {
-                show_alert("Cập nhật thành công", "bottom-warring");
+                show_alert("Cập nhật thành công", "bottom-warning");
                 $('#tb-edit-size').find('tbody').empty();
                 $('#tb-edit-size').find('tbody').html(response);
             },
@@ -518,11 +577,11 @@ $(document).ready(function () {
             }
         });
     }
-    $('.products-category').on('click' , '.change-page' ,function () {
+    $('.products-category').on('click', '.change-page', function () {
         var url = $(this).attr('href');
         var page_number = $(this).attr('value');
         var data = $('.filters-shoes').find("select").serialize();
-        data+= "&number="+page_number;
+        data += "&number=" + page_number;
         updatePageProduct(url, data);
         return false;
     });
@@ -534,4 +593,10 @@ $(document).ready(function () {
         return false;
     });
 
+
+    // add to cart
+    $('#add-to-cart').submit(function () {
+        submitFormShowErrToAlert($(this), "Thêm sản phẩm thành công");
+        return false;
+    });
 });

@@ -1,10 +1,7 @@
 package dao;
 
 import java.util.List;
-import java.util.Map;
-import javafx.util.Pair;
 import models.database.Giay;
-import models.database.KichCo;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
 
@@ -75,6 +72,30 @@ public class GiayDAO extends AbstractGenericDao {
         }
     }
 
+    public static boolean checkSizeCount(Integer maGiay, Integer maKichCo, Integer soLuong) {
+        beginTransaction();
+        Giay a_shoes = null;
+        try {
+            a_shoes = (Giay) Session().createQuery("select g , kc from Giay g , KichCo kc\n"
+                    + "where g.maGiay = :id_shoes\n"
+                    + "and g.maGiay = kc.giay.maGiay\n"
+                    + "and kc.maKichCo = :kc\n"
+                    + "and kc.soLuong >= :sl")
+                    .setInteger("id_shoes", maGiay)
+                    .setInteger("kc", maKichCo)
+                    .setInteger("sl", soLuong)
+                    .uniqueResult();
+            commitTransaction();
+            if (a_shoes != null) {
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            Transaction().rollback();
+        }
+        return false;
+    }
+
     public static Giay save(Giay giay) {
         beginTransaction();
         try {
@@ -90,16 +111,18 @@ public class GiayDAO extends AbstractGenericDao {
     public static Giay getShoesID(Integer id) {
         beginTransaction();
         Giay shoes = null;
+
         try {
-            shoes = (Giay) Session()
-                    .createQuery("from Giay g "
-                            + "left join fetch g.hangGiay "
-                            + "left join fetch g.loaiGiay "
-                            + "where maGiay = :id")
+            shoes = (Giay) Session().createQuery("from Giay g \n"
+                    + "left join fetch  g.hangGiay hg\n"
+                    + "left join fetch  g.loaiGiay lg\n"
+                    + "left join fetch  g.hinhAnhs ha\n"
+                    + "left join fetch  g.kichCos kc\n"
+                    + "where g.maGiay=:id\n")
                     .setParameter("id", id)
-                    .setMaxResults(1)
                     .uniqueResult();
             commitTransaction();
+
         } catch (Exception e) {
             Transaction().rollback();
         }
@@ -150,8 +173,6 @@ public class GiayDAO extends AbstractGenericDao {
         }
         return a_shoes;
     }
-
-    
 
     public static List<Giay> filter(KeyFilter key, KeySort sort) {
         beginTransaction();

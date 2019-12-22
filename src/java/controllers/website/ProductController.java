@@ -1,12 +1,9 @@
 package controllers.website;
 
 import dao.GiayDAO;
-import java.util.HashMap;
 import models.database.Giay;
 import java.util.List;
-import java.util.Map;
 import javafx.util.Pair;
-import javax.servlet.http.HttpSession;
 import models.database.HinhAnh;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
@@ -27,7 +24,7 @@ public class ProductController {
     public ModelAndView setUpPage(String sort, String manu, String type, String pnumber) {
 
         ModelAndView mv = new ModelAndView();
-        if(pnumber == null){
+        if (pnumber == null) {
             pnumber = "1";
         }
         int current_page = Integer.parseInt(pnumber);
@@ -63,7 +60,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView Index() {
-        ModelAndView mv = setUpPage("DF", "0", "0" ,null);
+        ModelAndView mv = setUpPage("DF", "0", "0", null);
         mv.setViewName("website/product/index");
         return mv;
     }
@@ -71,6 +68,11 @@ public class ProductController {
     @RequestMapping(value = "/single", method = RequestMethod.GET)
     public ModelAndView showSingleProduct(@RequestParam("id") String id) {
         ModelAndView mv = new ModelAndView();
+        Giay shoes = GiayDAO.getShoesID(Integer.parseInt(id));
+        String path_img_default = HinhAnh.getPathImgDefault();
+
+        mv.addObject("shoes", shoes);
+        mv.addObject("path_default", path_img_default);
         mv.setViewName("website/product/single");
         return mv;
     }
@@ -103,11 +105,17 @@ public class ProductController {
 
     @RequestMapping(value = "/filter", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView shortAndFitler(@RequestParam("sort") String sort,
-            @RequestParam("manu") String manu,
-            @RequestParam("type") String type) {
+    public ModelAndView shortAndFitler(@RequestParam(value = "sort", required = false) String sort,
+            @RequestParam(value = "manu", required = false) String manu,
+            @RequestParam(value = "type", required = false) String type,
+            @RequestParam(value = "first", required = false) String first) {
         ModelAndView mv = setUpPage(sort, manu, type, null);
-        mv.setViewName("partialview/website/product/page");
+        if (first != null) {
+            mv.setViewName("website/product/index");
+        } else {
+            mv.setViewName("partialview/website/product/page");
+        }
+
         return mv;
     }
 }

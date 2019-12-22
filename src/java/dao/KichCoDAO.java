@@ -5,6 +5,21 @@ import models.database.KichCo;
 
 public class KichCoDAO extends AbstractGenericDao {
 
+    
+    public static KichCo exist(Integer id){
+         beginTransaction();
+        try {
+            KichCo kc = (KichCo) Session().createQuery("from KichCo "
+                    + "where maKichCo = :id ")
+                    .setInteger("id", id).uniqueResult();
+            commitTransaction();
+            return kc;
+        } catch (Exception e) {
+            Transaction().rollback();
+            return null;
+        }
+    }
+    
     public static boolean update(KichCo size) {
         beginTransaction();
         try {
@@ -16,6 +31,7 @@ public class KichCoDAO extends AbstractGenericDao {
             return false;
         }
     }
+    
 
     public static List<KichCo> getSizeShoes(Integer id_shoes) {
         beginTransaction();

@@ -130,11 +130,10 @@
 
                 <div class="col-sm-4">
                 </div>
-
             </div>
-
         </div>
     </div>
+    <div class="back-to-top"><i class="fa fa-angle-up"></i></div>
 </div>
-<div class="back-to-top"><i class="fa fa-angle-up"></i></div>
+
 

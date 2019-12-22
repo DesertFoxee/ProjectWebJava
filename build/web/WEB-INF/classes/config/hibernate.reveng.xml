@@ -5,17 +5,16 @@
     <type-mapping>
         <sql-type jdbc-type="NVARCHAR" hibernate-type="string" />
     </type-mapping>
-    <table-filter match-name="KhachHang"/>
+    <table-filter match-name="KichCo"/>
     <table-filter match-name="Giay"/>
+    <table-filter match-name="DanhGia"/>
+    <table-filter match-name="QuanTri"/>
+    <table-filter match-name="LoaiGiay"/>
+    <table-filter match-name="HangGiay"/>
+    <table-filter match-name="TaiKhoan"/>
     <table-filter match-name="HoaDon"/>
     <table-filter match-name="HinhAnh"/>
-    <table-filter match-name="HangGiay"/>
     <table-filter match-name="GioHang"/>
-    <table-filter match-name="DanhGia"/>
-    <table-filter match-name="TaiKhoan"/>
-    <table-filter match-name="LoaiGiay"/>
     <table-filter match-name="ChiTietHoaDon"/>
-    <table-filter match-name="QuanTri"/>
-    <table-filter match-name="ChiTietGioHang"/>
-    <table-filter match-name="KichCo"/>
+    <table-filter match-name="KhachHang"/>
 </hibernate-reverse-engineering>

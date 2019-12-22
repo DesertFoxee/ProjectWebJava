@@ -52,8 +52,8 @@
 
 div[class^="myAlert-bottom"]{
     position: fixed;
-    bottom: -30px;
-    right: 0%;
+    bottom: -20px;
+    left: 0%;
     width: 25%;
 }
 div.fullscreen {
@@ -67,4 +67,13 @@ div.fullscreen {
 
 .alert{
     display: none;
+}
+.size-choose{
+    background: #ececec;
+    font-weight: bold;
+    color: #d04b3d;
+    border: 1px solid #d04b3d;
+}
+.content-info-customer{
+    padding: 10px;
 }

@@ -20,8 +20,6 @@ public class TaiKhoanDAO extends AbstractGenericDao {
         return count;
     }
 
-   
-
     public static TaiKhoan exists(Integer id) {
         beginTransaction();
         try {
@@ -49,6 +47,24 @@ public class TaiKhoanDAO extends AbstractGenericDao {
             Transaction().rollback();
         }
         return accounts;
+    }
+
+    public static TaiKhoan auth(String username, String password) {
+        beginTransaction();
+        TaiKhoan taikhoan = null;
+        try {
+            taikhoan = (TaiKhoan) Session().createQuery("from TaiKhoan tk\n"
+                    + "where tk.tenTaiKhoan = :username\n"
+                    + "and  tk.matKhau = :password")
+                    .setParameter("username", username)
+                    .setParameter("password", password)
+                    .uniqueResult();
+            commitTransaction();
+        } catch (Exception e) {
+            Transaction().rollback();
+            taikhoan =null;
+        }
+        return taikhoan;
     }
 
     public static boolean delete(Integer id) {

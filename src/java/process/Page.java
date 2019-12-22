@@ -66,6 +66,5 @@ public class Page {
             }
         }
         return new Pair(start, end);
-
     }
 }

@@ -123,8 +123,10 @@
                                                                         </a>
                                                                     </h4>
                                                                     <p class="price">
-                                                                        <fmt:formatNumber type ="currency" value ="${shoes.gia - (shoes.gia* shoes.giamGia /100)}"/> VND							  							  
-                                                                        <span class="price-old" style="padding: 0px"><b>Giá:</b> ${shoes.gia} VND</span>
+                                                                       <fmt:formatNumber pattern="###,###" value ="${shoes.gia - (shoes.gia* shoes.giamGia /100)}"/> VNĐ							  							  
+                                                                        <span class="price-old"  style="padding: 0px"><b>Giá:</b> 
+                                                                            <fmt:formatNumber pattern="###,###" value ="${shoes.gia}"/> VNĐ
+                                                                        </span>
                                                                     </p>
                                                                 </div>
                                                             </div>

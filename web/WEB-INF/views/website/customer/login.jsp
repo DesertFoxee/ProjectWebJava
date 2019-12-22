@@ -13,11 +13,9 @@
                         <i class="fa fa-home"></i>
                     </a>
                 </li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/account">Khách hàng</a>
+                <li><a href="<c:url value ="customer"/>">Khách hàng</a>
                 </li>
-                <li><a
-                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/login">Đăng nhập</a>
+                <li><a href="<c:url value="customer/login"/>">Đăng nhập</a>
                 </li>
             </ul>
             <div class="row">
@@ -32,13 +30,12 @@
                                         <p>Bằng các tạo tài khoản nhanh , bạn có thể truy cập trang web 
                                             để thực hiện giao dịch , mua bán , trao đổi thông tin
                                         </p>
-
                                     </div>
                                     <div class="bottom-form">
-                                        <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/register"
-                                           class="btn btn-primary creat-acc">Tiếp tục</a></div>
+                                        <a href="<c:url value="customer/register"/>"class="btn btn-primary creat-acc">Tiếp tục</a>
+                                    </div>
                                 </div>
-                                <form method="post" enctype="multipart/form-data">
+                                <form method="post" action="<c:url value="/customer/login"/>" id="user-login">
                                     <div class="col-sm-6 customer-login">
                                         <div class="well">
                                             <h2>ĐĂNG NHẬP</h2>

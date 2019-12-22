@@ -1,4 +1,5 @@
 package models.database;
+// Generated Dec 23, 2019 1:28:23 AM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,8 +19,8 @@ import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "Giay",
-         schema = "dbo",
-         catalog = "JAVA_WEB"
+        schema = "dbo",
+        catalog = "JAVA_WEB"
 )
 public class Giay implements java.io.Serializable {
 
@@ -32,8 +33,8 @@ public class Giay implements java.io.Serializable {
     private Integer giamGia;
     private String mauSac;
     private String moTa;
-    private Set<ChiTietGioHang> chiTietGioHangs = new HashSet<>(0);
     private Set<ChiTietHoaDon> chiTietHoaDons = new HashSet<>(0);
+    private Set<GioHang> gioHangs = new HashSet<>(0);
     private Set<HinhAnh> hinhAnhs = new HashSet<>(0);
     private Set<DanhGia> danhGias = new HashSet<>(0);
     private Set<KichCo> kichCos = new HashSet<>(0);
@@ -45,7 +46,7 @@ public class Giay implements java.io.Serializable {
         this.maGiay = maGiay;
     }
 
-    public Giay(int maGiay, HangGiay hangGiay, LoaiGiay loaiGiay, String tenGiay, String tieuDe, Integer gia, Integer giamGia, String mauSac, String moTa, Set<ChiTietGioHang> chiTietGioHangs, Set<ChiTietHoaDon> chiTietHoaDons, Set<HinhAnh> hinhAnhs, Set<DanhGia> danhGias, Set<KichCo> kichCos) {
+    public Giay(int maGiay, HangGiay hangGiay, LoaiGiay loaiGiay, String tenGiay, String tieuDe, Integer gia, Integer giamGia, String mauSac, String moTa, Set<ChiTietHoaDon> chiTietHoaDons, Set<GioHang> gioHangs, Set<HinhAnh> hinhAnhs, Set<DanhGia> danhGias, Set<KichCo> kichCos) {
         this.maGiay = maGiay;
         this.hangGiay = hangGiay;
         this.loaiGiay = loaiGiay;
@@ -55,16 +56,16 @@ public class Giay implements java.io.Serializable {
         this.giamGia = giamGia;
         this.mauSac = mauSac;
         this.moTa = moTa;
-        this.chiTietGioHangs = chiTietGioHangs;
         this.chiTietHoaDons = chiTietHoaDons;
+        this.gioHangs = gioHangs;
         this.hinhAnhs = hinhAnhs;
         this.danhGias = danhGias;
         this.kichCos = kichCos;
     }
 
     @Id
-    @Column(name = "MaGiay", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MaGiay", unique = true, nullable = false)
     public int getMaGiay() {
         return this.maGiay;
     }
@@ -114,7 +115,6 @@ public class Giay implements java.io.Serializable {
     }
 
     @Column(name = "Gia")
-    @ColumnDefault("0")
     public Integer getGia() {
         return this.gia;
     }
@@ -154,15 +154,6 @@ public class Giay implements java.io.Serializable {
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")
-    public Set<ChiTietGioHang> getChiTietGioHangs() {
-        return this.chiTietGioHangs;
-    }
-
-    public void setChiTietGioHangs(Set<ChiTietGioHang> chiTietGioHangs) {
-        this.chiTietGioHangs = chiTietGioHangs;
-    }
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")
     public Set<ChiTietHoaDon> getChiTietHoaDons() {
         return this.chiTietHoaDons;
     }
@@ -172,12 +163,12 @@ public class Giay implements java.io.Serializable {
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")
-    public Set<DanhGia> getDanhGias() {
-        return this.danhGias;
+    public Set<GioHang> getGioHangs() {
+        return this.gioHangs;
     }
 
-    public void setDanhGias(Set<DanhGia> danhGias) {
-        this.danhGias = danhGias;
+    public void setGioHangs(Set<GioHang> gioHangs) {
+        this.gioHangs = gioHangs;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")
@@ -187,6 +178,15 @@ public class Giay implements java.io.Serializable {
 
     public void setHinhAnhs(Set<HinhAnh> hinhAnhs) {
         this.hinhAnhs = hinhAnhs;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")
+    public Set<DanhGia> getDanhGias() {
+        return this.danhGias;
+    }
+
+    public void setDanhGias(Set<DanhGia> danhGias) {
+        this.danhGias = danhGias;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "giay")

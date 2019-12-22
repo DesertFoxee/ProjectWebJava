@@ -11,19 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class AuthInterceptor implements HandlerInterceptor {
 
     private static final String ad_controller_name = "manager";
-    private static final String cs_controller_name = "custom";
+    private static final String cs_controller_name = "customer";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
             Object handler) throws Exception {
-        
-        HandlerMethod handler_menthod ;
+
+        HandlerMethod handler_menthod;
         if (handler instanceof HandlerMethod) {
             handler_menthod = (HandlerMethod) handler;
-        }
-        else {
-             response.sendError(404);
-             return false;
+        } else {
+            response.sendError(404);
+            return false;
         }
 
         String name_controller = handler_menthod.getBeanType().getPackage().toString();
@@ -44,14 +43,16 @@ public class AuthInterceptor implements HandlerInterceptor {
         // user 
         Auth.Role user_role = isLogin ? (Auth.Role) session.getAttribute("user_login") : Auth.Role.ANY;
 
-        if ( sys_role  != Auth.Role.ANY) { 
+        if (sys_role != Auth.Role.ANY) {
             if (!isLogin) {
                 if (access_admin) {
-                    response.sendRedirect(request.getContextPath()+"/manager");
+                    response.sendRedirect(request.getContextPath() + "/manager");
                 } else if (access_custom) {
-                    response.sendRedirect("customer");
+                    response.sendRedirect(request.getContextPath()+"/customer/login");
+                } else {
+                    response.sendError(403);
+                    return false;
                 }
-                return false;
             } else {
                 if (sys_role != user_role) {
                     response.sendError(403);

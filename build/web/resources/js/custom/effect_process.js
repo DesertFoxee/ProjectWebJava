@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
-
+    $('div.alert').hide();
+    
     $('div.alert').on('click', function () {
         var a = $(this);
         setTimeout(function () {
@@ -19,13 +20,6 @@ $(document).ready(function () {
             alert.slideUp(400);
         }, 3000);
     }
-
-    $('div.alert').on('click', function () {
-        var a = $(this);
-        setTimeout(function () {
-            a.slideUp(400);
-        });
-    });
 
     $(".noti-hidden").click(function () {
         $body_pan = $(this).closest(".panel").find(".panel-body");
@@ -90,8 +84,41 @@ $(document).ready(function () {
         $('#tb-edit-size').find('tbody tr[state="new"]').remove();
         $('#tb-edit-size').find('tbody tr[state="delete"]').attr('state', 'old').show();
     });
+    $('.owl2-item').click(function () {
 
-  
+        var src = $(this).find('img').attr('src');
+        $('.owl2-item').removeClass('active');
+        $('.owl2-item').find('a').removeClass('active');
+        $(this).addClass('active');
+        $(this).find('a').addClass('active');
 
+        $('.product-image-zoom').attr('src', src);
+    });
+
+    $('.size-shoes').click(function () {
+        $('.size-shoes').removeClass('size-choose');
+        $(this).addClass('size-choose');
+        $(this).closest('.product-options ').find('input').val($(this).text());
+        $('.size-c').text($(this).closest('li').find('.size-quantity').text());
+        $('input[name="quantity"]').val(1);
+    });
+    $('.product_quantity_up ').click(function () {
+        var quantity = $(this).closest('.quantity-control').find('input').val();
+        var max_quantity_t = $('.size-c').text();
+        var max_quantity = parseInt(max_quantity_t);
+        if (max_quantity_t === "") {
+            show_alert("Mời chọn kích cỡ giày ", "bottom-warning");
+        } else {
+            if(quantity > max_quantity){
+               $('input[name="quantity"]').val(max_quantity); 
+            };
+        }
+    });
+    $('.product_quantity_down').click(function () {
+        var max_quantity_t = $('.size-c').text();
+        if (max_quantity_t === "") {
+            show_alert("Mời chọn kích cỡ giày ", "bottom-warning");
+        }
+    });
 });
 

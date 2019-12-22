@@ -20,13 +20,13 @@
    
     <mvc:resources location="/resources/" mapping="/resources/**"  />
     
-    <mvc:interceptors>
+<!--    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/manager/**" />
             <mvc:mapping path="/customer/**"/>
             <bean class="config.interceptor.AuthInterceptor" />
         </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
     
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
