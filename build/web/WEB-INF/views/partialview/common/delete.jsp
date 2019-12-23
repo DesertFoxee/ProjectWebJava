@@ -23,6 +23,5 @@
                 </div>
             </div>
         </form>
-        <!-- /.modal-content -->
     </div>
 </div>

@@ -98,7 +98,7 @@ $(document).ready(function () {
     $('.size-shoes').click(function () {
         $('.size-shoes').removeClass('size-choose');
         $(this).addClass('size-choose');
-        $(this).closest('.product-options ').find('input').val($(this).text());
+        $(this).closest('.product-options ').find('input[class="kichCo"]').val($(this).text());
         $('.size-c').text($(this).closest('li').find('.size-quantity').text());
         $('input[name="quantity"]').val(1);
     });

@@ -8,8 +8,23 @@ import org.springframework.validation.FieldError;
 public class ValidationResponse {
 
     private boolean validated;
-    private Map<String, String> errorMessages = new HashMap<>();
+    private Map<String, String> errorMessages;
     private String redirect;
+    private boolean alert;
+
+    public ValidationResponse() {
+        this.validated = false;
+        this.redirect = null;
+        this.alert = false;
+        this.errorMessages = new HashMap<>();
+    }
+
+    public boolean getAlert() {
+        return alert;
+    }
+    public void setAlert(boolean alert) {
+        this.alert = alert;
+    }
 
     public String getRedirect() {
         return redirect;
@@ -41,7 +56,7 @@ public class ValidationResponse {
         for (FieldError fieldError : error) {
             String a = fieldError.getField();
             String[] error_key = a.split("\\.");
-            String key = error_key[error_key.length -1];
+            String key = error_key[error_key.length - 1];
             String err = fieldError.getDefaultMessage();
             addErrorMessages(key, err);
         }

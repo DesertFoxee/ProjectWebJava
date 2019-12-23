@@ -19,6 +19,18 @@ public class KhachHangDAO extends AbstractGenericDao {
         return count;
     }
 
+    public static KhachHang save(KhachHang kh) {
+        beginTransaction();
+        try {
+            Session().save(kh);
+            commitTransaction();
+            return kh;
+        } catch (Exception e) {
+            Transaction().rollback();
+            return null;
+        }
+    }
+
     public static KhachHang getCustomerAccID(Integer id) {
         beginTransaction();
         KhachHang customer = null;

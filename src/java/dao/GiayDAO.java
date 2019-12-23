@@ -72,28 +72,26 @@ public class GiayDAO extends AbstractGenericDao {
         }
     }
 
-    public static boolean checkSizeCount(Integer maGiay, Integer maKichCo, Integer soLuong) {
+    public static boolean checkOverSizeCount(Integer maGiay, Integer kichCo, Integer soLuong) {
         beginTransaction();
-        Giay a_shoes = null;
         try {
-            a_shoes = (Giay) Session().createQuery("select g , kc from Giay g , KichCo kc\n"
-                    + "where g.maGiay = :id_shoes\n"
-                    + "and g.maGiay = kc.giay.maGiay\n"
-                    + "and kc.maKichCo = :kc\n"
-                    + "and kc.soLuong >= :sl")
-                    .setInteger("id_shoes", maGiay)
-                    .setInteger("kc", maKichCo)
-                    .setInteger("sl", soLuong)
-                    .uniqueResult();
+            List<Giay> a_shoes =  Session().createQuery("from Giay g , KichCo kc\n"
+                    + "where g.maGiay = :mg \n"
+                    + "and g.maGiay = kc.giay.maGiay \n"
+                    + "and kc.kichCo = :kcs "
+                    + "and kc.soLuong > :soluong \n")
+                    .setInteger("mg", maGiay)
+                    .setInteger("kcs", kichCo)
+                    .setInteger("soluong", soLuong)
+                    .list();
             commitTransaction();
-            if (a_shoes != null) {
-                return true;
+            if (a_shoes != null && a_shoes.size()>0) {
+                return false;
             }
-            return false;
         } catch (Exception e) {
             Transaction().rollback();
         }
-        return false;
+        return true;
     }
 
     public static Giay save(Giay giay) {

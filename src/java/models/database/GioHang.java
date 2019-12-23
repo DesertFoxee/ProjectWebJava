@@ -16,8 +16,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "GioHang",
-         schema = "dbo",
-         catalog = "JAVA_WEB"
+        schema = "dbo",
+        catalog = "JAVA_WEB"
 )
 public class GioHang implements java.io.Serializable {
 
@@ -33,15 +33,18 @@ public class GioHang implements java.io.Serializable {
     public GioHang() {
     }
 
-    public GioHang(int maGioHang, TaiKhoan taiKhoan, Date thoiGian) {
-        this.maGioHang = maGioHang;
-        this.taiKhoan = taiKhoan;
-        this.thoiGian = thoiGian;
-        this.thoiGian = new Date();
-    }
-
     public GioHang(int maGioHang, Giay giay, TaiKhoan taiKhoan, Date thoiGian, Integer soLuong, Integer giaThanh, Integer giamGia, Integer kichCo) {
         this.maGioHang = maGioHang;
+        this.giay = giay;
+        this.taiKhoan = taiKhoan;
+        this.thoiGian = thoiGian;
+        this.soLuong = soLuong;
+        this.giaThanh = giaThanh;
+        this.giamGia = giamGia;
+        this.kichCo = kichCo;
+    }
+
+    public GioHang(Giay giay, TaiKhoan taiKhoan, Date thoiGian, Integer soLuong, Integer giaThanh, Integer giamGia, Integer kichCo) {
         this.giay = giay;
         this.taiKhoan = taiKhoan;
         this.thoiGian = thoiGian;

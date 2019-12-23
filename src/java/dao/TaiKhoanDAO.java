@@ -62,9 +62,26 @@ public class TaiKhoanDAO extends AbstractGenericDao {
             commitTransaction();
         } catch (Exception e) {
             Transaction().rollback();
-            taikhoan =null;
+            taikhoan = null;
         }
         return taikhoan;
+    }
+
+    public static boolean checkExistUsername(String username) {
+        beginTransaction();
+        try {
+            List<TaiKhoan> taikhoan = Session().createQuery("from TaiKhoan tk\n"
+                    + "where tk.tenTaiKhoan = :username\n")
+                    .setParameter("username", username)
+                    .list();
+            commitTransaction();
+            if(taikhoan != null&& taikhoan.size() > 0){
+                return true;
+            }
+        } catch (Exception e) {
+            Transaction().rollback();
+        }
+        return false;
     }
 
     public static boolean delete(Integer id) {
@@ -87,6 +104,23 @@ public class TaiKhoanDAO extends AbstractGenericDao {
         beginTransaction();
         try {
             Session().update(account);
+            commitTransaction();
+            return true;
+        } catch (Exception e) {
+            Transaction().rollback();
+            return false;
+        }
+    }
+
+    public static boolean updatePass(TaiKhoan account, String pass) {
+        beginTransaction();
+        try {
+            Session().createQuery("update TaiKhoan tk\n"
+                    + "set tk.matKhau = :pass\n"
+                    + "where tk.maTaiKhoan = :id")
+                    .setParameter("pass", pass)
+                    .setParameter("id", account.getMaTaiKhoan())
+                    .executeUpdate();
             commitTransaction();
             return true;
         } catch (Exception e) {

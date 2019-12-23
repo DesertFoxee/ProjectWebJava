@@ -14,7 +14,7 @@
                         <i class="fa fa-home"></i>
                     </a>
                 </li>
-                <li><a href="<c:url value ="customer"/>">Khách hàng</a>
+                <li><a href="<c:url value ="/customer/dashboard"/>">Khách hàng</a>
                 </li>
             </ul>
             <div class="row">
@@ -67,14 +67,14 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-12 col-md-12 col-xs-12 col-sm-12"
                                                            for="input-account">Thông tin khách hàng ,tài khoản : 
-                                                        <a href="<c:url value="customer/account"/>" style="color: red;">Tại đây</a>
+                                                        <a href="<c:url value="/customer/dashboard/account"/>" style="color: red;">Tại đây</a>
                                                     </label>
 
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-12 col-md-12 col-xs-12 col-sm-12"
                                                            for="input-account">Kiểm soát giỏ hàng :
-                                                        <a href="<c:url value="customer/cart"/>" style="color: red;">Tại đây</a>
+                                                        <a href="<c:url value="/customer/dashboard/cart"/>" style="color: red;">Tại đây</a>
                                                     </label>
                                                 </div>
                                                 <div class="form-group">

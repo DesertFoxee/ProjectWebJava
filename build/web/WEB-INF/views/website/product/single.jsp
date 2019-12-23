@@ -24,9 +24,6 @@
                 <li>
                     <a href="<c:url value ="/product"/>">Sản phẩm</a>
                 </li>
-                <li>
-                    <a href="<c:url value ="/customer/single"/>">Chi tiết</a>
-                </li>
             </ul>
         </div>
         <div class="container product-detail">
@@ -136,11 +133,11 @@
 
                                         <div id="product">
                                             <div class="form-group box-info-product">
-                                                <form action="<c:url value="/customer/addtocart"/>" id="add-to-cart">
+                                                <form action="<c:url value="/customer/dashboard/cart/add"/>" id="add-to-cart">
                                                     <div class="image_option_type form-group required">
                                                         <label class="control-label">Kích cỡ và số lượng hỗ trợ</label>
                                                         <ul class="product-options clearfix" id="input-option229">
-                                                            <input type="hidden" name="maKichCo" value="">
+                                                            <input class="kichCo" type="hidden" name="kichCo" value="">
                                                             <input type="hidden" name="maGiay" value="${shoes.maGiay}">
                                                             <c:forEach var= "size" items="${shoes.kichCos.toArray()}" >
                                                                 <li class="radio">

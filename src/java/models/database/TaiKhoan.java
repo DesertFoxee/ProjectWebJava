@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -79,7 +78,7 @@ public class TaiKhoan implements java.io.Serializable {
     }
 
     @Column(name = "MatKhau" , length = 20)
-    @Pattern(regexp = RegexpCont.PassRegx ,message = "Mật khẩu không hợp lệ >8")
+    @NotEmpty(message = "Mật khẩu bỏ trống")
     public String getMatKhau() {
         return this.matKhau;
     }

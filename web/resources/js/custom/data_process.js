@@ -51,9 +51,9 @@ $(document).ready(function () {
         });
     }
     function get_list_error(err_content) {
-        var err ="";
+        var err = "";
         $.each(err_content, function (key, value) {
-            err+=  value +"\n";
+            err += value + "\n";
         });
         return err;
     }
@@ -157,8 +157,12 @@ $(document).ready(function () {
                 if (response.validated) {
                     show_alert(msg_success, "bottom-warning");
                 } else {
-                    var err = get_list_error(response.errorMessages);
-                    show_alert(err, "bottom-error");
+                    if (response.redirect) {
+                        window.location.href = response.redirect;
+                    } else {
+                        var err = get_list_error(response.errorMessages);
+                        show_alert(err, "bottom-error");
+                    }
                 }
             },
             error: function () {
@@ -195,9 +199,16 @@ $(document).ready(function () {
             data: datapost,
             success: function (response) {
                 if (response.validated) {
-                    window.location.href = window.location;
+                    if (response.redirect === null) {
+                        window.location.href = window.location;
+                    } else {
+                        window.location.href = response.redirect;
+                    }
                 } else {
-                    show_msg_error(response.errorMessages);
+                    if (response.alert) {
+                        show_alert(get_list_error(response.errorMessages), "bottom-error");
+                    } else
+                        show_msg_error(response.errorMessages);
                 }
             },
             error: function () {
@@ -244,6 +255,10 @@ $(document).ready(function () {
     // show delete 
     $(".btn-delete-shoes").click(function () {
         showAlertDelete($(this), $('#delete-shoes'), "sản phẩm");
+    });
+
+    $(".btn-delete-cart").click(function () {
+        showAlertDelete($(this), $('#delete-cart'), "sản phẩm");
     });
 
     $(".btn-delete-invoice").click(function () {
@@ -351,7 +366,7 @@ $(document).ready(function () {
     // submit form delete 
 
 
-    $("#form-delete-shoes").submit(function () {
+    $("#form-delete-shoes,").submit(function () {
         var url = $(this).attr("action");
         submitDeleteForm(url, $('#delete-shoes'), $('#table-shoes'));
         return false;
@@ -371,6 +386,13 @@ $(document).ready(function () {
         submitDeleteForm(url, $('#delete-account'), $('#table-account'));
         return false;
     });
+
+    $("#form-delete-cart").submit(function () {
+        var url = $(this).attr("action");
+        submitDeleteForm(url, $('#delete-account'), $('#table-account'));
+        return false;
+    });
+
 
 
     $("#form-edit-shoes").submit(function () {
@@ -599,4 +621,12 @@ $(document).ready(function () {
         submitFormShowErrToAlert($(this), "Thêm sản phẩm thành công");
         return false;
     });
+
+    $('#edit-infor , #edit-pass ,#register-customer').submit(function () {
+        var url = $(this).attr('action');
+        var data = $(this).serialize();
+        submitEditForm(url, data);
+        return false;
+    });
+
 });

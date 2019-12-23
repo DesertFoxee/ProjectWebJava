@@ -69,7 +69,6 @@ public class KhachHang implements java.io.Serializable {
     }
 
     @Column(name = "SDT", length = 12)
-    @Pattern(regexp = RegexpCont.PhoneRegx ,message = "Số điện thoại không hợp lệ")
     public String getSdt() {
         return this.sdt;
     }

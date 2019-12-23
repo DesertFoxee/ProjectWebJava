@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 public class ParaAddToCart {
 
     private int maGiay;
-    private Integer maKichCo;
+    private Integer kichCo;
     private Integer soLuong;
 
     public int getMaGiay() {
@@ -17,24 +17,24 @@ public class ParaAddToCart {
         this.maGiay = maGiay;
     }
 
-    @NotNull(message = "Hãy chọn kích cỡ")
-    @Min(value = 0, message = "Kích cỡ không phù hợp")
-    public Integer getMaKichCo() {
-        return maKichCo;
+    public void setKichCo(Integer kichCo) {
+        this.kichCo = kichCo;
     }
 
-    public void setMaKichCo(Integer maKichCo) {
-        this.maKichCo = maKichCo;
+    @NotNull(message = "Hãy chọn kích cỡ")
+    @Min(value = 0, message = "Kích cỡ không phù hợp")
+    public Integer getKichCo() {
+        return kichCo;
+    }
+
+    public void setSoLuong(Integer soLuong) {
+        this.soLuong = soLuong;
     }
 
     @NotNull(message = "Hãy chọn số lượng")
     @Min(value = 0, message = "Số lượng phải lớn hơn 0")
     public Integer getSoLuong() {
         return soLuong;
-    }
-
-    public void setSoLuong(Integer soLuong) {
-        this.soLuong = soLuong;
     }
 
 }

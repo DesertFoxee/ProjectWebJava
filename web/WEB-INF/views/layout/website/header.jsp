@@ -41,13 +41,13 @@
                             <c:choose>
                                 <c:when test="${not empty account}">
                                     <li class="account" id="my_account">
-                                        <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        <a href="<c:url value="/customer/dashboard"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
                                             <span>${account.tenTaiKhoan}</span>
                                             <span class="fa fa-angle-down"></span>
                                         </a>
                                         <ul class="dropdown-menu ">
                                             <li>
-                                                <a href="<c:url value="/customer/register"/>"
+                                                <a href="<c:url value="/customer/dashboard"/>"
                                                    <i class="fa fa-user"></i> Tài khoản
                                                 </a>
                                             </li>
@@ -59,7 +59,7 @@
                                         </ul>
                                     </li>
                                     <li > 
-                                        <a href="<c:url value="/customer/cart"/>">
+                                        <a href="<c:url value="/customer/dashboard/cart"/>">
                                             <i class="fa fa-shopping-cart"></i>
                                             <span>Giỏ hàng</span>
                                         </a>
@@ -67,7 +67,7 @@
                                 </c:when>    
                                 <c:otherwise>
                                     <li class="account" id="my_account">
-                                        <a href="<c:url value="/customer/account"/>" onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        <a onclick="window.location = this.getAttribute('href');" title="Tài khoản" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
                                             <span>Tài khoản</span>
                                             <span class="fa fa-angle-down"></span>
                                         </a>
@@ -231,7 +231,7 @@
                                                                                        href="<c:url value="/product"/>">Sản phẩm</a>
                                                                                 </li>
                                                                                 <li><a class="subcategory_item"
-                                                                                       href="<c:url value="/customer/cart"/>">Giỏ hàng</a>
+                                                                                       href="<c:url value="/customer/dashboard/cart"/>">Giỏ hàng</a>
                                                                                 </li>
 
                                                                             </ul>

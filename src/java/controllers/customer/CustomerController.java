@@ -1,21 +1,17 @@
 package controllers.customer;
 
 import config.interceptor.Auth;
-import dao.GiayDAO;
-import dao.GioHangDAO;
-import dao.KichCoDAO;
+import dao.MixtureDAO;
 import dao.TaiKhoanDAO;
 import java.io.IOException;
-import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import models.database.Giay;
-import models.database.GioHang;
-import models.database.KichCo;
+import models.database.KhachHang;
 import models.database.TaiKhoan;
-import models.parameter.ParaAddToCart;
+import models.parameter.ParaLogin;
+import models.parameter.ParaNewCustomer;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,12 +38,13 @@ public class CustomerController {
         ModelAndView mv = new ModelAndView();
         session.removeAttribute("user_customer");
         session.removeAttribute("user_login");
+        session.invalidate();
         response.sendRedirect(request.getContextPath());
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public ValidationResponse login(@Valid @ModelAttribute TaiKhoan account, BindingResult binding,
+    public ValidationResponse login(@Valid @ModelAttribute ParaLogin account, BindingResult binding,
             HttpServletRequest request, HttpSession session) {
         ValidationResponse resp = new ValidationResponse();
         if (binding.hasErrors()) {
@@ -57,11 +54,33 @@ public class CustomerController {
             if (ac != null) {
                 session.setAttribute("user_customer", ac);
                 session.setAttribute("user_login", Auth.Role.USER);
+                resp.setValidated(true);
+                resp.setRedirect(request.getContextPath());
+            } else {
+                resp.addErrorMessages("common", "Tài khoản / mật khẩu không đúng");
             }
-            resp.setValidated(true);
-            resp.setRedirect(request.getContextPath());
         }
         return resp;
+    }
+
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    public ModelAndView index(HttpSession session, HttpServletResponse response,
+            HttpServletRequest request) throws IOException, IOException {
+        ModelAndView mv = new ModelAndView();
+
+        TaiKhoan account = (TaiKhoan) session.getAttribute("user_customer");
+        account = TaiKhoanDAO.getAccountID(account.getMaTaiKhoan());
+
+        if (account != null) {
+            mv.addObject("account", account);
+        } else {
+            response.sendRedirect(request.getContextPath() + "/customer/login");
+            session.removeAttribute("user_customer");
+            session.removeAttribute("user_login");
+            return null;
+        }
+        mv.setViewName("website/customer/index");
+        return mv;
     }
 
     @Auth(role = Auth.Role.USER)
@@ -92,63 +111,29 @@ public class CustomerController {
         return mv;
     }
 
-    @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public ValidationResponse addToCart(@Valid @ModelAttribute ParaAddToCart order, BindingResult bindingResult,
-            HttpSession session, HttpServletResponse response, HttpServletRequest request) throws IOException {
+    public ValidationResponse register(@Valid @ModelAttribute ParaNewCustomer newaccout, BindingResult bindingResult) {
         ValidationResponse resp = new ValidationResponse();
-        resp.setValidated(false);
         if (bindingResult.hasErrors()) {
             resp.processError(bindingResult.getFieldErrors());
         } else {
-            TaiKhoan account = (TaiKhoan) session.getAttribute("user_customer");
-            if (account != null) {
-                account = TaiKhoanDAO.getAccountID(account.getMaTaiKhoan());
-                Giay shoes = GiayDAO.getShoesID(order.getMaGiay());
-                KichCo kc = KichCoDAO.exist(order.getMaKichCo());
-                if (account != null && shoes != null && kc != null) {
-                    if (GiayDAO.checkSizeCount(account.getMaTaiKhoan(), order.getMaKichCo(),
-                            order.getSoLuong())) {
-                        GioHang gh = new GioHang();
-                        gh.setGiay(shoes);
-                        gh.setTaiKhoan(account);
-                        gh.setKichCo(kc.getKichCo());
-                        gh.setSoLuong(order.getSoLuong());
-                        gh.setGiamGia(shoes.getGiamGia());
-                        gh.setGiaThanh(shoes.getGia());
-                        if (GioHangDAO.save(gh) != null) {
-                            resp.setValidated(true);
-                        } else {
-                            resp.addErrorMessages("err", "Xảy ra lỗi khi lưu");
-                        }
-                    } else {
-                        resp.addErrorMessages("err", "Tham số không đúng");
-                    }
-                } else {
-                    resp.addErrorMessages("err", "Hành động không cho phép");
+            if(TaiKhoanDAO.checkExistUsername(newaccout.getTenTaiKhoan()) ==false){
+                KhachHang kh = newaccout.convertToNewKhachHang();
+                TaiKhoan tk = newaccout.convertToNewTaiKhoan();
+                
+                if(MixtureDAO.register(tk, kh)){
+                    resp.setValidated(true);
                 }
-            } else {
-                response.sendRedirect(request.getContextPath() + "/customer/login");
+                else {
+                    resp.setAlert(true);
+                    resp.addErrorMessages("","Lưu thất bại ");
+                }
+            }
+            else {
+                resp.addErrorMessages("common","Tên tài khoản đã tồn tại");
             }
         }
         return resp;
     }
-
-    @Auth(role = Auth.Role.USER)
-    @RequestMapping(value = "/cart", method = RequestMethod.GET)
-    public ModelAndView getCart() {
-        ModelAndView mv = new ModelAndView();
-
-        mv.setViewName("website/customer/cart");
-        return mv;
-    }
-
-    @RequestMapping(value = "/account", method = RequestMethod.GET)
-    public ModelAndView getFormAccount() {
-        ModelAndView mv = new ModelAndView();
-
-        mv.setViewName("website/customer/account");
-        return mv;
-    }
-
 }
