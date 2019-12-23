@@ -4,6 +4,7 @@ import java.util.List;
 import models.database.Giay;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
+import org.hibernate.Query;
 
 public class GiayDAO extends AbstractGenericDao {
 
@@ -75,7 +76,7 @@ public class GiayDAO extends AbstractGenericDao {
     public static boolean checkOverSizeCount(Integer maGiay, Integer kichCo, Integer soLuong) {
         beginTransaction();
         try {
-            List<Giay> a_shoes =  Session().createQuery("from Giay g , KichCo kc\n"
+            List<Giay> a_shoes = Session().createQuery("from Giay g , KichCo kc\n"
                     + "where g.maGiay = :mg \n"
                     + "and g.maGiay = kc.giay.maGiay \n"
                     + "and kc.kichCo = :kcs "
@@ -85,7 +86,7 @@ public class GiayDAO extends AbstractGenericDao {
                     .setInteger("soluong", soLuong)
                     .list();
             commitTransaction();
-            if (a_shoes != null && a_shoes.size()>0) {
+            if (a_shoes != null && a_shoes.size() > 0) {
                 return false;
             }
         } catch (Exception e) {
@@ -172,31 +173,43 @@ public class GiayDAO extends AbstractGenericDao {
         return a_shoes;
     }
 
-    public static List<Giay> filter(KeyFilter key, KeySort sort) {
+    public static List<Giay> filter(KeyFilter keyf, KeySort sort, String key) {
         beginTransaction();
         List<Giay> a_shoes = null;
-        String query = "select g , ha  from Giay g ,LoaiGiay l , HangGiay h\n"
+        String manu = keyf.getManu();
+        String type = keyf.getType();
+
+        String query_str = "select g , ha  from Giay g ,LoaiGiay l , HangGiay h\n"
                 + "left join fetch  g.hinhAnhs ha\n"
                 + "where \n"
                 + "g.loaiGiay.maLoaiGiay = l.maLoaiGiay\n"
                 + "and g.hangGiay.maHang = h.maHang\n";
 
-        String manu = key.getManu();
-        String type = key.getType();
-
         if (manu != null) {
-            query += "and h.tenHangGiay = '" + manu + "'\n";
+            query_str += "and h.tenHangGiay = :manu\n";
         }
         if (type != null) {
-            query += "and l.tenLoaiGiay = '" + type + "'\n";
+            query_str += "and l.tenLoaiGiay = :type\n";
+        }
+        if (key != null && !key.isEmpty()) {
+            query_str += "and g.tenGiay like :key\n";
         }
         if (sort != null) {
-            query += "order by " + sort.getKeySort() + " " + sort.getValueSort() + "\n";
+            query_str += "order by " + sort.getKeySort() + " " + sort.getValueSort() + "\n";
+        }
+        Query query = Session().createQuery(query_str);
+
+        if (manu != null) {
+            query.setParameter("manu", manu);
+        }
+        if (type != null) {
+            query.setParameter("type", type);
+        }
+        if (key != null && !key.isEmpty()) {
+            query.setParameter("key", key);
         }
         try {
-            a_shoes = Session()
-                    .createQuery(query)
-                    .list();
+            a_shoes = query.list();
             commitTransaction();
         } catch (Exception e) {
             Transaction().rollback();

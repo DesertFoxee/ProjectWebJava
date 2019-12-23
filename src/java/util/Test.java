@@ -7,6 +7,8 @@ import javafx.util.Pair;
 import models.database.Giay;
 import models.database.KhachHang;
 import models.parameter.KeyFilter;
+import models.parameter.KeySort;
+import process.Filter;
 import process.Page;
 
 /**
@@ -17,14 +19,8 @@ public class Test {
 
     public static void main(String[] args) {
        
-        KhachHang kh = new KhachHang();
-
-        kh.setDiaChi("dfadf");
-        kh.setSdt("dafdsfs");
-        kh.setTenKhachHang("dafasdf");
-        
-        
-        System.out.println(KhachHangDAO.save(kh));
-        
+        KeyFilter key_filter = Filter.processKeyFilter("Adidas", "Thể thao");
+        KeySort key_sort = Filter.processKeySort("DF");
+        System.out.println(GiayDAO.filter(key_filter, key_sort, "%a%").size());
     }
 }

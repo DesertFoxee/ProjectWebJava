@@ -1,14 +1,18 @@
 package controllers.website;
 
 import dao.GiayDAO;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import models.database.Giay;
 import java.util.List;
 import javafx.util.Pair;
 import models.database.HinhAnh;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
+import models.parameter.ParaFilter;
 import models.parameter.ParaPage;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +25,8 @@ import process.Page;
 @RequestMapping(value = "product")
 public class ProductController {
 
-    public ModelAndView setUpPage(String sort, String manu, String type, String pnumber) {
+    public ModelAndView setUpPage(String sort, String manu, String type,
+            String pnumber, String key) {
 
         ModelAndView mv = new ModelAndView();
         if (pnumber == null) {
@@ -35,7 +40,7 @@ public class ProductController {
         KeySort key_sort = Filter.processKeySort(sort);
 
         String path_img_default = HinhAnh.getPathImgDefault();
-        List<Giay> list_shoes_filter = GiayDAO.filter(key_filter, key_sort);
+        List<Giay> list_shoes_filter = GiayDAO.filter(key_filter, key_sort, key);
 
         if (list_shoes_filter != null) {
             int total = list_shoes_filter.size();
@@ -60,7 +65,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView Index() {
-        ModelAndView mv = setUpPage("DF", "0", "0", null);
+        ModelAndView mv = setUpPage("DF", "0", "0", null, null);
         mv.setViewName("website/product/index");
         return mv;
     }
@@ -78,7 +83,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/manu", method = RequestMethod.GET)
-    public ModelAndView showManuProduct(@RequestParam("id") String id) {
+    public ModelAndView showManuProduct(@RequestParam("manu") String id) {
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("website/product/index");
@@ -86,7 +91,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/style", method = RequestMethod.GET)
-    public ModelAndView showStyleProduct(@RequestParam("id") String id) {
+    public ModelAndView showStyleProduct(@RequestParam("type") String id) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("website/product/index");
         return mv;
@@ -97,8 +102,10 @@ public class ProductController {
     public ModelAndView showPageProduct(@RequestParam("sort") String sort,
             @RequestParam("manu") String manu,
             @RequestParam("type") String type,
-            @RequestParam("number") String number) {
-        ModelAndView mv = setUpPage(sort, manu, type, number);
+            @RequestParam("number") String number,
+            @RequestParam(value = "key", required = false) String key) {
+
+        ModelAndView mv = setUpPage(sort, manu, type, number, key);
         mv.setViewName("partialview/website/product/page");
         return mv;
     }
@@ -106,10 +113,16 @@ public class ProductController {
     @RequestMapping(value = "/filter", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView shortAndFitler(@RequestParam(value = "sort", required = false) String sort,
-            @RequestParam(value = "manu", required = false) String manu,
-            @RequestParam(value = "type", required = false) String type,
-            @RequestParam(value = "first", required = false) String first) {
-        ModelAndView mv = setUpPage(sort, manu, type, null);
+            @RequestParam("manu") String manu,
+            @RequestParam("type") String type,
+            @RequestParam(value = "first", required = false) String first,
+            @RequestParam(value = "key", required = false) String key)  {
+        ModelAndView mv = setUpPage(sort, manu, type, null, key);
+
+        mv.addObject("f_manu", manu);
+        mv.addObject("f_type", type);
+        mv.addObject("f_sort", sort);
+
         if (first != null) {
             mv.setViewName("website/product/index");
         } else {

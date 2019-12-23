@@ -57,6 +57,7 @@
 
                             </div>
                             <script type="text/javascript">
+                                $('body').addClass('common-home');
                                 var owl = $(".sohomeslider-inner-1");
                                 var total_item = 3;
                                 function customCenter() {
@@ -124,7 +125,7 @@
 
             </div>
         </div>
-                                             
+
         <c:set var="path_default" value="${path_default}" scope="request" />
 
         <div class="container">
@@ -469,63 +470,53 @@
                         </div>
                     </div>
 
-                    <div class="bestseller col-md-4 col-sm-6 col-xs-12">
-                        <div class="bestseller-inner">
-                            <div>
-                                <h3>MẶT HÀNG CHẠY NHẤT</h3>
-                                <div class="product-layout ">
-                                    <div class="product-thumb transition">
-                                        <div class="image">
-                                            <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58"><img
-                                                    src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/el5-84x84.jpg"
-                                                    alt="Kenle masen itcute" title="Kenle masen itcute"
-                                                    class="img-responsive" />
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>
-                                                <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=58">Kenle
-                                                    masen itcute</a>
-                                            </h4>
-                                            <div class="description">The 30-inch Apple Cinema HD Display
-                                                delivers an
-                                                amazing 2560 x 1600
-                                                pixel resolution. Designed specifically for the creative
-                                                professional,
-                                                this display provides more space for easier access to all..
-                                            </div>
+                    <div class="module so-latest-blog latest-blog col-md-4 col-sm-6 col-xs-12">
+                        <h3 class="modtitle"><span>THÔNG TIN</span></h3>
+                        <div id="so_latest_blog_180_10303509171575512144"
+                             class="so-blog-external button-type2 button-type2">
+                            <div class="blog-external-simple">
+                                <div class="media">
+                                    <div class="item">
+                                        <div class="media-body">
 
-                                            <p class="price">
-                                                <span class="price-new"> 700.000VNĐ</span>
-                                                <span class="price-tax">Ex Tax: 700.000VNĐ</span>
-                                            </p>
+                                            <div class="media-date-added">28<br />
+                                                <span>Mar</span></div>
+                                            <div class="media-content">
+                                                <h4 class="media-heading">
+                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=simple_blog/article/view&amp;simple_blog_article_id=8"
+                                                       title="Ac tincidunt Suspendisse malesuada" target="_blank">Ac
+                                                        tincidunt Suspendisse malesuada</a>
+                                                </h4>
+                                                <div class="description">
+
+                                                    Commodo laoreet semper tincidunt lorem Vestibulum nunc
+                                                    at In
+                                                    Curabitur magna.....
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-layout ">
-                                    <div class="product-thumb transition">
-                                        <div class="image"><a
-                                                href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=40"><img
-                                                    src="http://opencart2.opencartworks.com/themes/so_maxshop/image/cache/catalog/product/3-84x84.PNG"
-                                                    alt="Duidem rerum facilis" title="Duidem rerum facilis"
-                                                    class="img-responsive" /></a></div>
-                                        <div class="caption">
+                                <div class="media">
+                                    <div class="item">
+                                        <div class="media-body">
 
-                                            <h4><a
-                                                    href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/product&amp;product_id=40">Duidem
-                                                    rerum facilis</a></h4>
-                                            <div class="description">
-                                                iPhone is a revolutionary new mobile phone that allows you
-                                                to make a
-                                                call by simply tapping a name or number in your address
-                                                book, a
-                                                favorites list, or a call log. It also automatically syncs
-                                                all y..</div>
-
-                                            <p class="price">
-                                                <span class="price-new"> 123.200VNĐ</span>
-                                                <span class="price-tax">Ex Tax: 101.000VNĐ</span>
-                                            </p>
+                                            <div class="media-date-added">01<br />
+                                                <span>Sep</span></div>
+                                            <div class="media-content">
+                                                <h4 class="media-heading">
+                                                    <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=simple_blog/article/view&amp;simple_blog_article_id=2"
+                                                       title="Biten demonstraverunt lector legere legunt saepius"
+                                                       target="_blank">Biten demonstraverunt lector legere
+                                                        legunt
+                                                        saepius</a>
+                                                </h4>
+                                                <div class="description">
+                                                    Commodo laoreet semper tincidunt lorem Vestibulum nunc
+                                                    at In
+                                                    Curabitur magna. Eu.....
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -587,244 +578,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="module manufacturer">
-                        <div class="main">
-                            <div id="ytcs5de86850d352610454418091575512144"
-                                 class="yt-content-slider owl-theme yt-content-slider-style-1 arrow-default"
-                                 data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="30"
-                                 data-item_lg="5" data-item_sm="4" data-item_xs="2" data-arrows="yes"
-                                 data-pagination="no" data-lazyload="no" data-loop="no" data-hoverpause="no">
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap">
-                                    <div class="item-manu">
-                                        <a href="#" title="Link">
-                                            <img src="<c:url value="/resources/images/common/jpg/7.jpg"/>" alt="img">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap">
-                                    <div class="item-manu">
-                                        <a href="#" title="Link">
-                                            <img src="<c:url value="/resources/images/common/jpg/8.jpg"/>" alt="img">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap">
-                                    <div class="item-manu">
-                                        <a href="#" title="Link">
-                                            <img src="<c:url value="/resources/images/common/jpg/9.jpg"/>" alt="img">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap">
-                                    <div class="item-manu">
-                                        <a href="#" title="Link">
-                                            <img src="<c:url value="/resources/images/common/jpg/2.jpg"/>" alt="img">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap">
-                                    <div class="item-manu">
-                                        <a href="#" title="Link">
-                                            <img src="<c:url value="/resources/images/common/jpg/4.jpg"/>" alt="img">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="yt-content-slide yt-clearfix yt-content-wrap"> </div>
-                            </div>
-                            <script type='text/javascript'>
-                                $(document).ready(function () {
-                                    $('#ytcs5de86850d352610454418091575512144').each(function () {
-                                        var slider = $(this),
-                                                panels = slider.children('div'),
-                                                data = slider.data();
-                                        // Remove unwanted br's
-                                        slider.children(':not(.yt-content-slide)').remove();
-                                        // Apply Owl Carousel
-                                        slider.owlCarousel2({
-                                            mouseDrag: true,
-                                            video: true,
-                                            lazyLoad: (data.lazyload == 'yes') ? true : false,
-                                            autoplay: (data.autoplay == 'yes') ? true : false,
-                                            autoHeight: (data.autoheight == 'yes') ? true : false,
-                                            autoplayTimeout: data.delay * 1000,
-                                            smartSpeed: data.speed * 1000,
-                                            autoplayHoverPause: (data.hoverpause == 'yes') ? true : false,
-                                            center: (data.center == 'yes') ? true : false,
-                                            loop: (data.loop == 'yes') ? true : false,
-                                            dots: (data.pagination == 'yes') ? true : false,
-                                            nav: (data.arrows == 'yes') ? true : false,
-                                            margin: data.margin,
-                                            navText: ['', ''],
-                                            responsive: {
-                                                0: {items: data.item_xs},
-                                                768: {items: data.item_sm},
-                                                992: {items: data.item_lg}
-                                            },
-                                        });
-
-                                    });
-                                });
-                                (function ($) {
-                                    $('body').addClass('common-home');
-                                    $.fn.Soautocomplete = function (option) {
-                                        return this.each(function () {
-                                            this.timer = null;
-                                            this.items = new Array();
-
-                                            $.extend(this, option);
-
-                                            $(this).attr('autocomplete', 'off');
-
-                                            // Focus
-                                            $(this).on('focus', function () {
-                                                this.request();
-                                            });
-
-                                            // Blur
-                                            $(this).on('blur', function () {
-                                                setTimeout(function (object) {
-                                                    (typeof object !== 'undefined') ? object.hide() : '';
-                                                }, 200, this);
-                                            });
-
-                                            // Keydown
-                                            $(this).on('keydown', function (event) {
-                                                switch (event.keyCode) {
-                                                    case 27: // escape
-                                                        this.hide();
-                                                        break;
-                                                    default:
-                                                        this.request();
-                                                        break;
-                                                }
-                                            });
-
-                                            // Click
-                                            this.click = function (event) {
-                                                event.preventDefault();
-
-                                                value = $(event.target).parent().attr('data-value');
-
-                                                if (value && this.items[value]) {
-                                                    this.select(this.items[value]);
-                                                }
-                                            }
-
-                                            // Show
-                                            this.show = function () {
-                                                var pos = $(this).position();
-
-                                                $(this).siblings('ul.dropdown-menu').css({
-                                                    top: pos.top + $(this).outerHeight(),
-                                                    left: pos.left
-                                                });
-
-                                                $(this).siblings('ul.dropdown-menu').show();
-                                            }
-
-                                            // Hide
-                                            this.hide = function () {
-                                                $(this).siblings('ul.dropdown-menu').hide();
-                                            }
-
-                                            // Request
-                                            this.request = function () {
-                                                clearTimeout(this.timer);
-
-                                                this.timer = setTimeout(function (object) {
-                                                    (typeof object !== 'undefined') ? object.source($(object).val(), $.proxy(object.response, object)) : '';
-                                                }, 200, this);
-                                            }
-
-                                            // Response
-                                            this.response = function (json) {
-                                                html = '';
-
-                                                if (json.length) {
-                                                    for (i = 0; i < json.length; i++) {
-                                                        this.items[json[i]['value']] = json[i];
-                                                    }
-
-                                                    for (i = 0; i < json.length; i++) {
-                                                        if (!json[i]['category']) {
-                                                            html += '<li class="media" data-value="' + json[i]['value'] + '">';
-                                                            if (json[i]['image'] && json[i]['show_image'] && json[i]['show_image'] == 1) {
-                                                                html += '	<a class="media-left pull-left" href="' + json[i]['link'] + '"><img class="pull-left" src="' + json[i]['image'] + '"></a>';
-                                                            }
-
-                                                            html += '<div class="media-body">';
-                                                            html += '<a href="' + json[i]['link'] + '"><span>' + json[i]['label'] + '</span></a>';
-                                                            if (json[i]['price'] && json[i]['show_price'] && json[i]['show_price'] == 1) {
-                                                                html += '	<div class="price">';
-                                                                if (!json[i]['special']) {
-                                                                    html += '<span class="price">Price : ' + json[i]['price'] + '</span>';
-                                                                    ;
-                                                                } else {
-                                                                    html += '<span class="price-old">' + json[i]['price'] + '</span><span class="price-new">' + json[i]['special'] + '</span>';
-                                                                }
-                                                                if (json[i]['tax']) {
-                                                                    html += '<br />';
-                                                                    html += '<span class="price-tax">Tax : ' + json[i]['tax'] + '</span>';
-                                                                }
-                                                                html += '	</div>';
-                                                            }
-
-                                                            if (json[i]['show_addtocart'] || json[i]['show_addtowishlist'] || json[i]['show_addtocompare']) {
-                                                                html += '<div class="button-group">';
-                                                                if (json[i]['show_addtocart'])
-                                                                    html += '<button type="button" onclick="cart.add(' + json[i]['value'] + ', ' + json[i]['minimum'] + ');"><span class="hidden-xs hidden-sm hidden-md">Add to Cart</span> <i class="fa fa-shopping-cart"></i></button>';
-                                                                if (json[i]['show_addtowishlist'])
-                                                                    html += '<button type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add(' + json[i]['value'] + ');"><i class="fa fa-heart"></i></button>';
-                                                                if (json[i]['show_addtocompare'])
-                                                                    html += '<button type="button" data-toggle="tooltip" title="Add to Compare" onclick="compare.add(' + json[i]['value'] + ');"><i class="fa fa-exchange"></i></button>';
-                                                                html += '</div>';
-                                                            }
-                                                            html += '</div></li>';
-                                                            html += '<li class="clearfix"></li>';
-                                                        }
-                                                    }
-
-                                                    // Get all the ones with a categories
-                                                    var category = new Array();
-
-                                                    for (i = 0; i < json.length; i++) {
-                                                        if (json[i]['category']) {
-                                                            if (!category[json[i]['category']]) {
-                                                                category[json[i]['category']] = new Array();
-                                                                category[json[i]['category']]['name'] = json[i]['category'];
-                                                                category[json[i]['category']]['item'] = new Array();
-                                                            }
-
-                                                            category[json[i]['category']]['item'].push(json[i]);
-                                                        }
-                                                    }
-
-                                                    for (i in category) {
-                                                        html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
-
-                                                        for (j = 0; j < category[i]['item'].length; j++) {
-                                                            html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
-                                                        }
-                                                    }
-                                                }
-
-                                                if (html) {
-                                                    this.show();
-                                                } else {
-                                                    this.hide();
-                                                }
-
-                                                $(this).siblings('ul.dropdown-menu').html(html);
-                                            }
-
-                                            $(this).after('<ul class="dropdown-menu"></ul>');
-
-                                        });
-                                    }
-                                })(window.jQuery);
-                            </script>
                         </div>
                     </div>
                 </div>

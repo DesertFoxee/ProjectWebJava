@@ -37,15 +37,15 @@
                                     <thead>
                                         <tr>
                                             <th align="left">STT</th>
-                                            <th>Thời gian</th>
                                             <th>Tên giày</th>
+                                            <th>Thời gian</th>
                                             <th>Cỡ giày</th>
                                             <th>Số lượng</th>
                                             <th>Giá gốc</th>
                                             <th>Giảm giá</th>
                                             <th>Thành tiền</th>
                                             <th>Chọn</th>
-                                            <th style="width: 120px;">Chức năng</th>
+                                            <th style="width: 160px;">Chức năng</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,10 +53,10 @@
                                         <c:forEach var="item" items="${list_cart}">
                                             <tr class="odd gradeX">
                                                 <td align="center">${count+1}</td>
-                                                <td class="timeline-badge">${item.thoiGian}</td>
                                                 <td>${item.giay.tenGiay}</td>
-                                                <td>${item.kichCo}</td>
-                                                <td>${item.soLuong}</td>
+                                                <td class="timeline-badge">${item.thoiGian}</td>
+                                                <td align="center">${item.kichCo}</td>
+                                                <td align="center">${item.soLuong}</td>
                                                 <td class="center">
                                                     <fmt:formatNumber pattern="###,###" value ="${item.giaThanh}"/> VNĐ
                                                 </td>
@@ -88,13 +88,12 @@
                             <jsp:param name="title" value="Xác nhận thanh toán" />
                             <jsp:param name="url" value="/customer/dashboard/cart/confirm" />
                         </jsp:include>
-                        
+
                         <jsp:include page="/WEB-INF/views/partialview/common/delete.jsp" flush="true">
                             <jsp:param name="id_modal" value="delete-cart"/>
                             <jsp:param name="id_lable" value="notify-delete-cart"/>
                             <jsp:param name="url" value="/customer/dashboard/cart/delete" />
                         </jsp:include>
-
                     </div>
                 </div>
             </div>

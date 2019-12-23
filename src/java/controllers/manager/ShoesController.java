@@ -240,12 +240,9 @@ public class ShoesController {
 
     @Auth(role = Auth.Role.ADMIN)
     @ResponseBody
-    @RequestMapping(value = "/shoes/edit/size/update",
-            consumes = "application/json",
-            produces = "application/json",
+    @RequestMapping(value = "/shoes/edit/size/update",consumes = "application/json",
             method = RequestMethod.POST)
-    public ModelAndView updateSizeShoes(
-            @RequestBody ParaSize sizes) {
+    public ModelAndView updateSizeShoes(@RequestBody ParaSize sizes) {
         ModelAndView mv = new ModelAndView();
         String path = "partialview/manager/";
         Integer shoes_id = Integer.parseInt(sizes.getShoesID());

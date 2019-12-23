@@ -366,7 +366,7 @@ $(document).ready(function () {
     // submit form delete 
 
 
-    $("#form-delete-shoes,").submit(function () {
+    $("#form-delete-shoes").submit(function () {
         var url = $(this).attr("action");
         submitDeleteForm(url, $('#delete-shoes'), $('#table-shoes'));
         return false;

@@ -11,14 +11,15 @@
 <%
     List<HangGiay> manus = HangGiayDAO.getAllManufacturer();
     List<LoaiGiay> types = LoaiGiayDAO.getAllType();
+    String sort = (String) request.getAttribute("sort");
 %>
 
 <c:set var="list_manu">
     <option value="0" selected> Hãng giày</option>
     <% for (int i = 0; i < manus.size(); i++) {%>
-    <c:set var="val" value="<%=manus.get(i).getMaHang()%>"/>
+    <c:set var="val" value="<%=manus.get(i).getTenHangGiay()%>"/>
     <c:choose> 
-        <c:when test="${val == f_manu} }">
+        <c:when test="${val == f_manu}">
             <option value="<%=manus.get(i).getTenHangGiay()%>" selected> <%=manus.get(i).getTenHangGiay()%></option>
         </c:when>
         <c:otherwise>
@@ -32,9 +33,9 @@
 <c:set var="list_type">
     <option value="0" selected> Loại giày</option>
     <% for (int i = 0; i < types.size(); i++) {%>
-    <c:set var="val" value="<%=types.get(i).getMaLoaiGiay()%>"/>
+    <c:set var="val" value="<%=types.get(i).getTenLoaiGiay()%>"/>
     <c:choose> 
-        <c:when test="${val == f_type} }">
+        <c:when test="${val == f_type}">
             <option value="<%=types.get(i).getTenLoaiGiay()%>" selected> <%=types.get(i).getTenLoaiGiay()%></option>
         </c:when>
         <c:otherwise>
@@ -43,6 +44,26 @@
     </c:choose>
     <%}%>
 </c:set>
+
+<c:set var="list_sort"> 
+    <option
+        value="DF" selected="selected">Sắp xếp</option>
+    <option
+        value="NAZ" <%=(sort == "NAZ") ? "selected" : ""%>> Tên (A - Z)</option>
+    <option
+        value="NZA" <%=(sort == "NZA") ? "selected" : ""%>>
+        Tên (Z - A)</option>
+    <option
+        value="PLH" <%=(sort == "PLH") ? "selected" : ""%>>
+        Giá (Low &gt; High)</option>
+    <option
+        value="PHL" <%=(sort == "PHL") ? "selected" : ""%>>
+        Giá (High &gt; Low)</option>
+    <option  value="DIS" <%=(sort == "DIS") ? "selected" : ""%>>
+        Giảm giá
+    </option>
+</c:set>     
+
 
 <t:template-website title="Product">
     <jsp:attribute name="content">
@@ -126,24 +147,11 @@
                                                 </div>
                                                 <div class="short-by-show form-inline text-left col-lg-7 col-sm-6 col-xs-12" style="width: 65%;">
                                                     <div class="form-group short-by filters-shoes">
+
+                                                        <input name="key" value="${key}" type="hidden" />
                                                         <label class="control-label" for="input-sort">Lọc SP:</label>
                                                         <select name ="sort" id="input-sort" class="form-control">
-                                                            <option
-                                                                value="DF" selected="selected">Sắp xếp</option>
-                                                            <option
-                                                                value="NAZ"> Tên (A - Z)</option>
-                                                            <option
-                                                                value="NZA">
-                                                                Tên (Z - A)</option>
-                                                            <option
-                                                                value="PLH">
-                                                                Giá (Low &gt; High)</option>
-                                                            <option
-                                                                value="PHL">
-                                                                Giá (High &gt; Low)</option>
-                                                            <option
-                                                                value="DIS">
-                                                                Giảm giá</option>
+                                                            ${list_sort}
                                                         </select>
                                                         <select name ="manu" id="input-sort" class="form-control" style="min-width: 130px;">
                                                             ${list_manu}
