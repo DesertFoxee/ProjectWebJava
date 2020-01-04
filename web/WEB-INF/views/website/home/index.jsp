@@ -147,7 +147,7 @@
         <jsp:param name="title" value="ADIDAS"/>
         <jsp:param name="position" value="1"/>
     </jsp:include>
-    
+
     <c:set var="first_shoes_price" value="${nike_shoes_price}" scope="request" />
     <c:set var="first_shoes_sale" value="${nike_shoes_sale}" scope="request" />
     <jsp:include page="/WEB-INF/views/partialview/website/home/spotlight.jsp" flush="true">

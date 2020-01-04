@@ -3,26 +3,29 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="products-list row grid so-filter-gird">
-    <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
-        <c:choose>
-            <c:when test="${empty list_shoes_filter}">
-                Không có sản phẩm nào !
-            </c:when>    
-            <c:otherwise>
-                <c:forEach  var="shoes" items="${list_shoes_filter}" >
+
+    <c:choose>
+        <c:when test="${empty list_shoes_filter}">
+            Không có sản phẩm nào !
+        </c:when>    
+        <c:otherwise>
+            <c:forEach  var="shoes" items="${list_shoes_filter}" >
+                <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
                     <div class="product-item-container">
                         <div class="left-block">
                             <div class="product-image-container lt-image  ">
                                 <c:set var = "images" value = "${shoes.hinhAnhs.toArray()}"/>
                                 <c:forEach var= "i" begin="0" end = "1" >
-                                    <c:choose>
-                                        <c:when test="${not empty images[i]}">
-                                            <img src="<c:url value ="/resources/images/shoes/${images[i].getLink()}"/>" class="img-${i+1} img-responsive" alt="${shoes.tenGiay}">
-                                        </c:when>    
-                                        <c:otherwise>
-                                            <img src="<c:url value ="/resources/images/shoes/${path_default}"/>" class="img-${i+1} img-responsive" alt="${shoes.tenGiay}">
-                                        </c:otherwise>
-                                    </c:choose>
+                                    <a href="<c:url value="/product/single?id=${shoes.maGiay}"/>">
+                                        <c:choose>
+                                            <c:when test="${not empty images[i]}">
+                                                <img src="<c:url value ="/resources/images/shoes/${images[i].getLink()}"/>" class="img-${i+1} img-responsive" alt="${shoes.tenGiay}">
+                                            </c:when>    
+                                            <c:otherwise>
+                                                <img src="<c:url value ="/resources/images/shoes/${path_default}"/>" class="img-${i+1} img-responsive" alt="${shoes.tenGiay}">
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </a>
                                 </c:forEach>
                             </div>
                         </div>
@@ -38,10 +41,11 @@
                             </div>
                         </div>
                     </div>
-                </c:forEach>
-            </c:otherwise>
-        </c:choose>
-    </div>
+                </div>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
+
 </div>
 <div class="product-filter product-filter-bottom filters-panel">
     <div class="row">
