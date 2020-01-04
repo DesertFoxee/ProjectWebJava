@@ -651,7 +651,7 @@ $(document).ready(function () {
             data: data,
             success: function (response) {
                 if (response.validated) {
-                    window.location.href = response.redirect;
+                    location.reload();
                 } else {
                     var err = get_list_error(response.errorMessages);
                     show_alert(err, "bottom-error");

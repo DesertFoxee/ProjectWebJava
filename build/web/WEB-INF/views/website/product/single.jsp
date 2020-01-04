@@ -104,7 +104,7 @@
                                             <h1>${shoes.tenGiay}</h1>
                                         </div>
                                         <div class="box-review">
-                                            <a class="reviews_button" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 review (s)</a> | <a class="write_review_button" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Write a review</a>
+                                            <a class="reviews_button" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">${fn:length(reviews)} đánh giá (s)</a> | <a class="write_review_button" href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Viết đánh giá</a>
                                         </div>
                                         <div class="product-label">
                                             <div class="stock">
@@ -287,8 +287,7 @@
                                                                                         ${review.khachHang.tenKhachHang}
                                                                                     </c:otherwise>
                                                                                 </c:choose>
-                                                                                
-
+                                                                               
                                                                             </strong> <span class="text-muted">commented ${review.thoiGian}</span>
                                                                         </div>
                                                                         <div class="panel-body">
