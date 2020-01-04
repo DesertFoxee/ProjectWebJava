@@ -206,7 +206,7 @@ public class GiayDAO extends AbstractGenericDao {
             query.setParameter("type", type);
         }
         if (key != null && !key.isEmpty()) {
-            query.setParameter("key", key);
+            query.setParameter("key", "%"+key+"%");
         }
         try {
             a_shoes = query.list();

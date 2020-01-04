@@ -13,7 +13,7 @@
                         <h3 class="modtitle">
                             <span class="icon-color" style="background-color: #ea3a3c; ">
                                 <i class="fa fa-empire #009688"></i>
-                                SẢN PHẨM <small class="arow-after"
+                                ${param.title}<small class="arow-after"
                                                 style="border-color: transparent transparent  #ea3a3c transparent">
                                 </small>
                             </span>
