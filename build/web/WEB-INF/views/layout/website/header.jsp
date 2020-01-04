@@ -149,7 +149,7 @@
                                                                                 <% for (int i = 0; i < types.size() / 2; i++) {%>
                                                                                 <li>
                                                                                     <a class="subcategory_item"
-                                                                                       href="<c:url value="/product/filter?type="/><%=types.get(i).getTenLoaiGiay()%>&first"><%=types.get(i).getTenLoaiGiay()%></a>
+                                                                                       href="<c:url value="/product/style?id="/><%=types.get(i).getTenLoaiGiay()%>&first"><%=types.get(i).getTenLoaiGiay()%></a>
                                                                                 </li>
                                                                                 <%}%>
                                                                             </ul>
@@ -161,7 +161,7 @@
                                                                                 <% for (int i = types.size() / 2 + 1; i < types.size(); i++) {%>
                                                                                 <li>
                                                                                     <a class="subcategory_item"
-                                                                                       href="<c:url value="/product/filter?type="/><%=types.get(i).getTenLoaiGiay()%>&first"><%=types.get(i).getTenLoaiGiay()%></a>
+                                                                                       href="<c:url value="/product/style?id="/><%=types.get(i).getTenLoaiGiay()%>&first"><%=types.get(i).getTenLoaiGiay()%></a>
                                                                                 </li>
                                                                                 <%}%>
                                                                             </ul>
@@ -188,7 +188,7 @@
                                                                                 <% for (int i = 0; i < manus.size() / 2; i++) {%>
                                                                                 <li>
                                                                                     <a class="subcategory_item"
-                                                                                       href="<c:url value="/product/filter?manu="/><%=manus.get(i).getTenHangGiay()%>&first"><%=manus.get(i).getTenHangGiay()%></a>
+                                                                                       href="<c:url value="/product/manu?id="/><%=manus.get(i).getTenHangGiay()%>"><%=manus.get(i).getTenHangGiay()%></a>
                                                                                 </li>
                                                                                 <%}%>
                                                                             </ul>
@@ -200,7 +200,7 @@
                                                                                 <% for (int i = manus.size() / 2 + 1; i < manus.size(); i++) {%>
                                                                                 <li>
                                                                                     <a class="subcategory_item"
-                                                                                       href="<c:url value="/product/filter?manu="/><%=manus.get(i).getTenHangGiay()%>&first"><%=manus.get(i).getTenHangGiay()%></a>
+                                                                                       href="<c:url value="/product/manu?id="/><%=manus.get(i).getTenHangGiay()%>"><%=manus.get(i).getTenHangGiay()%></a>
                                                                                 </li>
                                                                                 <%}%>
                                                                             </ul>

@@ -79,16 +79,22 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/manu", method = RequestMethod.GET)
-    public ModelAndView showManuProduct(@RequestParam("manu") String id) {
-        ModelAndView mv = new ModelAndView();
+    public ModelAndView showManuProduct(@RequestParam("id") String manu) {
+     
+        ModelAndView mv = setUpPage(null, manu, null, null, null);
 
+        mv.addObject("f_manu", manu);
+     
         mv.setViewName("website/product/index");
         return mv;
     }
 
     @RequestMapping(value = "/style", method = RequestMethod.GET)
-    public ModelAndView showStyleProduct(@RequestParam("type") String id) {
-        ModelAndView mv = new ModelAndView();
+    public ModelAndView showStyleProduct(@RequestParam("id") String type) {
+       ModelAndView mv = setUpPage(null, null, type, null, null);
+
+        mv.addObject("f_type", type);
+     
         mv.setViewName("website/product/index");
         return mv;
     }

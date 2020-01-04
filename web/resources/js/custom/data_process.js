@@ -610,7 +610,7 @@ $(document).ready(function () {
 
     $('.btn-filter').click(function () {
         var url = $(this).attr('href');
-        var data = $('.filters-shoes').find("select").serialize();
+        var data = $('.filters-shoes').find("select input").serialize();
         updatePageProduct(url, data);
         return false;
     });

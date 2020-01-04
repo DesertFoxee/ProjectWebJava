@@ -6,7 +6,9 @@
 
     <c:choose>
         <c:when test="${empty list_shoes_filter}">
-            Không có sản phẩm nào !
+            <div class="product-layout col-md-3 col-sm-6 col-xs-6 ">
+                Không có sản phẩm nào !
+            </div>
         </c:when>    
         <c:otherwise>
             <c:forEach  var="shoes" items="${list_shoes_filter}" >
