@@ -28,6 +28,7 @@
 <link href="<c:url value="/resources/css/website/lib.css"/>" rel="stylesheet" />
 <link href="<c:url value="/resources/css/website/theme-red.css"/>" rel="stylesheet" />
 <link href="<c:url value="/resources/css/website/so_megamenu.css"/>" rel="stylesheet" />
+<link href="<c:url value="/resources/css/custom/shoes.css"/>" rel="stylesheet" />
 
 <link href="<c:url value="/resources/css/website/wide-grid.css"/>" rel="stylesheet" />
 <link href="<c:url value="/resources/css/website/style/style.css"/>" rel="stylesheet" />

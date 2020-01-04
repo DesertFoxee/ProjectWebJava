@@ -328,35 +328,30 @@
                     </div>
 
                     <div class="header-bottom-right col-md-9 col-sm-10 col-xs-10">
-                        <!-- Search -->
+
                         <div class="col-lg-9 col-md-8 col-sm-7 col-xs-9 header_search">
                             <div id="sosearchpro" class="sosearchpro-wrapper so-search compact-hidden">
-                                <form method="GET" action="index.php">
+                                <form id="form_search" action="<c:url value="/product/search"/>">
                                     <div id="search1" class="search input-group">
                                         <div class="select_category filter_type  icon-select">
-                                            <select class="no-border" name="category_id">
-                                                <option value="0">All Category</option>
-                                                <option value="20">Hãng giày</option>
+                                            <select class="no-border" name="category">
+                                                <option value="all">Tất cả</option>
+                                                <option value="manu">Hãng giày</option>
                                                 <c:forEach var="manu" items="${manus}">
-                                                    <option value="${manu.maHang}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${manu.tenHangGiay}</option>
+                                                    <option value="m_${manu.tenHangGiay}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${manu.tenHangGiay}</option>
                                                 </c:forEach>
-                                                <option value="20">Loại giày</option>
-
+                                                <option value="type">Loại giày</option>
                                                 <c:forEach var="type" items="${types}">
-                                                    <option value="${type.maLoaiGiay}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${type.tenLoaiGiay}</option>
+                                                    <option value="t_${type.tenLoaiGiay}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${type.tenLoaiGiay}</option>
                                                 </c:forEach>
-
                                             </select>
                                         </div>
-
                                         <input class="autosearch-input form-control" type="text" value="" size="50"
-                                               autocomplete="off" placeholder="Search" name="search">
+                                               autocomplete="off" placeholder="Tìm kiếm" name="key">
                                         <span class="input-group-btn">
-                                            <button type="submit" class="button-search btn btn-default btn-lg"
-                                                    name="submit_search"><i class="fa fa-search"></i></button>
+                                            <button type="submit" class="button-search btn btn-default btn-lg"><i class="fa fa-search"></i></button>
                                         </span>
                                     </div>
-                                    <input type="hidden" name="route" value="product/search" />
                                 </form>
                             </div>
                             <script type="text/javascript">
@@ -437,7 +432,6 @@
         </div>
 
     </div>
-    <!-- Navbar switcher -->
     <div class="navbar-switcher-container">
         <div class="navbar-switcher">
             <span class="i-inactive">
@@ -446,5 +440,4 @@
             <span class="i-active fa fa-times"></span>
         </div>
     </div>
-    <!-- //end Navbar switcher -->
 </div>

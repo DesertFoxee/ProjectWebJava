@@ -48,8 +48,8 @@
                             <div class="content-block-footer">
                                 <div class="footer-logo"><img src="<c:url value="/resources/images/common/logo-footer.png" />" alt="">
                                 </div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <p>Maxshop cung cấp cho bạn sản phẩm chất lượng cao ,giá thành hợp lý.
+                                    Cảm ơn quý khách ! Mong được sự đóng góp nhằm phát triển hoàn thiện hơn .
                                 </p>
                             </div>
                         </div>
@@ -58,63 +58,38 @@
 
                 <div class="col-sm-6 col-md-3 box-account box-footer">
                     <div class="module clearfix">
-                        <h3 class="modtitle">My Account</h3>
+                        <h3 class="modtitle">Tài khoản</h3>
                         <div class="modcontent">
                             <ul class="menu">
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/manufacturer">Brands</a>
-                                </li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/voucher">Gift
-                                        Certificates</a></li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=affiliate/account">Affiliates</a>
-                                </li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/special">Specials</a>
-                                </li>
+                                <li><a href="<c:url value ="/customer/login"/>">Đăng nhập</a></li>
+                                <li><a href="<c:url value ="/customer/register"/>">Đăng ký</a></li>
+                                <li><a href="<c:url value ="/"/>">Chính sách</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-
+                <div class="col-sm-6 col-md-3 box-account box-footer">
+                    <div class="module clearfix">
+                        <h3 class="modtitle">Website</h3>
+                        <div class="modcontent">
+                            <ul class="menu">
+                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/customer/login"/>">Trang chủ</a></li>
+                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/product"/>">Tất cả sản phẩm</a></li>
+                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/manager"/>">Quản lý</a></li>
+                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/"/>">Trợ giúp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-6 col-md-3 box-information box-footer">
                     <div class="module clearfix">
-                        <h3 class="modtitle">Information</h3>
+                        <h3 class="modtitle">Thông tin</h3>
                         <div class="modcontent">
                             <ul class="menu">
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=information/information&amp;information_id=4">About
-                                        Us</a></li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=information/information&amp;information_id=6">FAQ</a>
-                                </li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=information/information&amp;information_id=3">Pricing
-                                        Tables</a></li>
-                                <li><a
-                                        href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=information/information&amp;information_id=5">Terms
-                                        Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col-sm-6 col-md-3 collapsed-block box-footer">
-                    <div class="module clearfix">
-
-
-                        <h3 class="modtitle">About Us</h3>
-                        <div class="modcontent">
-                            <ul class="contact-address">
-                                <li><span class="fa fa-home"></span> My Company, 42 avenue des Champs</li>
-                                <li><span class="fa fa-envelope"></span> Email: <a href="#">
-                                        sales@yourcompany.com</a></li>
-                                <li><span class="fa fa-phone">&nbsp;</span> Phone 1: 0123456789</li>
+                                <li><span class="fa fa-mail-reply">&nbsp;&nbsp;</span>Email    :<a href="">ngothuong18121998@gmail.com</a></li>
+                                <li><span class="fa fa-phone">&nbsp;&nbsp;</span>Liên lạc : 0398795518</li>
+                                <li><span class="fa fa-address-card-o">&nbsp;&nbsp;</span>Đia chỉ  : 236, Hoàng Quốc Việt, P. Cổ Nhuế 1, Q. Bắc Từ Liêm, HN</li>
+                                <li><span class="fa fa-facebook">&nbsp;&nbsp;</span>Facebook :<a href="http://facebook.com/SSID.no1">RedTeam</a></li>
                             </ul>
                         </div>
                     </div>
@@ -126,7 +101,7 @@
         <div class=" container">
             <div class="row">
                 <div class="col-sm-8 copyright-text">
-                    SO Maxshop © 2019- 2020 MAGENTECH Store. All Rights Reserved. </div>
+                    SO Maxshop © 2019- 2020 RedTeam Store. Đăng ký bản quyền. </div>
 
                 <div class="col-sm-4">
                 </div>

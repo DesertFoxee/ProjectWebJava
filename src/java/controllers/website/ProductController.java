@@ -1,18 +1,14 @@
 package controllers.website;
 
 import dao.GiayDAO;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import models.database.Giay;
 import java.util.List;
 import javafx.util.Pair;
 import models.database.HinhAnh;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
-import models.parameter.ParaFilter;
 import models.parameter.ParaPage;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -99,7 +95,7 @@ public class ProductController {
 
     @RequestMapping(value = "/page", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView showPageProduct(@RequestParam("sort") String sort,
+    public ModelAndView showPage(@RequestParam("sort") String sort,
             @RequestParam("manu") String manu,
             @RequestParam("type") String type,
             @RequestParam("number") String number,
@@ -112,11 +108,11 @@ public class ProductController {
 
     @RequestMapping(value = "/filter", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView shortAndFitler(@RequestParam(value = "sort", required = false) String sort,
-            @RequestParam("manu") String manu,
-            @RequestParam("type") String type,
+    public ModelAndView fitler(@RequestParam(value = "sort", required = false) String sort,
+            @RequestParam(value = "manu", required = false) String manu,
+            @RequestParam(value = "type", required = false) String type,
             @RequestParam(value = "first", required = false) String first,
-            @RequestParam(value = "key", required = false) String key)  {
+            @RequestParam(value = "key", required = false) String key) {
         ModelAndView mv = setUpPage(sort, manu, type, null, key);
 
         mv.addObject("f_manu", manu);
@@ -128,6 +124,31 @@ public class ProductController {
         } else {
             mv.setViewName("partialview/website/product/page");
         }
+        return mv;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView search(@RequestParam(value = "category", required = false) String category,
+            @RequestParam(value = "key", required = false) String key) {
+        String manu = null;
+        String type = null;
+        int index_type = (category != null) ? category.indexOf("_") : -1;
+        if (index_type > -1) {
+            String name_type = category.substring(0, index_type);
+            if ("m".equals(name_type)) {
+                manu = category.substring(index_type, category.length());
+            } else if ("t".equals(name_type)) {
+                type = category.substring(index_type, category.length());
+            }
+        }
+        ModelAndView mv = setUpPage(null, manu, type, null, key);
+
+        mv.addObject("key", key);
+        mv.addObject("f_manu", manu);
+        mv.addObject("f_type", type);
+        mv.addObject("f_sort", null);
+
+        mv.setViewName("website/product/index");
 
         return mv;
     }

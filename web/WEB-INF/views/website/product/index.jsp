@@ -117,7 +117,6 @@
                                                 <div class="item">
                                                     <div class="item-inner">
                                                         <div class="cat_slider_title">
-
                                                             <a href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=product/category&amp;path=61"
                                                                title="Guntes magesg" target="_blank">
                                                                 <i class="fa fa-caret-right"></i> Không biết </a>
