@@ -404,7 +404,6 @@
                                         },
                                     });
                                 });
-
                             </script>
                         </div>
                         <div class="header_custom_link hidden-xs">
@@ -412,7 +411,7 @@
                                 <li>
                                     <c:choose>
                                         <c:when test="${not empty account}">
-                                            <a href="<c:url value="/customer/cart"/>">
+                                            <a href="<c:url value="/customer/dashboard/cart"/>">
                                                 <i class="fa fa-shopping-cart"></i> GIỎ HÀNG
                                             </a>
                                         </c:when>    

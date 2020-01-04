@@ -3,12 +3,14 @@ package controllers.website;
 import dao.DanhGiaDAO;
 import dao.GiayDAO;
 import dao.KhachHangDAO;
+import dao.TaiKhoanDAO;
 import java.util.Date;
 import models.database.Giay;
 import java.util.List;
 import javafx.util.Pair;
 import javax.servlet.http.HttpSession;
 import models.database.DanhGia;
+import models.database.DanhGiaId;
 import models.database.HinhAnh;
 import models.database.KhachHang;
 import models.database.TaiKhoan;
@@ -78,9 +80,11 @@ public class ProductController {
     public ModelAndView showSingleProduct(@RequestParam("id") String id) {
         ModelAndView mv = new ModelAndView();
         Giay shoes = GiayDAO.getShoesID(Integer.parseInt(id));
+        List<DanhGia> reviews = DanhGiaDAO.getReviewsShoesID(Integer.parseInt(id));
         String path_img_default = HinhAnh.getPathImgDefault();
-
+        
         mv.addObject("shoes", shoes);
+        mv.addObject("reviews", reviews);
         mv.addObject("path_default", path_img_default);
         mv.setViewName("website/product/single");
         return mv;
@@ -168,28 +172,31 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
+    @ResponseBody
     public ValidationResponse comment(@RequestParam("shoes") String shoes_id,
             @RequestParam("comment") String comment, HttpSession session) {
         ValidationResponse resp = new ValidationResponse();
         TaiKhoan tk = (TaiKhoan) session.getAttribute("user_customer");
 
-        Giay shoes = GiayDAO.exists(Integer.parseInt(shoes_id));
-        KhachHang customer = KhachHangDAO.getCustomerAccID(tk.getMaTaiKhoan());
-
         if (tk != null) {
+
+            Giay shoes = GiayDAO.exists(Integer.parseInt(shoes_id));
+            TaiKhoan acc = TaiKhoanDAO.getAccountID(tk.getMaTaiKhoan());
+            KhachHang customer = acc.getKhachHang();
             if (shoes == null || customer == null) {
                 resp.addErrorMessages("err", "Yêu cầu không hợp lệ !");
             } else {
                 DanhGia review = new DanhGia();
+                review.setId(new DanhGiaId(customer.getMaKhachHang() , shoes.getMaGiay()));
                 review.setNoiDung(comment);
                 review.setThoiGian(new Date());
                 review.setKhachHang(customer);
                 review.setGiay(shoes);
                 if (DanhGiaDAO.save(review) != null) {
                     resp.setValidated(true);
-                    resp.setRedirect(comment);
+                } else {
+                    resp.addErrorMessages("err", "Lỗi hệ thống hoặc Bạn đã bình luận !");
                 }
-                else resp.addErrorMessages("err", "Bình luận thất bại !");
             }
         } else {
             resp.addErrorMessages("err", "Hãy đăng nhập trước khi bình luận !");

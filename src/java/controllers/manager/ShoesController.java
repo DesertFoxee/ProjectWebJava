@@ -26,6 +26,7 @@ import models.parameter.SizeUpdate;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -132,11 +133,9 @@ public class ShoesController {
 
     @Auth(role = Auth.Role.ADMIN)
     @ResponseBody
-    @RequestMapping(value = "/shoes/edit", method = RequestMethod.POST,
-            consumes = "application/json")
-    public ValidationResponse editShoes(@RequestBody @Valid ParaShoes para_shoes, BindingResult binding) {
+    @RequestMapping(value = "/shoes/edit", method = RequestMethod.POST)
+    public ValidationResponse editShoes(@ModelAttribute @Valid ParaShoes para_shoes, BindingResult binding) {
         ValidationResponse resp = new ValidationResponse();
-        resp.setValidated(false);
         if (binding.hasErrors()) {
             resp.processError(binding.getFieldErrors());
         } else {

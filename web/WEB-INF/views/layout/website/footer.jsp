@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <div id="footer">
     <div class="footer-top">
@@ -73,7 +75,7 @@
                         <h3 class="modtitle">Website</h3>
                         <div class="modcontent">
                             <ul class="menu">
-                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/customer/login"/>">Trang chủ</a></li>
+                                <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="${contextPath}">Trang chủ</a></li>
                                 <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/product"/>">Tất cả sản phẩm</a></li>
                                 <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/manager"/>">Quản lý</a></li>
                                 <li><span class="fa fa-caret-right">&nbsp;&nbsp;</span><a href="<c:url value ="/"/>">Trợ giúp</a></li>

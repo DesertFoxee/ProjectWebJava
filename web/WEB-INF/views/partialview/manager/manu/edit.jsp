@@ -6,7 +6,7 @@
 <div class="col-lg-12" style="text-align: center;">
     <small class="msg-error" id="er-common" ></small>
 </div>
-<input name="maHangGiay" value="${manu.maHang}" type="hidden" >
+<input name="maHang" value="${manu.maHang}" type="hidden" >
 <div class="col-lg-6 shoes-padding-input">
     <label>Tên hãng giày
         <small class="msg-error" id="er-tenHangGiay"></small>

@@ -1,9 +1,7 @@
-
 package dao;
 
 import java.util.List;
 import models.database.DanhGia;
-
 
 public class DanhGiaDAO extends AbstractGenericDao {
 
@@ -23,7 +21,7 @@ public class DanhGiaDAO extends AbstractGenericDao {
         }
         return reviews;
     }
-    
+
     public static DanhGia save(DanhGia dg) {
         beginTransaction();
         try {
@@ -34,6 +32,23 @@ public class DanhGiaDAO extends AbstractGenericDao {
             Transaction().rollback();
             return null;
         }
+    }
+
+    public static List<DanhGia> getReviewsShoesID(int id) {
+        beginTransaction();
+        List<DanhGia> reviews = null;
+        try {
+            reviews = Session()
+                    .createQuery("from DanhGia dg\n"
+                            + "left join fetch dg.khachHang\n"
+                            + "where dg.giay.maGiay =:id")
+                    .setParameter("id", id)
+                    .list();
+            commitTransaction();
+        } catch (Exception e) {
+            Transaction().rollback();
+        }
+        return reviews;
     }
 
 }

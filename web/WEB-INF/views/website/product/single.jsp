@@ -1,3 +1,4 @@
+<%@page import="dao.TaiKhoanDAO"%>
 <%@page import="models.database.TaiKhoan"%>
 <%@page import="models.database.Giay"%>
 <%@page import="process.Product"%>
@@ -6,15 +7,21 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <%
     Giay shoes = (Giay) pageContext.getAttribute("shoes", PageContext.REQUEST_SCOPE);
     int count_shoes = Product.getCountShoes(shoes);
     TaiKhoan account = (TaiKhoan) session.getAttribute("user_customer");
+    TaiKhoan acc = null;
+    if (account != null) {
+        acc = TaiKhoanDAO.getAccountID(account.getMaTaiKhoan());
+    }
+
 %>
 <c:set value="<%=count_shoes%>" var="count_shoes" />
-<c:set value="<%=account%>" var="account" />
+<c:set value="<%=acc%>" var="account" />
 <t:template-website title="Single">
     <jsp:attribute name="content">
         <div class="container ">
@@ -227,7 +234,7 @@
 
 
                                                 <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">ĐÁNH GIÁ
-                                                        (0)</a>                                                   
+                                                        (${fn:length(reviews)})</a>                                                   
                                                 </li>
 
 
@@ -240,7 +247,7 @@
                                                 </div>
                                                 <div id="tab-review" class="tab-pane fade">
                                                     <form id="review" action="<c:url value="/product/comment"/>" >
-                                                        <input name ="shoes" value="${shoes.maGiay}" style="hidden"/>
+                                                        <input name="shoes" value="${shoes.maGiay}" type="hidden" >
                                                         <h2 id="review-title">Hãy viết đánh giá
                                                             <c:if test="${empty account}">  
                                                                 <p style="float :right ;font-size: 10px;">
@@ -252,7 +259,7 @@
                                                                 </p>
                                                             </c:if>
                                                         </h2>
-                                                       
+
                                                         <div class="row" style="padding:10px;">
                                                             <div class="form-group" style="margin-bottom: 5px;">
                                                                 <label>Bình luận</label>
@@ -261,7 +268,7 @@
                                                             <button type="submit" class="btn btn-primary" style="float: right;">Bình luận</button>
                                                         </div>
 
-                                                        <c:forEach  var="review" items="${shoes.danhGias.toArray()}">   
+                                                        <c:forEach  var="review" items="${reviews}">   
                                                             <div class="row">
                                                                 <div class="col-sm-2">
                                                                     <div class="thumbnail">
@@ -271,7 +278,18 @@
                                                                 <div class="col-sm-10">
                                                                     <div class="panel panel-default">
                                                                         <div class="panel-heading">
-                                                                            <strong>unkown</strong> <span class="text-muted">commented ${review.thoiGian}</span>
+                                                                            <strong>
+                                                                                <c:choose> 
+                                                                                    <c:when test="${account.khachHang.maKhachHang == review.khachHang.maKhachHang}">
+                                                                                        Bạn
+                                                                                    </c:when>
+                                                                                    <c:otherwise>
+                                                                                        ${review.khachHang.tenKhachHang}
+                                                                                    </c:otherwise>
+                                                                                </c:choose>
+                                                                                
+
+                                                                            </strong> <span class="text-muted">commented ${review.thoiGian}</span>
                                                                         </div>
                                                                         <div class="panel-body">
                                                                             ${review.noiDung}

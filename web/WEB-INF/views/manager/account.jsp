@@ -21,12 +21,6 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 Danh sách khách hàng
-                                <div class="pull-right">
-                                    <div class="btn-group" style="top: -5px;">
-                                        <button type="button right" class="btn btn-info btn-sm" data-toggle="modal"
-                                                data-target="#btn-add-cus">Thêm</button>
-                                    </div>
-                                </div>
                             </div>
                             <div class="panel-body">
 

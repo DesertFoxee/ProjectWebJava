@@ -5,7 +5,7 @@
 <div class="col-lg-12" style="text-align: center;">
     <small class="msg-error" id="er-common" ></small>
 </div>
-<input name="maHangGiay" value="${type.maLoaiGiay}" type="hidden" >
+<input name="maLoaiGiay" value="${type.maLoaiGiay}" type="hidden" >
 <div class="col-lg-12 shoes-padding-input">
     <label>Tên loại giày
         <small class="msg-error" id="er-tenLoaiGiay"></small>

@@ -114,7 +114,6 @@ public class GiayDAO extends AbstractGenericDao {
         try {
             shoes = (Giay) Session().createQuery("from Giay g \n"
                     + "left join fetch  g.hangGiay hg\n"
-                    + "left join fetch  g.danhGias hg\n"
                     + "left join fetch  g.loaiGiay lg\n"
                     + "left join fetch  g.hinhAnhs ha\n"
                     + "left join fetch  g.kichCos kc\n"

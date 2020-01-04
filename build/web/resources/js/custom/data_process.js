@@ -398,17 +398,30 @@ $(document).ready(function () {
     $("#form-edit-shoes").submit(function () {
         var url = $(this).attr("action");
         var data_post = $(this).serialize();
-        submitEditForm(url, $('#edit-shoes'), data_post);
+        submitEditForm(url, data_post);
+
         return false;
     });
 
     $("#form-edit-account").submit(function () {
         var url = $(this).attr("action");
         var data_post = $(this).serialize();
-        submitEditForm(url, $('#edit-account'), data_post);
+        submitEditForm(url, data_post);
         return false;
     });
 
+    $("#form-edit-manu").submit(function () {
+        var url = $(this).attr("action");
+        var data_post = $(this).serialize();
+        submitEditForm(url, data_post);
+        return false;
+    });
+    $("#form-edit-type").submit(function () {
+        var url = $(this).attr("action");
+        var data_post = $(this).serialize();
+        submitEditForm(url, data_post);
+        return false;
+    });
 
     $("#admin-update").submit(function () {
         remove_msg_error();
@@ -628,34 +641,26 @@ $(document).ready(function () {
         submitEditForm(url, data);
         return false;
     });
-    
-     $('#review').submit(function () {
+
+    $('#review').submit(function () {
         var url = $(this).attr('action');
         var data = $(this).serialize();
-//        submitEditForm(url, data);
-
-
-//$.ajax({
-//            type: 'POST',
-//            url: url,
-//            data: data_post,
-//            success: function (response) {
-//                if (response.validated) {
-//                    show_alert(msg_success, "bottom-warning");
-//                } else {
-//                    if (response.redirect) {
-//                        window.location.href = response.redirect;
-//                    } else {
-//                        var err = get_list_error(response.errorMessages);
-//                        show_alert(err, "bottom-error");
-//                    }
-//                }
-//            },
-//            error: function () {
-//                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
-//            }
-//        });
-        alert(url  + data);
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            success: function (response) {
+                if (response.validated) {
+                    window.location.href = response.redirect;
+                } else {
+                    var err = get_list_error(response.errorMessages);
+                    show_alert(err, "bottom-error");
+                }
+            },
+            error: function () {
+                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
+            }
+        });
         return false;
     });
 

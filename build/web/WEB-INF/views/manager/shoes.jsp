@@ -53,7 +53,7 @@
                                                     <td class="center">${item.gia}</td>
                                                     <td class="right">
                                                         <a href="#" class="btn-edit btn-edit-shoes" data-toggle="modal" data-target="#edit-shoes">Edit</a>|
-                                                        <a  href="#" class="btn-edit btn-delete-shoes" data-toggle="modal" data-target="#delete-shoes">Delete</a>|
+                                                        <a href="#" class="btn-edit btn-delete-shoes" data-toggle="modal" data-target="#delete-shoes">Delete</a>|
                                                         <a href="#" class="btn-edit btn-image-shoes" data-toggle="modal" data-target="#image-shoes">Image</a>
                                                     </td>
                                                 </tr>
