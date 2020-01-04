@@ -1,3 +1,4 @@
+<%@page import="models.database.TaiKhoan"%>
 <%@page import="models.database.Giay"%>
 <%@page import="process.Product"%>
 <% request.setCharacterEncoding("utf-8");%>
@@ -10,8 +11,10 @@
 <%
     Giay shoes = (Giay) pageContext.getAttribute("shoes", PageContext.REQUEST_SCOPE);
     int count_shoes = Product.getCountShoes(shoes);
+    TaiKhoan account = (TaiKhoan) session.getAttribute("user_customer");
 %>
 <c:set value="<%=count_shoes%>" var="count_shoes" />
+<c:set value="<%=account%>" var="account" />
 <t:template-website title="Single">
     <jsp:attribute name="content">
         <div class="container ">
@@ -224,7 +227,8 @@
 
 
                                                 <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">ĐÁNH GIÁ
-                                                        (0)</a></li>
+                                                        (0)</a>                                                   
+                                                </li>
 
 
                                             </ul>
@@ -235,14 +239,48 @@
                                                         ${shoes.moTa}</p>
                                                 </div>
                                                 <div id="tab-review" class="tab-pane fade">
-                                                    <form>
-                                                        <div id="review"></div>
-                                                        <h2 id="review-title">Write a review</h2>
-                                                        Please <a
-                                                            href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/login">login</a>
-                                                        or <a
-                                                            href="http://opencart2.opencartworks.com/themes/so_maxshop/index.php?route=account/register">register</a>
-                                                        to review
+                                                    <form id="review" action="<c:url value="/product/comment"/>" >
+                                                        <input name ="shoes" value="${shoes.maGiay}" style="hidden"/>
+                                                        <h2 id="review-title">Hãy viết đánh giá
+                                                            <c:if test="${empty account}">  
+                                                                <p style="float :right ;font-size: 10px;">
+                                                                    ( Hãy  <a
+                                                                        href="<c:url value="/customer/login"/>">login</a>
+                                                                    hoặc <a
+                                                                        href="<c:url value="/customer/register"/>">register</a>
+                                                                    để đánh giá sản phẩm)
+                                                                </p>
+                                                            </c:if>
+                                                        </h2>
+                                                       
+                                                        <div class="row" style="padding:10px;">
+                                                            <div class="form-group" style="margin-bottom: 5px;">
+                                                                <label>Bình luận</label>
+                                                                <textarea class="form-control" name="comment" rows="3" style="max-height: 90px;"></textarea>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary" style="float: right;">Bình luận</button>
+                                                        </div>
+
+                                                        <c:forEach  var="review" items="${shoes.danhGias.toArray()}">   
+                                                            <div class="row">
+                                                                <div class="col-sm-2">
+                                                                    <div class="thumbnail">
+                                                                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="panel panel-default">
+                                                                        <div class="panel-heading">
+                                                                            <strong>unkown</strong> <span class="text-muted">commented ${review.thoiGian}</span>
+                                                                        </div>
+                                                                        <div class="panel-body">
+                                                                            ${review.noiDung}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </c:forEach>
+
                                                     </form>
                                                 </div>
                                             </div>

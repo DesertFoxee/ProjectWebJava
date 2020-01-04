@@ -23,5 +23,17 @@ public class DanhGiaDAO extends AbstractGenericDao {
         }
         return reviews;
     }
+    
+    public static DanhGia save(DanhGia dg) {
+        beginTransaction();
+        try {
+            Session().save(dg);
+            commitTransaction();
+            return dg;
+        } catch (Exception e) {
+            Transaction().rollback();
+            return null;
+        }
+    }
 
 }

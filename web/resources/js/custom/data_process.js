@@ -602,7 +602,7 @@ $(document).ready(function () {
     $('.products-category').on('click', '.change-page', function () {
         var url = $(this).attr('href');
         var page_number = $(this).attr('value');
-        var data = $('.filters-shoes').find("select").serialize();
+        var data = $('.filters-shoes').find("select ,input").serialize();
         data += "&number=" + page_number;
         updatePageProduct(url, data);
         return false;
@@ -626,6 +626,36 @@ $(document).ready(function () {
         var url = $(this).attr('action');
         var data = $(this).serialize();
         submitEditForm(url, data);
+        return false;
+    });
+    
+     $('#review').submit(function () {
+        var url = $(this).attr('action');
+        var data = $(this).serialize();
+//        submitEditForm(url, data);
+
+
+//$.ajax({
+//            type: 'POST',
+//            url: url,
+//            data: data_post,
+//            success: function (response) {
+//                if (response.validated) {
+//                    show_alert(msg_success, "bottom-warning");
+//                } else {
+//                    if (response.redirect) {
+//                        window.location.href = response.redirect;
+//                    } else {
+//                        var err = get_list_error(response.errorMessages);
+//                        show_alert(err, "bottom-error");
+//                    }
+//                }
+//            },
+//            error: function () {
+//                show_alert("Có lỗi xảy ra ! Xin kiểm tra lại", "bottom-error");
+//            }
+//        });
+        alert(url  + data);
         return false;
     });
 

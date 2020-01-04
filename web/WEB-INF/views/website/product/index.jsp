@@ -132,6 +132,9 @@
                             <div class="main-right">
                                 <div id="content" class=" col-md-12 col-sm-12  col-xs-12" style="padding-right: 0px;">
                                     <div class="products-category">
+                                        <c:if test="${not empty key}">
+                                            <b>Kết quả tìm kiếm cho</b> : ${key}
+                                        </c:if>
                                         <div class="product-filter filters-panel">
                                             <div class="row">
                                                 <div class="col-md-2 hidden-sm hidden-xs"style="width: 5%;">
@@ -159,6 +162,7 @@
                                                             ${list_type}
                                                         </select>
                                                         <button href="<c:url value="/product/filter"/>" class="btn btn-primary btn-filter" style="font-size: 12px;">Tìm kiếm</button>
+
                                                     </div>
                                                 </div>
                                                 <div class="box-pagination col-lg-3 col-sm-4 col-xs-12 text-right" style="width: 30%; float: right;">

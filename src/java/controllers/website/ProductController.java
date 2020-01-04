@@ -1,10 +1,17 @@
 package controllers.website;
 
+import dao.DanhGiaDAO;
 import dao.GiayDAO;
+import dao.KhachHangDAO;
+import java.util.Date;
 import models.database.Giay;
 import java.util.List;
 import javafx.util.Pair;
+import javax.servlet.http.HttpSession;
+import models.database.DanhGia;
 import models.database.HinhAnh;
+import models.database.KhachHang;
+import models.database.TaiKhoan;
 import models.parameter.KeyFilter;
 import models.parameter.KeySort;
 import models.parameter.ParaPage;
@@ -16,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import process.Filter;
 import process.Page;
+import validation.ValidationResponse;
 
 @Controller
 @RequestMapping(value = "product")
@@ -80,21 +88,21 @@ public class ProductController {
 
     @RequestMapping(value = "/manu", method = RequestMethod.GET)
     public ModelAndView showManuProduct(@RequestParam("id") String manu) {
-     
+
         ModelAndView mv = setUpPage(null, manu, null, null, null);
 
         mv.addObject("f_manu", manu);
-     
+
         mv.setViewName("website/product/index");
         return mv;
     }
 
     @RequestMapping(value = "/style", method = RequestMethod.GET)
     public ModelAndView showStyleProduct(@RequestParam("id") String type) {
-       ModelAndView mv = setUpPage(null, null, type, null, null);
+        ModelAndView mv = setUpPage(null, null, type, null, null);
 
         mv.addObject("f_type", type);
-     
+
         mv.setViewName("website/product/index");
         return mv;
     }
@@ -157,5 +165,35 @@ public class ProductController {
         mv.setViewName("website/product/index");
 
         return mv;
+    }
+
+    @RequestMapping(value = "/comment", method = RequestMethod.POST)
+    public ValidationResponse comment(@RequestParam("shoes") String shoes_id,
+            @RequestParam("comment") String comment, HttpSession session) {
+        ValidationResponse resp = new ValidationResponse();
+        TaiKhoan tk = (TaiKhoan) session.getAttribute("user_customer");
+
+        Giay shoes = GiayDAO.exists(Integer.parseInt(shoes_id));
+        KhachHang customer = KhachHangDAO.getCustomerAccID(tk.getMaTaiKhoan());
+
+        if (tk != null) {
+            if (shoes == null || customer == null) {
+                resp.addErrorMessages("err", "Yêu cầu không hợp lệ !");
+            } else {
+                DanhGia review = new DanhGia();
+                review.setNoiDung(comment);
+                review.setThoiGian(new Date());
+                review.setKhachHang(customer);
+                review.setGiay(shoes);
+                if (DanhGiaDAO.save(review) != null) {
+                    resp.setValidated(true);
+                    resp.setRedirect(comment);
+                }
+                else resp.addErrorMessages("err", "Bình luận thất bại !");
+            }
+        } else {
+            resp.addErrorMessages("err", "Hãy đăng nhập trước khi bình luận !");
+        }
+        return resp;
     }
 }

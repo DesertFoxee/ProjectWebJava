@@ -308,7 +308,7 @@
                                                         <% for (HangGiay h : manus) {%>
                                                         <li class='item-vertical style1 with-sub-menu hover'>
                                                             <p class='close-menu'></p>
-                                                            <a href= "<c:url value="/product/manu?id="/><%=h.getMaHang()%>" class='clearfix'>
+                                                            <a href= "<c:url value="/product/manu?id="/><%=h.getTenHangGiay()%>" class='clearfix'>
                                                                 <span><strong>
                                                                         <i class='icon icon1'></i><%=h.getTenHangGiay()%>
                                                                     </strong></span>
